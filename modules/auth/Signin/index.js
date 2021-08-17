@@ -85,7 +85,7 @@ const Signin = (props) => {
       <Box mb={{xs: 6, md: 8, xl: 18}} textAlign='center'>
         <img
           className={classes.imgRoot}
-          src={`${process.env.basePath}/images/logo-white-with-name.png`}
+          src={`${process.env.imageBasePath}/images/logo-white-with-name.png`}
           alt='sling-logo'
         />
       </Box>

@@ -22,14 +22,14 @@ const AppLogoWhite = () => {
       <Hidden smUp>
         <img
           className={classes.logo}
-          src={`${process.env.basePath}/images/logo-white.png`}
+          src={`${process.env.imageBasePath}/images/logo-white.png`}
           alt='sling-logo'
         />
       </Hidden>
       <Hidden xsDown>
         <img
           className={classes.logo}
-          src={`${process.env.basePath}/images/logo-white-with-name.png`}
+          src={`${process.env.imageBasePath}/images/logo-white-with-name.png`}
           alt='sling-logo'
         />
       </Hidden>

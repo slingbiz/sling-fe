@@ -28,8 +28,8 @@ const AppLogo = () => {
           className={classes.logo}
           src={
             themeMode === ThemeMode.DARK
-              ? `${process.env.basePath}/images/logo.png`
-              : `${process.env.basePath}/images/logo.png`
+              ? `${process.env.imageBasePath}/images/logo.png`
+              : `${process.env.imageBasePath}/images/logo.png`
           }
           alt='sling-logo'
         />
@@ -40,8 +40,8 @@ const AppLogo = () => {
             className={classes.logo}
             src={
               themeMode === ThemeMode.DARK
-                ? `${process.env.basePath}/images/sling-fe.png`
-                : `${process.env.basePath}/images/sling-fe.png`
+                ? `${process.env.imageBasePath}/images/sling-fe.png`
+                : `${process.env.imageBasePath}/images/sling-fe.png`
             }
             alt='Sling Frontend Demo'
           />
