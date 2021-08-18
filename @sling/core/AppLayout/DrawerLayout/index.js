@@ -24,16 +24,15 @@ const DrawerLayout = (props) => {
           appMainFixedFooter: footer && footerType === 'fixed',
         },
       )}>
-
       <AppHeader />
-      <AppSidebar />
       <Box className={classes.mainContent}>
         <Box className={classes.mainContainerFull}>
-          <ContentView>{props.children}</ContentView>
+          <Box className={classes.contentViewWrap}>
+            <ContentView>{props.children}</ContentView>
+          </Box>
         </Box>
       </Box>
       <AppFixedFooter />
-      <ThemeSetting />
     </Box>
   );
 };

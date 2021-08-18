@@ -33,7 +33,6 @@ const AppsHeader = ({children}) => {
         spacing={2}
         justifyContent={'center'}
         width={'auto'}
-        asdf={'asdf'}
         alignItems='baseline'
         flexDirection='row'
         px={6}

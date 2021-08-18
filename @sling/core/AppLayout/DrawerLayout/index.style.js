@@ -30,13 +30,13 @@ const useStyles = makeStyles((theme) => {
     mainContainerFull: {
       width: '100vw',
       paddingBottom: (props) => (props.footer ? 0 : 10),
-      '& > .scrollbar-container': {
-        padding: '20px 20px 0',
-        display: 'flex',
-        flexDirection: 'column',
-        [theme.breakpoints.up('md')]: {
-          padding: '30px 32px 0',
-        },
+    },
+    contentViewWrap: {
+      padding: '20px 20px 0',
+      display: 'flex',
+      flexDirection: 'column',
+      [theme.breakpoints.up('md')]: {
+        padding: '30px 32px 0',
       },
     },
     boxedLayout: {

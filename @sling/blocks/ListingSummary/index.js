@@ -10,7 +10,7 @@ const ListingSummary = ({payload}) => {
       <Box fontWeight={Fonts.BOLD} mr={3}>
         Watches
       </Box>
-      <Hidden only='xs'>
+      <Hidden only='xs' implementation='css'>
         <Box component='span'>(Showing 1 – 40 products of 93,723 products)</Box>
       </Hidden>
     </Box>

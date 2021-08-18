@@ -18,9 +18,14 @@ export async function getServerSideProps(context) {
       e.message,
     );
   }
-  console.log('[getServerSideProps] - Json stringied response from api', JSON.stringify(response));
+  console.log(
+    '[getServerSideProps] - Json stringied response from api',
+    JSON.stringify(response),
+  );
   return {
     props: {response}, // will be passed to the page component as props
   };
 }
-export default AppPage(() => <Products />);
+export default Products;
+// export default AppPage(() => <Products />);
+// export default () => <> asfdasf</>;

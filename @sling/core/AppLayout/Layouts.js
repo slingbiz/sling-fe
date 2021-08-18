@@ -12,16 +12,16 @@ import MiniSidebarToggle from './MiniSidebarToggle';
 import {NavStyle} from '../../../shared/constants/AppEnums';
 
 const Layouts = {
-  [NavStyle.STANDARD]: Standard,
-  [NavStyle.DEFAULT]: DefaultLayout,
-  [NavStyle.HEADER_USER]: HeaderUserLayout,
-  [NavStyle.HEADER_USER_MINI]: HeaderUserMiniLayout,
-  [NavStyle.MINI_SIDEBAR_TOGGLE]: MiniSidebarToggle,
-  [NavStyle.MINI]: MiniSidebar,
+  // [NavStyle.STANDARD]: Standard,
+  // [NavStyle.DEFAULT]: DefaultLayout,
+  // [NavStyle.HEADER_USER]: HeaderUserLayout,
+  // [NavStyle.HEADER_USER_MINI]: HeaderUserMiniLayout,
+  // [NavStyle.MINI_SIDEBAR_TOGGLE]: MiniSidebarToggle,
+  // [NavStyle.MINI]: MiniSidebar,
   [NavStyle.DRAWER]: DrawerLayout,
-  [NavStyle.BIT_BUCKET]: BitBucket,
-  [NavStyle.H_DEFAULT]: HorDefault,
-  [NavStyle.HOR_LIGHT_NAV]: HorLightNav,
-  [NavStyle.HOR_DARK_LAYOUT]: HorDarkLayout,
+  // [NavStyle.BIT_BUCKET]: BitBucket,
+  // [NavStyle.H_DEFAULT]: HorDefault,
+  // [NavStyle.HOR_LIGHT_NAV]: HorLightNav,
+  // [NavStyle.HOR_DARK_LAYOUT]: HorDarkLayout,
 };
 export default Layouts;

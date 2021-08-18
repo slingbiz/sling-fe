@@ -9,7 +9,6 @@ const AppFixedFooter = (props) => {
 
   const useStyles = makeStyles((theme) => ({
     footer: {
-      position: 'fixed',
       left: 0,
       bottom: 0,
       width: '100%',
@@ -38,23 +37,21 @@ const AppFixedFooter = (props) => {
 
   return (
     <>
-      {footer && footerType === 'fixed' ? (
-        <Box className={clsx(classes.footer, 'footer fixed-footer')}>
-          <Box
-            className='footerContainer'
-            alignItems='center'
-            flexDirection='row'
-            justifyContent='center'
-            display='flex'>
-            <Box>© 2021 Brewed Passionately in Dubai. All Rights Reserved.</Box>
-            {/*<Box ml='auto'>*/}
-            {/*  <Button className={classes.btnRoot} color='primary'>*/}
-            {/*    Buy Now*/}
-            {/*  </Button>*/}
-            {/*</Box>*/}
-          </Box>
+      <Box className={clsx(classes.footer, 'footer')}>
+        <Box
+          className='footerContainer'
+          alignItems='center'
+          flexDirection='row'
+          justifyContent='center'
+          display='flex'>
+          <Box>© 2021 Brewed Passionately in Dubai. All Rights Reserved.</Box>
+          {/*<Box ml='auto'>*/}
+          {/*  <Button className={classes.btnRoot} color='primary'>*/}
+          {/*    More*/}
+          {/*  </Button>*/}
+          {/*</Box>*/}
         </Box>
-      ) : null}
+      </Box>
     </>
   );
 };

@@ -34,20 +34,18 @@ TransitionWrapper.propTypes = {
 
 const ContentView = (props) => {
   return (
-    <Scrollbar>
+    <Box>
       <Box
         display='flex'
         flex={1}
         flexDirection='column'
         className='main-content-view'>
-        <AppSuspense>
-          <AppErrorBoundary>
-            <TransitionWrapper>{props.children}</TransitionWrapper>
-          </AppErrorBoundary>
-        </AppSuspense>
+        <AppErrorBoundary>
+          <TransitionWrapper>{props.children}</TransitionWrapper>
+        </AppErrorBoundary>
       </Box>
       <AppFooter />
-    </Scrollbar>
+    </Box>
   );
 };
 

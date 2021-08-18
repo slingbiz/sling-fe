@@ -24,7 +24,7 @@ const ListingSearchBar = ({parentProps}) => {
         placeholder='Search'
         onChange={(e) => searchProduct(e.target.value)}
       />
-      <Hidden mdDown>
+      {/*<Hidden mdDown>*/}
         <IconButton onClick={() => dispatch(setViewType(VIEW_TYPE.LIST))}>
           <ListIcon
             color={viewType === VIEW_TYPE.LIST ? 'primary' : 'inherit'}
@@ -35,7 +35,7 @@ const ListingSearchBar = ({parentProps}) => {
             color={viewType === VIEW_TYPE.GRID ? 'primary' : 'inherit'}
           />
         </IconButton>
-      </Hidden>
+      {/*</Hidden>*/}
     </Box>
   );
 };

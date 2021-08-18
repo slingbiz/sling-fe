@@ -34,22 +34,20 @@ const AppFixedFooter = (props) => {
 
   return (
     <>
-      {footer && footerType === 'fixed' ? (
-        <Box className={clsx(classes.footer, 'footer fixed-footer')}>
-          <Box
-            className='footerContainer'
-            alignItems='center'
-            flexDirection='row'
-            display='flex'>
-            <Box>© 2021 Brewed Passionately in Dubai. All Rights Reserved.</Box>
-            <Box ml='auto'>
-              <Box px={5} clone>
-                <Button color='primary'>Buy Now</Button>
-              </Box>
+      <Box className={clsx(classes.footer, 'footer fixed-footer')}>
+        <Box
+          className='footerContainer'
+          alignItems='center'
+          flexDirection='row'
+          display='flex'>
+          <Box>© 2021 Brewed Passionately in Dubai. All Rights Reserved.</Box>
+          <Box ml='auto'>
+            <Box px={5} clone>
+              <Button color='primary'>Buy Now</Button>
             </Box>
           </Box>
         </Box>
-      ) : null}
+      </Box>
     </>
   );
 };
