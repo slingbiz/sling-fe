@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Products = (props) => {
-  console.log(props, '@@@@props@@@@');
   const classes = useStyles();
   const {ecommerceList, viewType} = useSelector(({ecommerce}) => ecommerce);
   const {loading} = useSelector(({common}) => common);

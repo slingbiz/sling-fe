@@ -4,15 +4,16 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import {Checkbox, makeStyles} from '@material-ui/core';
-import IntlMessages from '../../../../../@sling/utility/IntlMessages';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {green} from '@material-ui/core/colors';
 import clsx from 'clsx';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
 import {useDispatch} from 'react-redux';
-import {setCurrentProduct} from '../../../../../redux/actions/Ecommerce';
 import {useRouter} from 'next/router';
+import IntlMessages from '../../utility/IntlMessages';
+import {Fonts} from '../../../shared/constants/AppEnums';
+import {setCurrentProduct} from '../../../redux/actions/Ecommerce';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   textUppercase: {
@@ -37,14 +38,21 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   truncate: {
+    // overflow: 'hidden',
+    // textOverflow: 'ellipsis',
+    // whiteSpace: 'nowrap',
+    display: 'box',
+    lineClamp: 3,
+    boxOrient: 'vertical',
     overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
   },
   btn: {
     fontWeight: Fonts.MEDIUM,
     padding: '4px 12px',
     fontSize: 12,
+  },
+  descpMargin: {
+    marginBottom: 10,
   },
 }));
 
@@ -62,9 +70,8 @@ const Item = (props) => {
       onClick={() => {
         dispatch(setCurrentProduct(item));
         router.push('/ecommerce/product_detail/' + item.id);
-      }}
-      clone>
-      <Card>
+      }}>
+      <Box style={{display: 'flex', flexDirection: 'column'}}>
         <Box mt={2} mb={5} display='flex' justifyContent='space-between'>
           <Box
             component='span'
@@ -99,18 +106,21 @@ const Item = (props) => {
           color='text.primary'
           fontWeight={Fonts.BOLD}
           fontSize={16}
-          component='h3'
+          component='h4'
           className={classes.truncate}>
           {item.title}
         </Box>
 
-        <Box
-          mb={3}
-          mr={6}
+        <Typography
+          component='h6'
           color='text.secondary'
-          className={clsx(classes.truncate, classes.textSm)}>
+          className={clsx(
+            classes.truncate,
+            classes.textSm,
+            classes.descpMargin,
+          )}>
           {item.description}
-        </Box>
+        </Typography>
 
         <Box
           mx={-1}
@@ -135,7 +145,7 @@ const Item = (props) => {
             {item.discount}% <IntlMessages id='ecommerce.off' />
           </Box>
         </Box>
-      </Card>
+      </Box>
     </Box>
   );
 };

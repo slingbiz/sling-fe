@@ -10,7 +10,7 @@ const Products = asyncComponent(() =>
 export async function getServerSideProps(context) {
   let response = {};
   try {
-    response = await fetch(`${INIT_CONFIG}`);
+    response = await fetch(`${'/api/ecommerce/list'}`);
     response = await response.json();
   } catch (e) {
     console.log(

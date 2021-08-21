@@ -15,7 +15,7 @@ import {cartItems} from '../../@sling/services/db/ecommerce/ecommerceData';
 export const VIEW_TYPE = Object.freeze({LIST: 1, GRID: 2});
 const initialState = {
   ecommerceList: [],
-  viewType: VIEW_TYPE.LIST,
+  viewType: VIEW_TYPE.GRID,
   currentProduct: null,
   orderCount: 0,
   filterData: {
