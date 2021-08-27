@@ -14,6 +14,8 @@ import Auth from './Auth';
 import ChatApp from './ChatApp';
 import Wall from './Wall';
 import Layout from './Layout';
+import RouteConstants from './RouteConstants';
+import SSRApi from './SSRApi';
 
 const reducers = combineReducers({
   settings: Settings,
@@ -31,5 +33,7 @@ const reducers = combineReducers({
   chatApp: ChatApp,
   wall: Wall,
   layout: Layout,
+  routeConstants: RouteConstants,
+  ssrApi: SSRApi,
 });
 export default reducers;

@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
     boxOrient: 'vertical',
     overflow: 'hidden',
   },
+  titleTruncate: {
+    lineClamp: 1,
+  },
   btn: {
     fontWeight: Fonts.MEDIUM,
     padding: '4px 12px',
@@ -53,6 +56,14 @@ const useStyles = makeStyles((theme) => ({
   },
   descpMargin: {
     marginBottom: 10,
+  },
+  itemImg: {
+    maxHeight: '220px !important',
+    height: 220,
+    overflow: 'hidden',
+    objectFit: 'cover',
+    objectPosition: '50% 50%',
+    verticalAlign: 'middle',
   },
 }));
 
@@ -92,7 +103,7 @@ const Item = (props) => {
               <StarBorderIcon className={classes.textBase} />
             </Box>
           </Box>
-          <img src={item.image[0].src} alt='watch' />
+          <img className={classes.itemImg} src={item.image} alt='watch' />
           <Box mt={-3}>
             <Checkbox
               icon={<FavoriteBorderIcon />}
@@ -107,7 +118,7 @@ const Item = (props) => {
           fontWeight={Fonts.BOLD}
           fontSize={16}
           component='h4'
-          className={classes.truncate}>
+          className={clsx(classes.truncate, classes.titleTruncate)}>
           {item.title}
         </Box>
 
@@ -131,7 +142,8 @@ const Item = (props) => {
           justifyContent='space-between'
           className={classes.textRes}>
           <Box px={1} mb={2} component='span' color='text.primary'>
-            $ {+item.mrp - Math.round((+item.mrp * +item.discount) / 100)}
+            {/*$ {+item.mrp - Math.round((+item.mrp * +item.discount) / 100)}*/}
+            $ {item.price}
           </Box>
           <Box
             px={1}
@@ -139,10 +151,10 @@ const Item = (props) => {
             component='span'
             color='text.disabled'
             className={classes.lineThrough}>
-            ${item.mrp}
+            {/*${item.price}*/}
           </Box>
           <Box px={1} mb={2} component='span' color={green[500]}>
-            {item.discount}% <IntlMessages id='ecommerce.off' />
+            {/*{item.discount}% <IntlMessages id='ecommerce.off' />*/}
           </Box>
         </Box>
       </Box>

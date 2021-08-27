@@ -149,3 +149,9 @@ export const GET_GALLERY_PHOTO = 'get_gallery_photo';
 //LAYOUT
 export const GET_LAYOUT = 'GET_LAYOUT';
 export const SET_LAYOUT = 'SET_LAYOUT';
+
+//ROUTE CONSTANTS
+export const SET_ROUTE_CONSTANTS = 'SET_ROUTE_CONSTANTS';
+
+//SET SSR API RESPONSE
+export const SET_SSR_API_RESPONSE = 'SET_SSR_API_RESPONSE';

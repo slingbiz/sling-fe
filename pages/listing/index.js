@@ -9,8 +9,15 @@ const Products = asyncComponent(() =>
 
 export async function getServerSideProps(context) {
   let response = {};
+  /**
+   * To be fetched from backend server api remote call.
+   * Make this a list of apis
+   * @type {string}
+   */
+  const API_URL = 'https://fakestoreapi.com/products';
+
   try {
-    response = await fetch(`${'/api/ecommerce/list'}`);
+    response = await fetch(`${API_URL}`);
     response = await response.json();
   } catch (e) {
     console.log(
@@ -18,10 +25,6 @@ export async function getServerSideProps(context) {
       e.message,
     );
   }
-  console.log(
-    '[getServerSideProps] - Json stringied response from api',
-    JSON.stringify(response),
-  );
   return {
     props: {response}, // will be passed to the page component as props
   };

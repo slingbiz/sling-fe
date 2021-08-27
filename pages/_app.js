@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {Provider} from 'react-redux';
 import {useStore} from '../redux/store';
 import ContextProvider from '../@sling/utility/ContextProvider';
@@ -11,17 +11,31 @@ import '../styles/index.css';
 import '../@sling/services/index';
 import AuthRoutes from '../@sling/utility/AuthRoutes';
 import PageMeta from '../@sling/core/PageMeta';
-import App from 'next/app';
 import {default as defaultStaticConfig} from '../@sling/utility/ContextProvider/defaultConfig';
-import {useRouter} from "next/router";
-import {INIT_CONFIG} from '../shared/constants/Services';
-
+import {
+  GET_INIT_PROPS,
+  CLIENT_KEY_SECRET,
+  CLIENT_ID,
+} from '../shared/constants/Services';
+import axios from 'axios';
 
 // eslint-disable-next-line react/prop-types
-const MyApp = ({Component, pageProps, user, initConfig, layoutConfig}) => {
-  const store = useStore({...pageProps, layout: layoutConfig});
-  // console.log(pageProps, '@pageprops @myapp');
-  // console.log(pageProps.initialReduxState, " @pageprops @Myapp")
+const MyApp = ({
+  Component,
+  pageProps,
+  user,
+  initConfig,
+  layoutConfig,
+  routeConstants,
+  apiResponse,
+}) => {
+  const store = useStore({
+    ...pageProps,
+    layout: layoutConfig,
+    routeConstants,
+    ssrApi: apiResponse,
+  });
+
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -51,31 +65,50 @@ const MyApp = ({Component, pageProps, user, initConfig, layoutConfig}) => {
   );
 };
 
+const getHeaders = () => {
+  return {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+    license: CLIENT_KEY_SECRET,
+    client: CLIENT_ID,
+  };
+};
+
 MyApp.getInitialProps = async (appContext) => {
-  // calls page's `getInitialProps` and fills `appProps.pageProps`
   let response = {};
-  const {ctx, Component} = appContext;
+  const {ctx} = appContext;
   const {pathname, query, asPath} = ctx;
-  console.log('Running _app.js api call, INIT_CONFIG: ', INIT_CONFIG);
+
   try {
     //Fetch initial Layout based on url.
-    response = await fetch(`${INIT_CONFIG}`, {
+    console.log(GET_INIT_PROPS, '@GET_INIT_PROPS@');
+    response = await axios({
+      url: `${GET_INIT_PROPS}`,
       method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({pathname, query, asPath}),
+      headers: getHeaders(),
+      data: {pathname, query, asPath},
     });
-    response = await response.json();
+    console.log(response.data, '@_app.js response');
+    response = response.data;
   } catch (e) {
     console.log('[MyApp.getInitialProps] - Message', e.message);
-    response = {initConfigData: defaultStaticConfig, layoutConfig: {}};
+
+    response = {
+      initConfigData: defaultStaticConfig,
+      layoutConfig: {},
+      routeConstants: {},
+      apiResponse: {},
+    };
   }
 
-  const {initConfigData, layoutConfig} = response;
+  const {initConfigData, layoutConfig, routeConstants, apiResponse} = response;
 
-  return {initConfig: initConfigData, layoutConfig};
+  return {
+    initConfig: initConfigData,
+    layoutConfig,
+    routeConstants,
+    apiResponse,
+  };
 };
 
 export default MyApp;
