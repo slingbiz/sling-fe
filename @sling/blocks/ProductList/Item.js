@@ -98,12 +98,17 @@ const Item = (props) => {
             fontWeight={Fonts.MEDIUM}
             borderRadius={8}
             className={classes.textSm}>
-            {item.rating}
+            {item.rating.rate}
             <Box component='span' ml={1}>
               <StarBorderIcon className={classes.textBase} />
             </Box>
           </Box>
-          <img className={classes.itemImg} src={item.image} alt='watch' />
+          {console.log(item.image, '@item/image')}
+          <img
+            className={classes.itemImg}
+            src={item?.image || ''}
+            alt='watch'
+          />
           <Box mt={-3}>
             <Checkbox
               icon={<FavoriteBorderIcon />}

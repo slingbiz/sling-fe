@@ -7,6 +7,7 @@ import Box from '@material-ui/core/Box';
 import AppHeader from '../../@sling/core/AppLayout/DrawerLayout/AppHeader';
 import {makeStyles} from '@material-ui/core/styles';
 import AppFixedFooter from '../../@sling/core/AppLayout/DrawerLayout/AppFixedFooter';
+import Error from 'next/error';
 
 const useStyles = makeStyles((theme) => ({
   bodyMain: {padding: '20px 20px 0'},
@@ -34,15 +35,14 @@ const useStyles = makeStyles((theme) => ({
 
 const GlobalPage = () => {
   const classes = useStyles();
-  const layout = useSelector(({layout}) => layout.listing);
-  const dispatch = useDispatch();
 
-  const {filterData} = useSelector(({ecommerce}) => ecommerce);
+  const {layoutConfig, pageTemplate} = useSelector(({layout}) => layout);
+  const layout = layoutConfig[pageTemplate];
 
-  useEffect(() => {
-    dispatch(onGetEcommerceData(filterData));
-  }, [dispatch, filterData]);
-
+  if (!layout) {
+    return <Error statusCode={'404'} />;
+  }
+  console.log(layout, ' @layoutlayoutlayoutlayout');
   return (
     <Box className={classes.appMain}>
       <AppHeader />

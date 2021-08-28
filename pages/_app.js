@@ -23,7 +23,7 @@ import axios from 'axios';
 const MyApp = ({
   Component,
   pageProps,
-  user,
+  pageTemplate,
   initConfig,
   layoutConfig,
   routeConstants,
@@ -31,7 +31,7 @@ const MyApp = ({
 }) => {
   const store = useStore({
     ...pageProps,
-    layout: layoutConfig,
+    layout: {layoutConfig, pageTemplate},
     routeConstants,
     ssrApi: apiResponse,
   });
@@ -81,7 +81,6 @@ MyApp.getInitialProps = async (appContext) => {
 
   try {
     //Fetch initial Layout based on url.
-    console.log(GET_INIT_PROPS, '@GET_INIT_PROPS@');
     response = await axios({
       url: `${GET_INIT_PROPS}`,
       method: 'POST',
@@ -98,17 +97,11 @@ MyApp.getInitialProps = async (appContext) => {
       layoutConfig: {},
       routeConstants: {},
       apiResponse: {},
+      pageTemplate: '',
     };
   }
 
-  const {initConfigData, layoutConfig, routeConstants, apiResponse} = response;
-
-  return {
-    initConfig: initConfigData,
-    layoutConfig,
-    routeConstants,
-    apiResponse,
-  };
+  return response;
 };
 
 export default MyApp;

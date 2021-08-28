@@ -149,6 +149,7 @@ export const GET_GALLERY_PHOTO = 'get_gallery_photo';
 //LAYOUT
 export const GET_LAYOUT = 'GET_LAYOUT';
 export const SET_LAYOUT = 'SET_LAYOUT';
+export const SET_PAGE_TEMPLATE = 'SET_PAGE_TEMPLATE';
 
 //ROUTE CONSTANTS
 export const SET_ROUTE_CONSTANTS = 'SET_ROUTE_CONSTANTS';

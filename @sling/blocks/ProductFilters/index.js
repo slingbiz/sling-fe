@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 const ProductSidebar = (props) => {
   const {payload} = props;
   const {style, muiWidths} = payload || {};
-  console.log(payload, '@@@payloaddddd');
+  // console.log(payload, '@@@payloaddddd');
   const classes = useStyles();
   const dispatch = useDispatch();
   const {filterData} = useSelector(({ecommerce}) => ecommerce);
