@@ -14,6 +14,7 @@ import IntlMessages from '../../utility/IntlMessages';
 import {Fonts} from '../../../shared/constants/AppEnums';
 import {setCurrentProduct} from '../../../redux/actions/Ecommerce';
 import Typography from '@material-ui/core/Typography';
+const dot = require('dot-object');
 
 const useStyles = makeStyles((theme) => ({
   textUppercase: {
@@ -28,6 +29,11 @@ const useStyles = makeStyles((theme) => ({
   textSm: {
     fontSize: 14,
   },
+  posAbs: {
+    position: 'absolute',
+  },
+  flr: {right: 0},
+  posRel: {position: 'relative'},
   textXs: {
     fontSize: 12,
   },
@@ -58,19 +64,24 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 10,
   },
   itemImg: {
+    width: '100%',
     maxHeight: '220px !important',
     height: 220,
     overflow: 'hidden',
-    objectFit: 'cover',
+    objectFit: 'contain',
     objectPosition: '50% 50%',
     verticalAlign: 'middle',
   },
 }));
 
-const Item = (props) => {
-  const {item} = props;
+const GridItem = (props) => {
+  const {item, slingMapping} = props;
   const dispatch = useDispatch();
   const router = useRouter();
+
+  const getValue = (key) => {
+    return slingMapping[key] ? dot.pick(slingMapping[key], item) : item[key];
+  };
 
   const classes = useStyles(props);
   return (
@@ -79,11 +90,20 @@ const Item = (props) => {
       m={2}
       className='pointer item-hover'
       onClick={() => {
-        dispatch(setCurrentProduct(item));
         router.push('/ecommerce/product_detail/' + item.id);
       }}>
       <Box style={{display: 'flex', flexDirection: 'column'}}>
-        <Box mt={2} mb={5} display='flex' justifyContent='space-between'>
+        <Box
+          mt={2}
+          mb={5}
+          display='flex'
+          justifyContent='space-between'
+          className={classes.posRel}>
+          <img
+            className={classes.itemImg}
+            src={getValue('image') || ''}
+            alt='watch'
+          />
           <Box
             component='span'
             maxHeight={28}
@@ -97,19 +117,15 @@ const Item = (props) => {
             alignItems='center'
             fontWeight={Fonts.MEDIUM}
             borderRadius={8}
-            className={classes.textSm}>
-            {item.rating.rate}
+            className={clsx(classes.textSm, classes.posAbs)}>
+            {getValue('rating_count')}
+
             <Box component='span' ml={1}>
               <StarBorderIcon className={classes.textBase} />
             </Box>
           </Box>
-          {console.log(item.image, '@item/image')}
-          <img
-            className={classes.itemImg}
-            src={item?.image || ''}
-            alt='watch'
-          />
-          <Box mt={-3}>
+
+          <Box mt={-3} className={clsx(classes.posAbs, classes.flr)}>
             <Checkbox
               icon={<FavoriteBorderIcon />}
               checkedIcon={<FavoriteOutlinedIcon />}
@@ -125,6 +141,7 @@ const Item = (props) => {
           component='h4'
           className={clsx(classes.truncate, classes.titleTruncate)}>
           {item.title}
+          {getValue('title')}
         </Box>
 
         <Typography
@@ -135,7 +152,7 @@ const Item = (props) => {
             classes.textSm,
             classes.descpMargin,
           )}>
-          {item.description}
+          {getValue('description')}
         </Typography>
 
         <Box
@@ -147,28 +164,36 @@ const Item = (props) => {
           justifyContent='space-between'
           className={classes.textRes}>
           <Box px={1} mb={2} component='span' color='text.primary'>
-            {/*$ {+item.mrp - Math.round((+item.mrp * +item.discount) / 100)}*/}
-            $ {item.price}
+            ${getValue('original_price')}
           </Box>
-          <Box
-            px={1}
-            mb={2}
-            component='span'
-            color='text.disabled'
-            className={classes.lineThrough}>
-            {/*${item.price}*/}
-          </Box>
-          <Box px={1} mb={2} component='span' color={green[500]}>
-            {/*{item.discount}% <IntlMessages id='ecommerce.off' />*/}
-          </Box>
+          {getValue('discounted_price') ? (
+            <>
+              <Box
+                px={1}
+                mb={2}
+                component='span'
+                color='text.disabled'
+                className={classes.lineThrough}>
+                ${getValue('discounted_price')}
+              </Box>
+              <Box px={1} mb={2} component='span' color={green[500]}>
+                {getValue('original_price') -
+                  (getValue('discounted_price') / getValue('original_price')) *
+                    100}
+                % <IntlMessages id='ecommerce.off' />
+              </Box>
+            </>
+          ) : (
+            ''
+          )}
         </Box>
       </Box>
     </Box>
   );
 };
 
-export default Item;
+export default GridItem;
 
-Item.propTypes = {
+GridItem.propTypes = {
   item: PropTypes.object.isRequired,
 };

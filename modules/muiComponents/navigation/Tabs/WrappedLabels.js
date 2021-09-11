@@ -64,18 +64,18 @@ export default function TabsWrappedLabel() {
             wrapped
             {...a11yProps('one')}
           />
-          <Tab value='two' label='Item Two' {...a11yProps('two')} />
-          <Tab value='three' label='Item Three' {...a11yProps('three')} />
+          <Tab value='two' label='GridItem Two' {...a11yProps('two')} />
+          <Tab value='three' label='GridItem Three' {...a11yProps('three')} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index='one'>
-        Item One
+        GridItem One
       </TabPanel>
       <TabPanel value={value} index='two'>
-        Item Two
+        GridItem Two
       </TabPanel>
       <TabPanel value={value} index='three'>
-        Item Three
+        GridItem Three
       </TabPanel>
     </div>
   );

@@ -63,35 +63,35 @@ export default function ScrollableTabsButtonAuto() {
           variant='scrollable'
           scrollButtons='auto'
           aria-label='scrollable auto tabs example'>
-          <Tab label='Item One' {...a11yProps(0)} />
-          <Tab label='Item Two' {...a11yProps(1)} />
-          <Tab label='Item Three' {...a11yProps(2)} />
-          <Tab label='Item Four' {...a11yProps(3)} />
-          <Tab label='Item Five' {...a11yProps(4)} />
-          <Tab label='Item Six' {...a11yProps(5)} />
-          <Tab label='Item Seven' {...a11yProps(6)} />
+          <Tab label='GridItem One' {...a11yProps(0)} />
+          <Tab label='GridItem Two' {...a11yProps(1)} />
+          <Tab label='GridItem Three' {...a11yProps(2)} />
+          <Tab label='GridItem Four' {...a11yProps(3)} />
+          <Tab label='GridItem Five' {...a11yProps(4)} />
+          <Tab label='GridItem Six' {...a11yProps(5)} />
+          <Tab label='GridItem Seven' {...a11yProps(6)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        GridItem One
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        GridItem Two
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        GridItem Three
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+        GridItem Four
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item Five
+        GridItem Five
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Item Six
+        GridItem Six
       </TabPanel>
       <TabPanel value={value} index={6}>
-        Item Seven
+        GridItem Seven
       </TabPanel>
     </div>
   );

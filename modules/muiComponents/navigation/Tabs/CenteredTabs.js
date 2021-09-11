@@ -26,9 +26,9 @@ export default function CenteredTabs() {
         indicatorColor='primary'
         textColor='primary'
         centered>
-        <Tab label='Item One' />
-        <Tab label='Item Two' />
-        <Tab label='Item Three' />
+        <Tab label='GridItem One' />
+        <Tab label='GridItem Two' />
+        <Tab label='GridItem Three' />
       </Tabs>
     </Paper>
   );

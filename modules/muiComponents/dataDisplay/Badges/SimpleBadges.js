@@ -48,12 +48,12 @@ export default function SimpleBadge() {
                 className={classes.padding}
                 color='secondary'
                 badgeContent={4}>
-                Item One
+                GridItem One
               </Badge>
             }
           />
-          <Tab className={classes.tabItem} label='Item Two' />
-          <Tab className={classes.tabItem} label='Item Three' />
+          <Tab className={classes.tabItem} label='GridItem Two' />
+          <Tab className={classes.tabItem} label='GridItem Three' />
         </Tabs>
       </AppBar>
       <Badge color='primary' badgeContent={4} className={classes.margin}>

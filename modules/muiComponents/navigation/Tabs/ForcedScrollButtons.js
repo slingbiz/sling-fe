@@ -70,35 +70,35 @@ export default function ScrollableTabsButtonForce() {
           indicatorColor='primary'
           textColor='primary'
           aria-label='scrollable force tabs example'>
-          <Tab label='Item One' icon={<PhoneIcon />} {...a11yProps(0)} />
-          <Tab label='Item Two' icon={<FavoriteIcon />} {...a11yProps(1)} />
-          <Tab label='Item Three' icon={<PersonPinIcon />} {...a11yProps(2)} />
-          <Tab label='Item Four' icon={<HelpIcon />} {...a11yProps(3)} />
-          <Tab label='Item Five' icon={<ShoppingBasket />} {...a11yProps(4)} />
-          <Tab label='Item Six' icon={<ThumbDown />} {...a11yProps(5)} />
-          <Tab label='Item Seven' icon={<ThumbUp />} {...a11yProps(6)} />
+          <Tab label='GridItem One' icon={<PhoneIcon />} {...a11yProps(0)} />
+          <Tab label='GridItem Two' icon={<FavoriteIcon />} {...a11yProps(1)} />
+          <Tab label='GridItem Three' icon={<PersonPinIcon />} {...a11yProps(2)} />
+          <Tab label='GridItem Four' icon={<HelpIcon />} {...a11yProps(3)} />
+          <Tab label='GridItem Five' icon={<ShoppingBasket />} {...a11yProps(4)} />
+          <Tab label='GridItem Six' icon={<ThumbDown />} {...a11yProps(5)} />
+          <Tab label='GridItem Seven' icon={<ThumbUp />} {...a11yProps(6)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        GridItem One
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        GridItem Two
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        GridItem Three
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+        GridItem Four
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item Five
+        GridItem Five
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Item Six
+        GridItem Six
       </TabPanel>
       <TabPanel value={value} index={6}>
-        Item Seven
+        GridItem Seven
       </TabPanel>
     </div>
   );

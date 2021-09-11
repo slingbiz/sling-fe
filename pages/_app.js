@@ -9,7 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/index.css';
 import '../@sling/services/index';
-import AuthRoutes from '../@sling/utility/AuthRoutes';
+// import AuthRoutes from '../@sling/utility/AuthRoutes';
 import PageMeta from '../@sling/core/PageMeta';
 import {default as defaultStaticConfig} from '../@sling/utility/ContextProvider/defaultConfig';
 import {
@@ -34,6 +34,7 @@ const MyApp = ({
     layout: {layoutConfig, pageTemplate},
     routeConstants,
     ssrApi: apiResponse,
+    initConfig,
   });
 
   useEffect(() => {
@@ -44,6 +45,7 @@ const MyApp = ({
     }
   }, []);
 
+  console.log(initConfig, '[initConfig  - in _app.js]');
   return (
     <React.Fragment>
       <PageMeta />
@@ -52,10 +54,10 @@ const MyApp = ({
           <SlingThemeProvider>
             <SlingStyleProvider>
               <LocaleProvider>
-                <AuthRoutes>
-                  <CssBaseline />
-                  <Component />
-                </AuthRoutes>
+                {/*<AuthRoutes>*/}
+                <CssBaseline />
+                <Component />
+                {/*</AuthRoutes>*/}
               </LocaleProvider>
             </SlingStyleProvider>
           </SlingThemeProvider>
@@ -78,7 +80,13 @@ MyApp.getInitialProps = async (appContext) => {
   let response = {};
   const {ctx} = appContext;
   const {pathname, query, asPath} = ctx;
-
+  console.log(
+    '[MyApp.getInitialProps]',
+    pathname,
+    query,
+    asPath,
+    GET_INIT_PROPS,
+  );
   try {
     //Fetch initial Layout based on url.
     response = await axios({

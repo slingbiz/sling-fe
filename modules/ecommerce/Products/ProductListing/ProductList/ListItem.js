@@ -1,67 +1,67 @@
-import React from "react";
-import Card from "@material-ui/core/Card";
-import { Checkbox, makeStyles } from "@material-ui/core";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import FavoriteOutlinedIcon from "@material-ui/icons/FavoriteOutlined";
-import Rating from "@material-ui/lab/Rating";
-import Slider from "react-slick";
-import IntlMessages from "../../../../../@sling/utility/IntlMessages";
-import Box from "@material-ui/core/Box";
-import PropTypes from "prop-types";
-import { green, grey } from "@material-ui/core/colors";
-import { Fonts } from "../../../../../shared/constants/AppEnums";
-import { setCurrentProduct } from "../../../../../redux/actions/Ecommerce";
-import { useDispatch } from "react-redux";
-import { useRouter } from "next/router";
+import React from 'react';
+import Card from '@material-ui/core/Card';
+import {Checkbox, makeStyles} from '@material-ui/core';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
+import Rating from '@material-ui/lab/Rating';
+import Slider from 'react-slick';
+import IntlMessages from '../../../../../@sling/utility/IntlMessages';
+import Box from '@material-ui/core/Box';
+import PropTypes from 'prop-types';
+import {green, grey} from '@material-ui/core/colors';
+import {Fonts} from '../../../../../shared/constants/AppEnums';
+import {setCurrentProduct} from '../../../../../redux/actions/Ecommerce';
+import {useDispatch} from 'react-redux';
+import {useRouter} from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 280,
-    [theme.breakpoints.up("sm")]: {
-      width: "8rem"
+    [theme.breakpoints.up('sm')]: {
+      width: '8rem',
     },
-    [theme.breakpoints.up("xl")]: {
-      width: "10rem"
-    }
+    [theme.breakpoints.up('xl')]: {
+      width: '10rem',
+    },
   },
   contentRoot: {
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "calc(100% - 8rem)"
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: 'calc(100% - 8rem)',
     },
-    [theme.breakpoints.up("xl")]: {
-      width: "calc(100% - 10rem)"
-    }
+    [theme.breakpoints.up('xl')]: {
+      width: 'calc(100% - 10rem)',
+    },
   },
   priceView: {
     fontSize: 12,
-    [theme.breakpoints.up("xl")]: {
-      fontSize: 14
-    }
+    [theme.breakpoints.up('xl')]: {
+      fontSize: 14,
+    },
   },
   textUppercase: {
-    textTransform: "uppercase"
+    textTransform: 'uppercase',
   },
   lineThrough: {
-    textDecoration: "line-through"
+    textDecoration: 'line-through',
   },
   textSm: {
-    fontSize: 14
+    fontSize: 14,
   },
   textXs: {
-    fontSize: 12
+    fontSize: 12,
   },
   checkBoxRoot: {
-    "& .MuiCheckbox-root": {
-      padding: 3
-    }
+    '& .MuiCheckbox-root': {
+      padding: 3,
+    },
   },
   truncate: {
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-    width: "calc(100% - 40px)"
-  }
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    width: 'calc(100% - 40px)',
+  },
 }));
 
 const settings = {
@@ -70,11 +70,11 @@ const settings = {
   infinite: true,
   speed: 500,
   slidesToShow: 1,
-  slidesToScroll: 1
+  slidesToScroll: 1,
 };
 
 const ListItem = (props) => {
-  const { item } = props;
+  const {item} = props;
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -86,14 +86,14 @@ const ListItem = (props) => {
       className='pointer item-hover'
       onClick={() => {
         dispatch(setCurrentProduct(item));
-        router.push("/ecommerce/product_detail/" + item.id);
+        router.push('/ecommerce/product_detail/' + item.id);
       }}
       clone>
       <Card>
-        <Box display='flex' flexDirection={{ xs: "column", sm: "row" }}>
-          <Box pr={{ xs: 0, sm: 4 }} mb={{ xs: 3, sm: 0 }} className={classes.root}>
+        <Box display='flex' flexDirection={{xs: 'column', sm: 'row'}}>
+          <Box pr={{xs: 0, sm: 4}} mb={{xs: 3, sm: 0}} className={classes.root}>
             <Slider {...settings}>
-              {item.image.map((img) => {
+              {item?.image?.map((img) => {
                 return (
                   <Box mb={2} key={img.id}>
                     <img src={img.src} alt='watch' />
@@ -135,14 +135,14 @@ const ListItem = (props) => {
             </Box>
 
             <Box
-              mb={{ xs: 2, xl: 5 }}
+              mb={{xs: 2, xl: 5}}
               display='flex'
               flexWrap='wrap'
               className={classes.priceView}>
               <Box
-                mr={{ xs: 2, xl: 4 }}
+                mr={{xs: 2, xl: 4}}
                 mb={1}
-                pr={{ xs: 2, xl: 4 }}
+                pr={{xs: 2, xl: 4}}
                 borderRight={1}
                 borderColor={grey[200]}>
                 <Box
@@ -157,9 +157,9 @@ const ListItem = (props) => {
                 </Box>
               </Box>
               <Box
-                mr={{ xs: 2, xl: 4 }}
+                mr={{xs: 2, xl: 4}}
                 mb={1}
-                pr={{ xs: 2, xl: 4 }}
+                pr={{xs: 2, xl: 4}}
                 color='text.secondary'
                 borderRight={1}
                 borderColor='primary.main'>
@@ -174,16 +174,16 @@ const ListItem = (props) => {
             </Box>
 
             <Box
-              pt={{ xl: 4 }}
-              mx={{ xs: -2, xl: -3 }}
+              pt={{xl: 4}}
+              mx={{xs: -2, xl: -3}}
               display='flex'
               flexWrap='wrap'
               justifyContent='space-between'
               alignItems='center'>
               <Box
-                px={{ xs: 2, xl: 3 }}
+                px={{xs: 2, xl: 3}}
                 mb={2}
-                display={{ xs: "none", xl: "flex" }}
+                display={{xs: 'none', xl: 'flex'}}
                 alignItems='center'>
                 <Box ml={-3} mr={1}>
                   <Checkbox />
@@ -193,7 +193,7 @@ const ListItem = (props) => {
                 </Box>
               </Box>
               <Box
-                px={{ xs: 2, xl: 3 }}
+                px={{xs: 2, xl: 3}}
                 mb={2}
                 display='flex'
                 alignItems='center'>
@@ -211,5 +211,5 @@ const ListItem = (props) => {
 export default ListItem;
 
 ListItem.propTypes = {
-  item: PropTypes.object.isRequired
+  item: PropTypes.object.isRequired,
 };

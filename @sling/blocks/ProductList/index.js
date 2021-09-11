@@ -1,13 +1,11 @@
 import React from 'react';
-import {Box, Card} from '@material-ui/core';
+import {Box} from '@material-ui/core';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import {VIEW_TYPE} from '../../../redux/reducers/Ecommerce';
-import ProductList from '../../../modules/ecommerce/Products/ProductListing/ProductList';
 import {useSelector} from 'react-redux';
 import ProductGrid from './ProductGrid';
-import Grid from '@material-ui/core/Grid';
+import ProductList from './ProductList';
 import PaginationControlled from '../../../modules/muiComponents/util/Pagination/Controlled';
-import ssrApi from '../../../redux/reducers/SSRApi';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,10 +17,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Products = (props) => {
   const classes = useStyles();
-  const {ecommerceList, viewType} = useSelector(({ecommerce}) => ecommerce);
+  const {viewType} = useSelector(({ecommerce}) => ecommerce);
   const {fakeProducts} = useSelector(({ssrApi}) => ssrApi);
-
-  // console.log(ssrApiRes, '[@ProductList/index.js]', ssrApiRes);
   const {loading} = useSelector(({common}) => common);
 
   return (

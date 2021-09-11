@@ -19,7 +19,16 @@ module.exports = (phase) => {
     };
   }
   if (phase === PHASE_DEVELOPMENT_SERVER) {
+    const rewrites = () => {
+      return [
+        {
+          source: '/api/:slug*',
+          destination: 'http://localhost:10001/:slug*',
+        },
+      ];
+    };
     return {
+      rewrites,
       distDir: 'build',
       env: {
         FIREBASE_API_KEY: 'AIzaSyAzL_2jiVBhmiIUFGs2z6-cDR-Hgoedh3k',
@@ -30,6 +39,7 @@ module.exports = (phase) => {
       },
     };
   }
+
   return {
     // optimizeFonts: false,
     // useFileSystemPublicRoutes: false,
