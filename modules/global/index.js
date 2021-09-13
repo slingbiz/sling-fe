@@ -42,7 +42,6 @@ const GlobalPage = () => {
   if (!layout) {
     return <Error statusCode={'404'} />;
   }
-  console.log(layout, ' @layoutlayoutlayoutlayout');
   return (
     <Box className={classes.appMain}>
       <AppHeader />

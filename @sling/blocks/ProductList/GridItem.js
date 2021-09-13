@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
@@ -8,11 +7,9 @@ import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {green} from '@material-ui/core/colors';
 import clsx from 'clsx';
-import {useDispatch} from 'react-redux';
 import {useRouter} from 'next/router';
 import IntlMessages from '../../utility/IntlMessages';
 import {Fonts} from '../../../shared/constants/AppEnums';
-import {setCurrentProduct} from '../../../redux/actions/Ecommerce';
 import Typography from '@material-ui/core/Typography';
 const dot = require('dot-object');
 
@@ -76,7 +73,6 @@ const useStyles = makeStyles((theme) => ({
 
 const GridItem = (props) => {
   const {item, slingMapping} = props;
-  const dispatch = useDispatch();
   const router = useRouter();
 
   const getValue = (key) => {

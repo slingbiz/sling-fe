@@ -16,6 +16,8 @@ import Grid from '@material-ui/core/Grid';
 import clsx from 'clsx';
 import Typography from '@material-ui/core/Typography';
 
+const dot = require('dot-object');
+
 const useStyles = makeStyles((theme) => ({
   priceView: {
     fontSize: 12,
@@ -40,9 +42,7 @@ const useStyles = makeStyles((theme) => ({
       padding: 3,
     },
   },
-  truncate: {
-
-  },
+  truncate: {},
   listImage: {
     maxHeight: 190,
     height: 190,
@@ -74,9 +74,14 @@ const settings = {
 };
 
 const ListItem = (props) => {
-  const {item} = props;
+  const {item, slingMapping} = props;
+  console.log(slingMapping, 'slingMappingslingMappingslingMappingslingMapping');
   const dispatch = useDispatch();
   const router = useRouter();
+
+  const getValue = (key) => {
+    return slingMapping[key] ? dot.pick(slingMapping[key], item) : item[key];
+  };
 
   const classes = useStyles(props);
   return (
@@ -101,7 +106,7 @@ const ListItem = (props) => {
                   <Box sm={2} key={img.id}>
                     <img
                       className={classes.listImage}
-                      src={img.src}
+                      src={getValue('image') || ''}
                       alt='watch'
                     />
                   </Box>
@@ -125,7 +130,7 @@ const ListItem = (props) => {
               fontSize={16}
               component='h4'
               className={clsx(classes.truncate, classes.titleTruncate)}>
-              {item.title}
+              {getValue('title')}
             </Box>
 
             <Box
@@ -149,7 +154,7 @@ const ListItem = (props) => {
               classes.textSm,
               classes.descpMargin,
             )}>
-            {item.description}
+            {getValue('description')}
           </Typography>
 
           <Box
@@ -171,26 +176,34 @@ const ListItem = (props) => {
                 <IntlMessages id='ecommerce.exclusivePrice' />:
               </Box>
               <Box component='span' ml={2} fontWeight={Fonts.MEDIUM}>
-                {/*${+item.mrp - Math.round((+item.mrp * +item.discount) / 100)}*/}
-                ${item.price}
+                ${getValue('original_price')}
               </Box>
             </Box>
-            <Box
-              mr={{xs: 2, xl: 4}}
-              mb={1}
-              pr={{xs: 2, xl: 4}}
-              color='text.secondary'
-              borderRight={1}
-              borderColor='primary.main'>
-              <IntlMessages id='ecommerce.mrp' />:
-              <Box component='span' className={classes.lineThrough}>
-                ${item.price + 10}
-              </Box>
-            </Box>
-            <Box mb={1} fontWeight={Fonts.MEDIUM} color={green[600]}>
-              {item.discount || Math.round((10 / (item.price + 10)) * 100)}%{' '}
-              <IntlMessages id='ecommerce.off' />
-            </Box>
+            {getValue('discounted_price') ? (
+              <>
+                <Box
+                  mr={{xs: 2, xl: 4}}
+                  mb={1}
+                  pr={{xs: 2, xl: 4}}
+                  color='text.secondary'
+                  borderRight={1}
+                  borderColor='primary.main'>
+                  <IntlMessages id='ecommerce.mrp' />:
+                  <Box component='span' className={classes.lineThrough}>
+                    ${getValue('discounted_price')}
+                  </Box>
+                </Box>
+                <Box mb={1} fontWeight={Fonts.MEDIUM} color={green[600]}>
+                  {getValue('original_price') -
+                    (getValue('discounted_price') /
+                      getValue('original_price')) *
+                      100}
+                  <IntlMessages id='ecommerce.off' />
+                </Box>
+              </>
+            ) : (
+              ''
+            )}
           </Box>
 
           <Box
@@ -213,7 +226,7 @@ const ListItem = (props) => {
               </Box>
             </Box>
             <Box px={{xs: 2, xl: 3}} mb={2} display='flex' alignItems='center'>
-              <Rating size='small' value={item.rating?.rate} readOnly />
+              <Rating size='small' value={getValue('rating_count')} readOnly />
               <Box ml={2}>{`(${item.rating?.count})`}</Box>
             </Box>
           </Box>

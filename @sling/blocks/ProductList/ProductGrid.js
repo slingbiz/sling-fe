@@ -8,13 +8,11 @@ const useStyles = makeStyles((theme) => ({
   cPoint: {cursor: 'pointer'},
 }));
 
-const ProductGrid = ({ecommerceList}) => {
+const ProductGrid = ({products, slingMapping}) => {
   const classes = useStyles();
-  const {data, sling_mapping: slingMapping} = ecommerceList;
-  console.log(ecommerceList, ' @ecommerceList@ecommerceList');
   return (
     <Grid container spacing={4} justifyContent={'center'}>
-      {data?.map((item, k) => {
+      {products?.map((item, k) => {
         return (
           <Grid
             item

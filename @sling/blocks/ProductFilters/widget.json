@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "global": false,
+  "name": "Product Filters",
+  "description": "Select Filters and calls updateFilters which triggers Fetch products call.",
+  "type": "pure",
+  "availableToAllPages": true,
+  "requiredProps": {
+
+  }
+}

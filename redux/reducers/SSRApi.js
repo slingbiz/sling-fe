@@ -1,7 +1,11 @@
-import {SET_SSR_API_RESPONSE} from '../../shared/constants/ActionTypes';
+import {
+  SET_SSR_API_RESPONSE,
+  SET_PRODUCT_FILTER_DATA,
+} from '../../shared/constants/ActionTypes';
 
 const initialState = {
   ssrApi: {},
+  filterData: {},
 };
 
 const ssrApi = (state = initialState, action) => {
@@ -9,6 +13,13 @@ const ssrApi = (state = initialState, action) => {
     case SET_SSR_API_RESPONSE: {
       return {...state, ssrApi: action.payload};
     }
+
+    case SET_PRODUCT_FILTER_DATA:
+      console.log(action.payload, 'SET_PRODUCT_FILTER_DATA @SSRApi Reducer');
+      return {
+        ...state,
+        filterData: action.payload,
+      };
 
     default: {
       return state;

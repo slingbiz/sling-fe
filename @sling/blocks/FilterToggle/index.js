@@ -14,62 +14,11 @@ import {makeStyles} from '@material-ui/core/styles';
 import {NavStyle} from '../../../shared/constants/AppEnums';
 import Grid from '@material-ui/core/Grid';
 
-const getHeaderHeight = (navStyle, screenSize) => {
-  if (
-    navStyle === NavStyle.HOR_DARK_LAYOUT ||
-    navStyle === NavStyle.HOR_LIGHT_NAV ||
-    navStyle === NavStyle.H_DEFAULT
-  )
-    return screenSize >= 1280 ? 124 + 20 : 70 + 10; // 50 Header Height + 20/10 Padding Bottom
-  if (navStyle === NavStyle.BIT_BUCKET) return 0; // 0 Header Height
-
-  return screenSize >= 600 ? 70 : 60;
-};
-
 const useStyles = makeStyles((theme) => ({
   appsContainer: (props) => ({
-    // height: `calc(100vh - ${
-    //   55 + // AppContainerHeader Height
-    //   20 + //Container Padding
-    //   getHeaderHeight(props.navStyle, 0) +
-    //   (props.footer ? 70 : 10) // 50 Header Height + 20 Margin Top
-    // }px) !important`,
-    [theme.breakpoints.up('sm')]: {
-      // height: `calc(100vh - ${
-      //   55 + // AppContainerHeader Height
-      //   20 + //Container Padding
-      //   getHeaderHeight(props.navStyle, 600) +
-      //   (props.footer ? 70 : 10)
-      // }px) !important`,
-    },
-    [theme.breakpoints.up('md')]: {
-      // height: `calc(100vh - ${
-      //   55 + // AppContainerHeader Height
-      //   30 + //Container Padding
-      //   getHeaderHeight(props.navStyle, 960) +
-      //   (props.footer ? 80 : 10) // 50 Header Height + 30 Margin Top
-      // }px) !important`,
-    },
-    [theme.breakpoints.up('lg')]: {
-      // height: `calc(100vh - ${
-      //   43 + // AppContainerHeader Height
-      //   30 + //Container Padding
-      //   getHeaderHeight(props.navStyle, 1280) +
-      //   (props.footer ? 80 : 10)
-      // }px) !important`,
-    },
-    [theme.breakpoints.up('xl')]: {
-      // height: `calc(100vh - ${
-      //   64 + // AppContainerHeader Height
-      //   30 + //Container Padding
-      //   getHeaderHeight(props.navStyle, 1920) +
-      //   (props.footer ? 86 : 10) // 56 Header Height + 30 Margin Top
-      // }px) !important`,
-    },
     display: 'flex',
   }),
   appsSidebar: {
-    // height: '100%',
     [theme.breakpoints.up('lg')]: {
       width: '17rem',
     },
@@ -108,36 +57,34 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const FilterToggle = (props) => {
+const FilterToggle = ({widgetProps}) => {
   const dispatch = useDispatch();
+  let {h1} = widgetProps;
   const {footer, navStyle} = useContext(AppContext);
-  // eslint-disable-next-line react/prop-types
-  const {title, fullView} = props;
-  const classes = useStyles({footer, navStyle, fullView});
+  const classes = useStyles({footer, navStyle});
+
   return (
     <Box
       mb={{xs: -3, md: 0, lg: 0}}
-      mt={{xs: fullView ? 0 : -3, lg: 0}}
+      mt={{xs: -3, lg: 0}}
       display='flex'
       alignItems='center'>
-      {fullView ? null : (
-        <Hidden lgUp>
-          <IconButton
-            edge='start'
-            className={classes.menuButton}
-            color='inherit'
-            aria-label='open drawer'
-            onClick={() => dispatch(onToggleAppDrawer())}>
-            <FilterListIcon className={classes.menuIcon} />
-          </IconButton>
-        </Hidden>
-      )}
+      <Hidden lgUp>
+        <IconButton
+          edge='start'
+          className={classes.menuButton}
+          color='inherit'
+          aria-label='open drawer'
+          onClick={() => dispatch(onToggleAppDrawer())}>
+          <FilterListIcon className={classes.menuIcon} />
+        </IconButton>
+      </Hidden>
       <Box
         component='h2'
         color='text.primary'
         fontWeight={Fonts.BOLD}
         fontSize={16}>
-        {title} Products
+        {h1.value}
       </Box>
     </Box>
   );

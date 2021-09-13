@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "global": false,
+  "name": "Listing Summary Top Bar",
+  "description": "Summary of total count and current page. h1 & h2 values.",
+  "type": "pure",
+  "availableToAllPages": true,
+  "config": {
+  },
+  "requiredProps": {
+    "totalCount": {
+      "type": "response-derived",
+      "dataType": "string",
+      "default": "341"
+    },
+    "h1": {
+      "type": "static",
+      "dataType": "string"
+    },
+    "h2": {
+      "type": "static-derived",
+      "dataType": "string"
+    }
+  }
+}

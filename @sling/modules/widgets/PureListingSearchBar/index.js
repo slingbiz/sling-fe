@@ -1,7 +1,5 @@
 import React from 'react';
-import AppSearch from '../../core/SearchBar';
-
-const _ = require('lodash');
+import AppSearch from '../../../core/SearchBar';
 
 const PureListingSearchBar = ({onSearch}) => {
   return (

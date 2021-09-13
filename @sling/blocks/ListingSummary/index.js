@@ -1,19 +1,30 @@
 import React from 'react';
 import {Box, Hidden} from '@material-ui/core';
 import {Fonts} from '../../../shared/constants/AppEnums';
-import Grid from '@material-ui/core/Grid';
+import {useSelector} from 'react-redux';
 
-const ListingSummary = ({payload}) => {
-  const {muiWidths, style} = payload;
+const dot = require('dot-object');
+const _ = require('lodash');
+const ListingSummary = ({widgetProps}) => {
+  let {h1, h2} = widgetProps;
+  const {fakeProducts} = useSelector(({ssrApi}) => ssrApi);
+  const {value: rPath, default: defaultVal} = _.find(widgetProps, {
+    type: 'response-derived',
+  });
+
+  const totalCount =
+    (rPath ? dot.pick(rPath, fakeProducts) : defaultVal) || defaultVal;
+  h2 = h2.value.replace(/<totalCount>/g, totalCount);
+
   return (
-    <Box p={4}>
-      <Box fontWeight={Fonts.BOLD} mr={3}>
-        Watches
+    <Hidden only='xs' implementation='css'>
+      <Box p={4}>
+        <Box fontWeight={Fonts.BOLD} mr={3}>
+          {h1.value}
+        </Box>
+        <Box component='span'>{h2}</Box>
       </Box>
-      <Hidden only='xs' implementation='css'>
-        <Box component='span'>(Showing 1 – 40 products of 93,723 products)</Box>
-      </Hidden>
-    </Box>
+    </Hidden>
   );
 };
 export default ListingSummary;

@@ -20,13 +20,14 @@ const RenderTree = (props) => {
             <Wrapper>
               {cells?.map((cell) => {
                 const {rows, key, payload} = cell;
-                const {style, muiWidths} = payload;
+                const {style, muiWidths, props: widgetProps} = payload;
                 if (key && Blocks[key]) {
                   const CellComponent = Blocks[cell.key];
                   return (
                     <Grid item display={'flex'} flex={1} {...muiWidths}>
                       <CellComponent
                         parentProps={props}
+                        widgetProps={widgetProps}
                         key={key}
                         payload={payload}
                       />

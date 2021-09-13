@@ -14,8 +14,11 @@ const Loader = () => {
       top={0}
       left={0}
       right={0}
-      bottom={0}>
-      <CircularProgress />
+      bottom={0}
+      style={{position: 'absolute'}}
+      asdfas='owere'>
+      To be fixed
+      <CircularProgress size={40} />
     </Box>
   );
 };

@@ -5,15 +5,9 @@ import {Fonts} from '../../../shared/constants/AppEnums';
 import Divider from '@material-ui/core/Divider';
 import PriceSelector from './PriceSelector';
 import {makeStyles} from '@material-ui/core/styles';
-import Scrollbar from '../../core/Scrollbar';
 import AppList from '../../core/AppList';
 import CheckedCell from './CheckedCell';
-import {
-  BrandData,
-  DiscountList,
-  IdealFor,
-  ProductColors,
-} from '../../services/db/ecommerce/ecommerceData';
+import {BrandData, DiscountList, IdealFor, ProductColors,} from '../../services/db/ecommerce/ecommerceData';
 import AppGrid from '../../core/AppGrid';
 import ColorCell from './ColorCell';
 import RatingCell from './RatingCell';
@@ -27,10 +21,7 @@ const useStyles = makeStyles({
     marginTop: 16,
   },
 });
-const ProductSidebar = (props) => {
-  const {payload} = props;
-  const {style, muiWidths} = payload || {};
-  // console.log(payload, '@@@payloaddddd');
+const ProductSidebar = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const {filterData} = useSelector(({ecommerce}) => ecommerce);

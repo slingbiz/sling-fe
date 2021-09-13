@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Box} from '@material-ui/core';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import {VIEW_TYPE} from '../../../redux/reducers/Ecommerce';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import ProductGrid from './ProductGrid';
 import ProductList from './ProductList';
 import PaginationControlled from '../../../modules/muiComponents/util/Pagination/Controlled';
+import {getProducts} from '../../../redux/actions/SSRActions';
 
-const useStyles = makeStyles((theme) => ({
+const dot = require('dot-object');
+
+const useStyles = makeStyles(() => ({
   root: {
     width: '100%',
     '& > div': {
@@ -15,10 +18,25 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const Products = (props) => {
+
+const Products = ({widgetProps}) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
   const {viewType} = useSelector(({ecommerce}) => ecommerce);
-  const {fakeProducts} = useSelector(({ssrApi}) => ssrApi);
+  const {fakeProducts, filterData} = useSelector(({ssrApi}) => ssrApi);
+
+  useEffect(() => {
+    dispatch(getProducts(filterData));
+  }, [dispatch, filterData]);
+
+  const {responsePath} = widgetProps;
+  let products = fakeProducts;
+  if (responsePath?.value) {
+    products = dot.pick(responsePath.value, fakeProducts);
+  }
+
+  const {sling_mapping: slingMapping} = fakeProducts;
   const {loading} = useSelector(({common}) => common);
 
   return (
@@ -32,9 +50,17 @@ const Products = (props) => {
       flexDirection={'column'}
       justifyContent={'center'}>
       {viewType === VIEW_TYPE.GRID ? (
-        <ProductGrid ecommerceList={fakeProducts} loading={loading} />
+        <ProductGrid
+          products={products}
+          loading={loading}
+          slingMapping={slingMapping}
+        />
       ) : (
-        <ProductList ecommerceList={fakeProducts} loading={loading} />
+        <ProductList
+          products={products}
+          loading={loading}
+          slingMapping={slingMapping}
+        />
       )}
       <PaginationControlled />
     </Box>
