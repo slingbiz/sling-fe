@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, makeStyles} from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import NotificationItem from '../../../../@sling/core/Notifications/NotificationItem';
+import NotificationItem from '../../../../@sling/widgets/Notifications/NotificationItem';
 import PropTypes from 'prop-types';
 import AppList from '../../../../@sling/core/AppList';
 import AppCard from '../../../../@sling/core/AppCard';

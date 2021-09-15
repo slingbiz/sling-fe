@@ -7,7 +7,7 @@ import {makeStyles, Popover} from '@material-ui/core';
 import List from '@material-ui/core/List';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import Scrollbar from '../Scrollbar';
+import Scrollbar from '../../core/Scrollbar';
 import IntlMessages from '../../utility/IntlMessages';
 import Hidden from '@material-ui/core/Hidden';
 import clsx from 'clsx';

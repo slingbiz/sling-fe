@@ -7,8 +7,8 @@ const getHeaderHeight = (navStyle, screenSize) => {
     navStyle === NavStyle.HOR_LIGHT_NAV ||
     navStyle === NavStyle.H_DEFAULT
   )
-    return screenSize >= 1280 ? 124 + 20 : 70 + 10; // 50 Header Height + 20/10 Padding Bottom
-  if (navStyle === NavStyle.BIT_BUCKET) return 0; // 0 Header Height
+    return screenSize >= 1280 ? 124 + 20 : 70 + 10; // 50 HeaderDefault Height + 20/10 Padding Bottom
+  if (navStyle === NavStyle.BIT_BUCKET) return 0; // 0 HeaderDefault Height
 
   return screenSize >= 600 ? 70 : 60;
 };
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
       55 + // AppContainerHeader Height
       20 + //Container Padding
       getHeaderHeight(props.navStyle, 0) +
-      (props.footer ? 70 : 10) // 50 Header Height + 20 Margin Top
+      (props.footer ? 70 : 10) // 50 HeaderDefault Height + 20 Margin Top
     }px) !important`,
     [theme.breakpoints.up('sm')]: {
       height: `calc(100vh - ${
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         55 + // AppContainerHeader Height
         30 + //Container Padding
         getHeaderHeight(props.navStyle, 960) +
-        (props.footer ? 80 : 10) // 50 Header Height + 30 Margin Top
+        (props.footer ? 80 : 10) // 50 HeaderDefault Height + 30 Margin Top
       }px) !important`,
     },
     [theme.breakpoints.up('lg')]: {
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
         64 + // AppContainerHeader Height
         30 + //Container Padding
         getHeaderHeight(props.navStyle, 1920) +
-        (props.footer ? 86 : 10) // 56 Header Height + 30 Margin Top
+        (props.footer ? 86 : 10) // 56 HeaderDefault Height + 30 Margin Top
       }px) !important`,
     },
     display: 'flex',

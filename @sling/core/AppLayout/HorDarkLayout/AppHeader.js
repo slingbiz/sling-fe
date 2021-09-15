@@ -14,10 +14,10 @@ import Hidden from '@material-ui/core/Hidden';
 import HorizontalNav from '../../Navigation/HorizontalNav';
 import Box from '@material-ui/core/Box';
 import useStyles from './AppHeader.style';
-import SearchBar from '../../SearchBar';
+import SearchBar from '../../../widgets/SearchBar';
 import NotificationBar from './NotificationBar';
-import HeaderMessages from '../../HeaderMessages';
-import Notifications from '../../Notifications';
+import HeaderMessages from '../../../widgets/HeaderMessages';
+import Notifications from '../../../widgets/Notifications';
 import HorUserInfo from '../HorUserInfo';
 import AppLogoWhite from '../../../../shared/components/AppLogoWhite';
 

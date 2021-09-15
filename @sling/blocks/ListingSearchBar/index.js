@@ -4,11 +4,11 @@ import ListIcon from '@material-ui/icons/List';
 import AppsIcon from '@material-ui/icons/Apps';
 import IconButton from '@material-ui/core/IconButton';
 import {useDispatch, useSelector} from 'react-redux';
-import AppSearch from '../../core/SearchBar';
+import AppSearch from '../../widgets/SearchBar';
 import {setViewType} from '../../../redux/actions/Ecommerce';
 import {VIEW_TYPE} from '../../../redux/reducers/Ecommerce';
 import {setProductFilters} from '../../../redux/actions/SSRActions';
-import PureListingSearchBar from '../../modules/widgets/PureListingSearchBar';
+import PureListingSearchBar from '../../widgets/PureListingSearchBar';
 
 const _ = require('lodash');
 

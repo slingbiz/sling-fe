@@ -3,7 +3,7 @@ import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core';
 import clsx from 'clsx';
 
-const AppFixedFooter = (props) => {
+const FooterDefault = (props) => {
   const useStyles = makeStyles((theme) => ({
     footer: {
       left: 0,
@@ -53,4 +53,4 @@ const AppFixedFooter = (props) => {
   );
 };
 
-export default AppFixedFooter;
+export default FooterDefault;

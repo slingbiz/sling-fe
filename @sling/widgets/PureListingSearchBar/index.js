@@ -1,5 +1,5 @@
 import React from 'react';
-import AppSearch from '../../../core/SearchBar';
+import AppSearch from '../SearchBar';
 
 const PureListingSearchBar = ({onSearch}) => {
   return (

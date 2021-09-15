@@ -3,7 +3,7 @@ import Checkbox from '@material-ui/core/Checkbox/index';
 import {useSelector} from 'react-redux';
 import Box from '@material-ui/core/Box';
 import {useIntl} from 'react-intl';
-import SearchBar from '../../../../../@sling/core/SearchBar';
+import SearchBar from '../../../../../@sling/widgets/SearchBar';
 import PropTypes from 'prop-types';
 import {Hidden, makeStyles} from '@material-ui/core';
 import SelectTasksDropdown from './SelectTasksDropdown';

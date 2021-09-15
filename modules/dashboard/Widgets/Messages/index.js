@@ -1,6 +1,6 @@
 import React from 'react';
 import CloseIcon from '@material-ui/icons/Close';
-import MessageItem from '../../../../@sling/core/HeaderMessages/MessageItem';
+import MessageItem from '../../../../@sling/widgets/HeaderMessages/MessageItem';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
 import {isBreakPointDown} from '../../../../@sling/utility/Utils';

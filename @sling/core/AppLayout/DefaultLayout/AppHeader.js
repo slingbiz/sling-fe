@@ -11,11 +11,11 @@ import {toggleNavCollapsed} from '../../../../redux/actions';
 import {useDispatch} from 'react-redux';
 import Hidden from '@material-ui/core/Hidden';
 import Box from '@material-ui/core/Box';
-import HeaderMessages from '../../HeaderMessages';
-import Notifications from '../../Notifications';
-import SearchBar from '../../SearchBar';
+import HeaderMessages from '../../../widgets/HeaderMessages';
+import Notifications from '../../../widgets/Notifications';
+import SearchBar from '../../../widgets/SearchBar';
 import useStyles from './AppHeader.style';
-import AppLogo from '../../../../shared/components/AppLogo';
+import AppLogo from '../../../widgets/AppLogo';
 
 const AppHeader = () => {
   const classes = useStyles();

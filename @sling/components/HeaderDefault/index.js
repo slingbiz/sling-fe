@@ -2,25 +2,20 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import LanguageSwitcher from '../../LanguageSwitcher';
-import {toggleNavCollapsed} from '../../../../redux/actions';
-import {useDispatch} from 'react-redux';
-import Hidden from '@material-ui/core/Hidden';
+import LanguageSwitcher from '../../core/LanguageSwitcher';
 import Box from '@material-ui/core/Box';
-import SearchBar from '../../../widgets/SearchBar';
-import useStyles from './AppHeader.style';
-import HeaderMessages from '../../../widgets/HeaderMessages';
-import Notifications from '../../../widgets/Notifications';
-import AppLogo from '../../../widgets/AppLogo';
-import clsx from 'clsx';
+import useStyles from './Header.style';
+import HeaderMessages from '../../widgets/HeaderMessages';
+import SearchBar from '../../widgets/SearchBar';
+import Notifications from '../../widgets/Notifications';
+import AppLogo from '../../widgets/AppLogo';
+import Hidden from '@material-ui/core/Hidden';
 
-const AppHeader = () => {
+const Header = () => {
   const classes = useStyles();
-  const dispatch = useDispatch();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -55,20 +50,20 @@ const AppHeader = () => {
 
   return (
     <>
-      <AppBar color='inherit' className={clsx(classes.appBar, 'app-bar')}>
-        <Toolbar className={classes.appToolbar}>
-          <Hidden lgUp>
-            <IconButton
-              edge='start'
-              className={classes.menuButton}
-              color='inherit'
-              aria-label='open drawer'
-              onClick={() => dispatch(toggleNavCollapsed())}>
-              <MenuIcon className={classes.menuIcon} />
-            </IconButton>
-          </Hidden>
-          <AppLogo />{' '}
+      <AppBar className='app-bar' color='inherit'>
+        {/*<NotificationBar />*/}
 
+        <Toolbar className={classes.appToolbar}>
+          {/*<IconButton*/}
+          {/*  edge='start'*/}
+          {/*  className={classes.menuButton}*/}
+          {/*  color='inherit'*/}
+          {/*  aria-label='open drawer'*/}
+          {/*  onClick={() => dispatch(toggleNavCollapsed())}>*/}
+          {/*  <MenuIcon className={classes.menuIconRoot} />*/}
+          {/*</IconButton>*/}
+
+          <AppLogo />
           <Box className={classes.grow} />
           <SearchBar borderLight placeholder='Search…' />
           <Box className={classes.sectionDesktop}>
@@ -87,9 +82,17 @@ const AppHeader = () => {
             </IconButton>
           </Box>
         </Toolbar>
+        <Hidden mdDown>
+          <Box className={classes.headerNav}>
+            <Box className={classes.headerContainer}>
+              {/*<HorizontalNav />*/}
+              {/*TODO: Add Category Menu here*/}
+            </Box>
+          </Box>
+        </Hidden>
       </AppBar>
       {renderMobileMenu}
     </>
   );
 };
-export default AppHeader;
+export default Header;

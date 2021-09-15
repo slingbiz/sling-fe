@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import Box from '@material-ui/core/Box';
-import SearchBar from '../../../../../@sling/core/SearchBar';
+import SearchBar from '../../../../../@sling/widgets/SearchBar';
 import {Hidden, makeStyles} from '@material-ui/core';
 import PropTypes from 'prop-types';
 import {useIntl} from 'react-intl';

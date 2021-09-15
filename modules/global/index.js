@@ -1,12 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import RenderTree from '../../@sling/hoc/RenderTree';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetEcommerceData} from '../../redux/actions/Ecommerce';
+import {useSelector} from 'react-redux';
 import CustomizedBreadcrumbs from '../muiComponents/navigation/BreadCrumbs/CustomizedBreadcrumbs';
 import Box from '@material-ui/core/Box';
-import AppHeader from '../../@sling/core/AppLayout/DrawerLayout/AppHeader';
 import {makeStyles} from '@material-ui/core/styles';
-import AppFixedFooter from '../../@sling/core/AppLayout/DrawerLayout/AppFixedFooter';
+import FooterDefault from '../../@sling/components/FooterDefault';
 import Error from 'next/error';
 
 const useStyles = makeStyles((theme) => ({
@@ -44,11 +42,9 @@ const GlobalPage = () => {
   }
   return (
     <Box className={classes.appMain}>
-      <AppHeader />
       <Box className={classes.bodyMain}>
         <CustomizedBreadcrumbs />
         <RenderTree layout={layout} />
-        <AppFixedFooter />
       </Box>
     </Box>
   );
