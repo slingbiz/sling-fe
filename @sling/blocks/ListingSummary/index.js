@@ -18,7 +18,7 @@ const ListingSummary = ({widgetProps}) => {
 
   return (
     <Box p={4}>
-      <Box fontWeight={Fonts.BOLD} mr={3}>
+      <Box component='h1' fontWeight={Fonts.BOLD} fontSize={18} mr={3}>
         {h1.value}
       </Box>
       <Box component='span'>{h2}</Box>
