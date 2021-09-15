@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     borderBottom: `1px solid ${grey[300]}`,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
     // [theme.breakpoints.up('xl')]: {
     //   height: 77,
     // },
@@ -27,19 +27,17 @@ const useStyles = makeStyles((theme) => ({
 const AppsHeader = ({children}) => {
   const classes = useStyles();
   return (
-    <>
-      <Grid
-        container
-        spacing={2}
-        justifyContent={'center'}
-        width={'auto'}
-        alignItems='baseline'
-        flexDirection='row'
-        px={6}
-        className={classes.appHeader}>
-        {children}
-      </Grid>
-    </>
+    <Grid
+      container
+      spacing={2}
+      justifyContent={'center'}
+      width={'100%'}
+      alignItems='baseline'
+      flexDirection='row'
+      px={6}
+      className={classes.appHeader}>
+      {children}
+    </Grid>
   );
 };
 

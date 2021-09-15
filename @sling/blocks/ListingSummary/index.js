@@ -17,14 +17,12 @@ const ListingSummary = ({widgetProps}) => {
   h2 = h2.value.replace(/<totalCount>/g, totalCount);
 
   return (
-    <Hidden only='xs' implementation='css'>
-      <Box p={4}>
-        <Box fontWeight={Fonts.BOLD} mr={3}>
-          {h1.value}
-        </Box>
-        <Box component='span'>{h2}</Box>
+    <Box p={4}>
+      <Box fontWeight={Fonts.BOLD} mr={3}>
+        {h1.value}
       </Box>
-    </Hidden>
+      <Box component='span'>{h2}</Box>
+    </Box>
   );
 };
 export default ListingSummary;

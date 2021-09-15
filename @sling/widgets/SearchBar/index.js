@@ -10,6 +10,7 @@ import {Fonts} from '../../../shared/constants/AppEnums';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    width: '100%',
     marginRight: 10,
     position: 'relative',
     [theme.breakpoints.up('sm')]: {
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   search: (props) => ({
     position: 'relative',
+    width: '100%',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     marginLeft: props.align === 'right' ? 'auto' : 0,
@@ -36,11 +38,11 @@ const useStyles = makeStyles((theme) => ({
     },
     '&.cr-search': {
       [theme.breakpoints.down('sm')]: {
-        position: 'absolute',
-        right: 0,
-        top: '50%',
-        zIndex: 1,
-        transform: 'translateY(-50%)',
+        // position: 'absolute',
+        // right: 0,
+        // top: '50%',
+        // zIndex: 1,
+        // transform: 'translateY(-50%)',
       },
     },
   }),
@@ -73,20 +75,17 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create('width'),
     backgroundColor: theme.palette.common.white,
-    width: 250,
+    width: '100%',
     height: 35,
     borderRadius: 4,
     boxSizing: 'border-box',
-    [theme.breakpoints.down('sm')]: {
-      width: 100,
-    },
     '&:focus': {
       backgroundColor: 'rgba(255, 255, 255, 0.5)',
       borderColor: theme.palette.primary,
-      width: 235,
+      width: '100%',
       [theme.breakpoints.down('sm')]: {
-        backgroundColor: theme.palette.common.white,
-        width: 162,
+        // backgroundColor: theme.palette.common.white,
+        // width: 162,
       },
     },
   },
@@ -110,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: 50,
       paddingLeft: 27,
       '&:focus': {
-        width: 235,
+        width: '100%',
         borderRadius: 4,
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
       },

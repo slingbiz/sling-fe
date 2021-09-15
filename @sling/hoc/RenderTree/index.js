@@ -6,10 +6,11 @@ import Widgets from '../../widgets/index';
 import Wrappers from '../../wrappers/index';
 import ComponentBlocks from '../../components/index';
 import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
 
 const NodeTypeMap = {
   componentBlocks: ComponentBlocks,
-  widget: Widgets,
+  widgets: Widgets,
   blocks: Blocks,
 };
 
@@ -27,7 +28,12 @@ const RenderTree = (props) => {
             <Wrapper>
               {cells?.map((cell) => {
                 const {rows, key, payload, type} = cell;
-                const {style, muiWidths, props: widgetProps} = payload;
+                const {
+                  style,
+                  muiWidths,
+                  props: widgetProps,
+                  muiHidden,
+                } = payload;
                 if (key) {
                   let CellComponent = Blocks[key];
                   if (type) {
@@ -35,6 +41,22 @@ const RenderTree = (props) => {
                   }
 
                   if (CellComponent) {
+                    if (muiHidden) {
+                      console.log('[muiHidden]', muiHidden, key);
+                      return (
+                        <Hidden {...muiHidden} >
+                          <Grid item display={'flex'} flex={1} {...muiWidths}>
+                            <CellComponent
+                              parentProps={props}
+                              widgetProps={widgetProps}
+                              key={key}
+                              payload={payload}
+                            />
+                          </Grid>
+                        </Hidden>
+                      );
+                    }
+
                     return (
                       <Grid item display={'flex'} flex={1} {...muiWidths}>
                         <CellComponent
@@ -48,6 +70,27 @@ const RenderTree = (props) => {
                   }
                 }
                 if (rows) {
+                  if (muiHidden) {
+                    return (
+                      <Hidden {...muiHidden}>
+                        <Grid
+                          item
+                          {...muiWidths}
+                          display={'flex'}
+                          flexDirection={'column'}
+                          justifyContent={'center'}
+                          alignItems={'center'}>
+                          <Box
+                            // container
+                            spacing={2}
+                            justifyContent={'center'}
+                            width={'auto'}>
+                            {processRows(rows)}
+                          </Box>
+                        </Grid>
+                      </Hidden>
+                    );
+                  }
                   return (
                     <Grid
                       item

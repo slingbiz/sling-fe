@@ -43,7 +43,6 @@ const GlobalPage = () => {
   return (
     <Box className={classes.appMain}>
       <Box className={classes.bodyMain}>
-        <CustomizedBreadcrumbs />
         <RenderTree layout={layout} />
       </Box>
     </Box>
