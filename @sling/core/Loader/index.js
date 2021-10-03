@@ -17,7 +17,7 @@ const Loader = () => {
       bottom={0}
       style={{position: 'absolute'}}
       asdfas='owere'>
-      To be fixed
+      {/*To be fixed*/}
       <CircularProgress size={40} />
     </Box>
   );

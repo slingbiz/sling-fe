@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
 const FilterToggle = ({widgetProps}) => {
   const dispatch = useDispatch();
   let {h1} = widgetProps;

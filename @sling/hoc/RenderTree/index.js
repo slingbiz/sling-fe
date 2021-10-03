@@ -9,9 +9,9 @@ import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 
 const NodeTypeMap = {
-  componentBlocks: ComponentBlocks,
-  widgets: Widgets,
-  blocks: Blocks,
+  componentBlock: ComponentBlocks,
+  widget: Widgets,
+  block: Blocks,
 };
 
 const RenderTree = (props) => {
