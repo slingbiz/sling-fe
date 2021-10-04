@@ -4,6 +4,7 @@ const {
 } = require('next/constants');
 
 module.exports = (phase) => {
+  console.log(phase, 'phase@next.config.js');
   if (phase === PHASE_PRODUCTION_BUILD) {
     return {
       basePath: '/frontend',
