@@ -16,7 +16,7 @@ const NodeTypeMap = {
 
 const RenderTree = (props) => {
   const {layout} = props;
-  const tree = layout.root;
+  const tree = layout?.root;
   const elements = [];
   const processRows = (rows) => {
     const tmpElements = [];

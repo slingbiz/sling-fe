@@ -15,6 +15,15 @@ const ListingSummary = ({widgetProps}) => {
   const totalCount =
     (rPath ? dot.pick(rPath, fakeProducts) : defaultVal) || defaultVal;
   h2 = h2.value.replace(/<totalCount>/g, totalCount);
+  console.log(h2.value, 'h2.value - before');
+  console.log(
+    rPath,
+    fakeProducts,
+    'rPath - fakeProudcts',
+    totalCount,
+    'h2',
+    h2,
+  );
 
   return (
     <Box p={4}>
