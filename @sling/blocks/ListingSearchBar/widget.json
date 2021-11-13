@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "global": false,
+  "name": "Listing Search Bar",
+  "description": "Search Bar Wrapper - accepts List or Grid option ",
+  "type": "pure",
+  "availableToAllPages": true,
+  "config": {
+  },
+  "requiredProps": {
+    "viewType": {
+      "type": "option",
+      "options": [
+        {
+          "value": 1,
+          "label": "List"
+        },
+        {
+          "value": 2,
+          "label": "Grid"
+        }
+      ],
+      "dataType": "number",
+      "default": 2
+    }
+  }
+}
