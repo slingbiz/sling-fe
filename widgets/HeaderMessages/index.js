@@ -9,7 +9,6 @@ import Popover from '@material-ui/core/Popover';
 import List from '@material-ui/core/List';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import Scrollbar from '../../@sling/core/Scrollbar';
 import IntlMessages from '../../@sling/utility/IntlMessages';
 import Hidden from '@material-ui/core/Hidden';
 import clsx from 'clsx';
@@ -144,7 +143,7 @@ const HeaderMessages = (props) => {
               <IntlMessages id='dashboard.messages' />({messages.length})
             </Box>
           </Box>
-          <Scrollbar className='scroll-submenu'>
+          <Box className='scroll-submenu'>
             <List
               className={classes.listRoot}
               onClick={() => {
@@ -154,7 +153,7 @@ const HeaderMessages = (props) => {
                 <MessageItem key={item.id} item={item} />
               ))}
             </List>
-          </Scrollbar>
+          </Box>
           <Box mt={2}>
             <Button
               className={classes.btnPopover}

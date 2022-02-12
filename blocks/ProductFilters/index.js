@@ -8,7 +8,6 @@ import {makeStyles} from '@material-ui/core/styles';
 import AppList from '../../@sling/core/AppList';
 import CheckedCell from './CheckedCell';
 import {BrandData, DiscountList, IdealFor, ProductColors,} from '../../@sling/services/db/ecommerce/ecommerceData';
-import AppGrid from '../../@sling/core/AppGrid';
 import ColorCell from './ColorCell';
 import RatingCell from './RatingCell';
 import {useDispatch, useSelector} from 'react-redux';
@@ -161,7 +160,7 @@ const ProductSidebar = () => {
         <Divider className={classes.divider} />
         <Box color='text.secondary' my={4} fontWeight={Fonts.MEDIUM}>
           COLOR
-          <AppGrid
+          <Box
             data={Object.values(ProductColors)}
             column={6}
             itemPadding={10}

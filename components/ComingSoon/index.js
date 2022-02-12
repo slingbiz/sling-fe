@@ -12,7 +12,6 @@ import Typography from '@material-ui/core/Typography';
 import {grey} from '@material-ui/core/colors';
 import {makeStyles} from '@material-ui/core';
 import {Fonts} from '../../utils/constants/AppEnums';
-import AppAnimate from '../../@sling/core/AppAnimate';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -59,7 +58,7 @@ const ComingSoon = () => {
   const classes = useStyles();
 
   return (
-    <AppAnimate animation='transition.slideUpIn' delay={200}>
+    <Box>
       <Box
         py={{xl: 8}}
         flex={1}
@@ -133,7 +132,7 @@ const ComingSoon = () => {
         </Box>
         <InfoView />
       </Box>
-    </AppAnimate>
+    </Box>
   );
 };
 

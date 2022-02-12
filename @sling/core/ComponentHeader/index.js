@@ -6,7 +6,6 @@ import LinkIcon from '@material-ui/icons/Link';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
 import {Fonts} from '../../../utils/constants/AppEnums';
-import AppAnimate from '../AppAnimate';
 
 const ComponentHeader = ({title, description, refUrl}) => {
   const useStyles = makeStyles((theme) => ({
@@ -33,7 +32,7 @@ const ComponentHeader = ({title, description, refUrl}) => {
 
   const classes = useStyles();
   return (
-    <AppAnimate animation='transition.slideDownIn' delay={300}>
+    <Box >
       <Box className={classes.containerHeader}>
         <Box mb={3} pr={{sm: 3}} flex={{sm: 1}}>
           <Box
@@ -64,7 +63,7 @@ const ComponentHeader = ({title, description, refUrl}) => {
           </Box>
         ) : null}
       </Box>
-    </AppAnimate>
+    </Box>
   );
 };
 

@@ -7,12 +7,10 @@ import Highlight, {defaultProps} from 'prism-react-renderer';
 import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
 import Collapse from '@material-ui/core/Collapse';
-import Scrollbar from '../Scrollbar';
 import clsx from 'clsx';
 import {highlightTheme} from './highlightTheme';
 import Box from '@material-ui/core/Box';
 import {Fonts} from '../../../utils/constants/AppEnums';
-import AppAnimate from '../AppAnimate';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -54,7 +52,7 @@ const ComponentCard = ({
   const classes = useStyles();
 
   return (
-    <AppAnimate animation='transition.slideUpIn' delay={200}>
+    <Box>
       <Card>
         <CardHeader
           className={classes.cardHeader}
@@ -89,51 +87,37 @@ const ComponentCard = ({
         <CardContent className={classes.cardContent}>
           <Collapse in={animation}>
             {viewSource ? (
-              <Scrollbar
-                style={{
-                  borderRadius: 8,
-                  background: '#333333',
-                }}>
-                <Highlight
-                  {...defaultProps}
-                  code={source}
-                  language='jsx'
-                  theme={highlightTheme}>
-                  {({
-                    className,
-                    style,
-                    tokens,
-                    getLineProps,
-                    getTokenProps,
-                  }) => (
-                    <pre
-                      className={clsx(className, classes.preTag)}
-                      style={{...style, maxHeight: 500}}>
-                      {tokens.map((line, i) => (
-                        <Box {...getLineProps({line, key: i})}>
-                          {line.map((token, key) => (
-                            <span {...getTokenProps({token, key})} />
-                          ))}
-                        </Box>
-                      ))}
-                    </pre>
-                  )}
-                </Highlight>
-              </Scrollbar>
+              <Highlight
+                {...defaultProps}
+                code={source}
+                language='jsx'
+                theme={highlightTheme}>
+                {({className, style, tokens, getLineProps, getTokenProps}) => (
+                  <pre
+                    className={clsx(className, classes.preTag)}
+                    style={{...style, maxHeight: 500}}>
+                    {tokens.map((line, i) => (
+                      <Box {...getLineProps({line, key: i})}>
+                        {line.map((token, key) => (
+                          <span {...getTokenProps({token, key})} />
+                        ))}
+                      </Box>
+                    ))}
+                  </pre>
+                )}
+              </Highlight>
             ) : null}
           </Collapse>
-          <Scrollbar className={classes.root} style={{maxHeight: maxHeight}}>
-            <Box
-              width='100%'
-              display='flex'
-              alignItems='center'
-              justifyContent='center'>
-              <Component />
-            </Box>
-          </Scrollbar>
+          <Box
+            width='100%'
+            display='flex'
+            alignItems='center'
+            justifyContent='center'>
+            <Component />
+          </Box>
         </CardContent>
       </Card>
-    </AppAnimate>
+    </Box>
   );
 };
 

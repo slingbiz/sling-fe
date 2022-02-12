@@ -3,7 +3,7 @@ import {useBottomScrollListener} from 'react-bottom-scroll-listener';
 import PropTypes from 'prop-types';
 import {useTheme} from '@material-ui/core';
 import grey from '@material-ui/core/colors/grey';
-import AppAnimateGroup from '../AppAnimateGroup';
+import Box from "@material-ui/core/Box";
 
 const getEmptyContainer = (ListEmptyComponent) => {
   if (ListEmptyComponent)
@@ -56,7 +56,7 @@ const ListView = ({
   }
   useBottomScrollListener(onEndReached, 200);
   return (
-    <AppAnimateGroup
+    <Box
       style={{...style}}
       {...rest}
       flex={1}
@@ -65,7 +65,7 @@ const ListView = ({
         ? data.map((item, index) => renderRow(item, index))
         : getEmptyContainer(ListEmptyComponent)}
       {getFooterContainer(ListFooterComponent)}
-    </AppAnimateGroup>
+    </Box>
   );
 };
 

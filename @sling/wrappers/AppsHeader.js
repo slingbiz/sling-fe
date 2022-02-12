@@ -3,7 +3,6 @@ import {Box} from '@material-ui/core';
 import {grey} from '@material-ui/core/colors';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Grid from '@material-ui/core/Grid';
-import NotificationBar from '../core/AppLayout/HorDefault/NotificationBar';
 
 const useStyles = makeStyles((theme) => ({
   appHeader: {

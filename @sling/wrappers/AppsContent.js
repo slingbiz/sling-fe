@@ -1,7 +1,7 @@
 import React from 'react';
-import Scrollbar from '../core/Scrollbar';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import {fade} from '@material-ui/core';
+import Box from "@material-ui/core/Box";
 
 export const useAppsContentStyles = makeStyles((theme) => ({
   appsContentContainer: (props) => ({
@@ -49,9 +49,9 @@ export const useAppsContentStyles = makeStyles((theme) => ({
 const AppsContent = (props) => {
   const classes = useAppsContentStyles(props);
   return (
-    <Scrollbar className={classes.appsContentContainer} style={props.style}>
+    <Box>
       {props.children}
-    </Scrollbar>
+    </Box>
   );
 };
 
