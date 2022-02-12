@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import clsx from 'clsx';
-import UserInfo from '../../../../shared/components/UserInfo';
+import UserInfo from '../../../../blocks/UserInfo';
 import Navigation from '../../Navigation/VerticleNav';
 import {toggleNavCollapsed} from '../../../../redux/actions';
 import {useDispatch, useSelector} from 'react-redux';
@@ -10,7 +10,7 @@ import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import AppContext from '../../../utility/AppContext';
 import useStyles from './AppSidebar.style';
-import {ThemeStyle} from '../../../../shared/constants/AppEnums';
+import {ThemeStyle} from '../../../../utils/constants/AppEnums';
 import Scrollbar from '../../Scrollbar';
 
 const AppSidebar = (props) => {

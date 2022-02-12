@@ -6,7 +6,7 @@ import {
   SHOW_MESSAGE,
   TOGGLE_APP_DRAWER,
   UPDATING_CONTENT,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 
 const INIT_STATE = {
   error: '',

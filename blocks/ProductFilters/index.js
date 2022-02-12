@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import ProductsCategory from './ProductsCategory';
 import {Box} from '@material-ui/core';
-import {Fonts} from '../../shared/constants/AppEnums';
+import {Fonts} from '../../utils/constants/AppEnums';
 import Divider from '@material-ui/core/Divider';
 import PriceSelector from './PriceSelector';
 import {makeStyles} from '@material-ui/core/styles';

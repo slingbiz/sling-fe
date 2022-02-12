@@ -9,7 +9,7 @@ import {
   SET_PRODUCT_DATA,
   SET_PRODUCT_VIEW_TYPE,
   UPDATE_CART_ITEM,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import {cartItems} from '../../@sling/services/db/ecommerce/ecommerceData';
 
 export const VIEW_TYPE = Object.freeze({LIST: 1, GRID: 2});

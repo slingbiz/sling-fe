@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
 import {grey} from '@material-ui/core/colors';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import {Fonts} from '../../../utils/constants/AppEnums';
 
 const ConfirmationDialog = ({open, onDeny, onConfirm, title, dialogTitle}) => {
   const useStyle = makeStyles({

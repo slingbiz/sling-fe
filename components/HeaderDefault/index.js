@@ -8,10 +8,10 @@ import Menu from '@material-ui/core/Menu';
 import LanguageSwitcher from '../../@sling/core/LanguageSwitcher';
 import Box from '@material-ui/core/Box';
 import useStyles from './Header.style';
-import HeaderMessages from '../../@sling/widgets/HeaderMessages';
-import SearchBar from '../../@sling/widgets/SearchBar';
-import Notifications from '../../@sling/widgets/Notifications';
-import AppLogo from '../../@sling/widgets/AppLogo';
+import HeaderMessages from '../../widgets/HeaderMessages';
+import SearchBar from '../../widgets/SearchBar';
+import Notifications from '../../widgets/Notifications';
+import AppLogo from '../../widgets/AppLogo';
 import Hidden from '@material-ui/core/Hidden';
 
 const Header = ({style}) => {

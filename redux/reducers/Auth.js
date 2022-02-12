@@ -3,7 +3,7 @@ import {
   SIGNOUT_AUTH_SUCCESS,
   UPDATE_AUTH_USER,
   USER_LOADED
-} from "../../shared/constants/ActionTypes";
+} from "../../utils/constants/ActionTypes";
 
 const INIT_STATE = {
   loading: true,

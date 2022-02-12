@@ -12,7 +12,7 @@ import {
   UPDATE_TASK_FOLDER,
   UPDATE_TASK_LABEL,
   UPDATE_TASK_STARRED_STATUS,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 
 const initialState = {
   taskList: [],

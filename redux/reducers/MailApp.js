@@ -12,7 +12,7 @@ import {
   UPDATE_MAIL_LABEL,
   UPDATE_STARRED_STATUS,
   UPDATED_MAIL_DETAIL,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 
 const initialState = {
   mailList: [],

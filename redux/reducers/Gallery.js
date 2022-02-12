@@ -1,4 +1,4 @@
-import {GET_GALLERY_PHOTO} from '../../shared/constants/ActionTypes';
+import {GET_GALLERY_PHOTO} from '../../utils/constants/ActionTypes';
 
 const initialState = {
   photos: [],

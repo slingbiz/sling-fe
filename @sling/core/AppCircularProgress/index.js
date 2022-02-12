@@ -3,7 +3,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import ProtoTypes from 'prop-types';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Box from '@material-ui/core/Box';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import {Fonts} from '../../../utils/constants/AppEnums';
 
 const useStyles = makeStyles((theme) => ({
   root: {

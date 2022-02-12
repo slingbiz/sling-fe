@@ -6,7 +6,7 @@ import {
   SHOW_MESSAGE,
   TOGGLE_APP_DRAWER, UPDATE_AUTH_USER,
   UPDATING_CONTENT,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 
 export const fetchStart = () => {
   return (dispatch) => dispatch({type: FETCH_START});

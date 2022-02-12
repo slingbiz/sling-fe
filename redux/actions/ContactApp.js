@@ -12,7 +12,7 @@ import {
   UPDATE_CONTACT_DETAIL,
   UPDATE_CONTACT_LABEL,
   UPDATE_CONTACT_STARRED_STATUS,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import Api from '../../@sling/services/ApiConfig';
 import {appIntl} from '../../@sling/utility/Utils';
 

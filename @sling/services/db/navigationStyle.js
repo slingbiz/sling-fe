@@ -1,4 +1,4 @@
-import {LayoutType, NavStyle} from '../../../shared/constants/AppEnums';
+import {LayoutType, NavStyle} from '../../../utils/constants/AppEnums';
 
 export const navStyles = [
   {

@@ -4,7 +4,7 @@ import {
   SET_PRODUCT_FILTER_DATA,
   GET_PRODUCT_LIST,
   FETCH_ERROR,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import Api from '../../@sling/services/ApiConfig';
 
 export const setProductFilters = (filters) => {

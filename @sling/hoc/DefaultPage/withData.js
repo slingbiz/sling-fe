@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Router, { useRouter } from "next/router";
-import { initialUrl } from "../../../shared/constants/AppConst";
+import { initialUrl } from "../../../utils/constants/AppConst";
 import { useSelector } from "react-redux";
 import Loader from "../../core/Loader";
 

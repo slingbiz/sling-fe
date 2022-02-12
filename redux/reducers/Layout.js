@@ -1,7 +1,7 @@
 import {
   SET_LAYOUT,
   SET_PAGE_TEMPLATE,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 
 const initialState = {
   layoutConfig: null,

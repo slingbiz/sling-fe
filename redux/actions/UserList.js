@@ -3,7 +3,7 @@ import {
   FETCH_START,
   FETCH_SUCCESS,
   GET_USER_LIST,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import Api from '../../@sling/services/ApiConfig';
 import IntlMessages from '../../@sling/utility/IntlMessages';
 import React from 'react';

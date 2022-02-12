@@ -10,9 +10,9 @@ import {
   FETCH_START,
   FETCH_SUCCESS,
   UPDATE_AUTH_USER,
-} from '../../shared/constants/ActionTypes';
-import {AuthType} from '../../shared/constants/AppEnums';
-import { defaultUser } from "../../shared/constants/AppConst";
+} from '../../utils/constants/ActionTypes';
+import {AuthType} from '../../utils/constants/AppEnums';
+import { defaultUser } from "../../utils/constants/AppConst";
 
 export const onSignUpFirebaseUser = ({email, password}) => {
   return (dispatch) => {

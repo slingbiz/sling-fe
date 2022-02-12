@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import IntlMessages from '../../utility/IntlMessages';
 import {makeStyles} from '@material-ui/core/styles';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import {Fonts} from '../../../utils/constants/AppEnums';
 
 const useStyle = makeStyles({
   btn: {

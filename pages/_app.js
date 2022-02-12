@@ -16,7 +16,7 @@ import {
   GET_INIT_PROPS,
   CLIENT_KEY_SECRET,
   CLIENT_ID,
-} from '../shared/constants/Services';
+} from '../utils/constants/Services';
 import axios from 'axios';
 
 // eslint-disable-next-line react/prop-types

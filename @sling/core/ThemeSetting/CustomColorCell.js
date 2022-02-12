@@ -4,7 +4,7 @@ import useStyles from './CustomColorCell.style';
 import {AppContext} from '../../index';
 import CheckIcon from '@material-ui/icons/Check';
 import IntlMessages from '../../utility/IntlMessages';
-import {ThemeMode} from '../../../shared/constants/AppEnums';
+import {ThemeMode} from '../../../utils/constants/AppEnums';
 
 const CustomColorCell = ({themeColorSet, updateThemeColors}) => {
   const classes = useStyles();

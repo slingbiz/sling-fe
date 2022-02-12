@@ -1,3 +1,3 @@
 import React from 'react';
-import HomePage from '../modules/home/index';
+import HomePage from '../utils/home/index';
 export default HomePage;

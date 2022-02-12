@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
-import UserInfo from '../../../../shared/components/UserInfo';
+import UserInfo from '../../../../blocks/UserInfo';
 import Navigation from '../../Navigation/VerticleNav';
 import {toggleNavCollapsed} from '../../../../redux/actions';
 import {useDispatch, useSelector} from 'react-redux';

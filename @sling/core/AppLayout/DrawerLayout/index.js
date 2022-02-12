@@ -7,7 +7,7 @@ import useStyles from '../../../../components/HeaderDefault/index.style';
 import AppFixedFooter from './AppFixedFooter';
 import clsx from 'clsx';
 import AppContext from '../../../utility/AppContext';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import {LayoutType} from '../../../../utils/constants/AppEnums';
 import NotificationBar from '../HorDarkLayout/NotificationBar';
 
 const DrawerLayout = (props) => {

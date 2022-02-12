@@ -13,7 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Box from '@material-ui/core/Box';
 import {orange} from '@material-ui/core/colors';
-import {AuthType} from '../../../../shared/constants/AppEnums';
+import {AuthType} from '../../../../utils/constants/AppEnums';
 import {useDispatch} from 'react-redux';
 
 const useStyles = makeStyles((theme) => {

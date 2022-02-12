@@ -11,7 +11,7 @@ import {
   SET_PRODUCT_DATA,
   SET_PRODUCT_VIEW_TYPE,
   UPDATE_CART_ITEM,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import Api from '../../@sling/services/ApiConfig';
 
 export const onGetEcommerceData = (filterData) => {

@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import LinkIcon from '@material-ui/icons/Link';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import {Fonts} from '../../../utils/constants/AppEnums';
 import AppAnimate from '../AppAnimate';
 
 const ComponentHeader = ({title, description, refUrl}) => {

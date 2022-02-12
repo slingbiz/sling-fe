@@ -12,7 +12,7 @@ import {
   GET_HC_DATA,
   GET_METRICS_DATA,
   GET_WIDGETS_DATA,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import IntlMessages from '../../@sling/utility/IntlMessages';
 
 export const onGetAnalyticsData = () => {

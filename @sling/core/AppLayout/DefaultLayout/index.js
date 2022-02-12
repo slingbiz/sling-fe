@@ -8,7 +8,7 @@ import useStyles from './index.style';
 import AppFixedFooter from './AppFixedFooter';
 import clsx from 'clsx';
 import AppContext from '../../../utility/AppContext';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import {LayoutType} from '../../../../utils/constants/AppEnums';
 
 const DefaultLayout = (props) => {
   const {themeStyle, footer, layoutType, footerType} = useContext(AppContext);

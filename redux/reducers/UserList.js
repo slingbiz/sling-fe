@@ -1,4 +1,4 @@
-import {GET_USER_LIST} from '../../shared/constants/ActionTypes';
+import {GET_USER_LIST} from '../../utils/constants/ActionTypes';
 
 const initialState = {
   usersList: [],

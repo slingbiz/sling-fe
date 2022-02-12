@@ -9,7 +9,7 @@ import AppContext from '../AppContext';
 import AppLocale from '../../../shared/localization';
 import {responsiveFontSizes} from '@material-ui/core';
 import {isBreakPointDown} from '../Utils';
-import {ThemeStyle} from '../../../shared/constants/AppEnums';
+import {ThemeStyle} from '../../../utils/constants/AppEnums';
 import {useUrlSearchParams} from 'use-url-search-params';
 
 const SlingThemeProvider = (props) => {

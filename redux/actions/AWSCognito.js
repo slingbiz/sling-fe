@@ -4,11 +4,11 @@ import {
   FETCH_SUCCESS,
   SHOW_MESSAGE,
   UPDATE_AUTH_USER,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import {Auth} from 'aws-amplify';
 import { Cookies } from 'react-cookie';
-import {AuthType} from '../../shared/constants/AppEnums';
-import {defaultUser} from '../../shared/constants/AppConst';
+import {AuthType} from '../../utils/constants/AppEnums';
+import {defaultUser} from '../../utils/constants/AppConst';
 
 export const onConfirmCognitoUserSignup = (username, confirmCode, history) => {
   const code = confirmCode ? confirmCode : '000000';

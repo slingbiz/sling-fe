@@ -5,7 +5,7 @@ import HorizontalItem from './HorizontalItem';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 
-import routesConfig from '../../../../modules/routesConfig';
+import routesConfig from '../../../../utils/routesConfig';
 import Box from '@material-ui/core/Box';
 
 const HorizontalNav = () => {

@@ -1,4 +1,4 @@
-import {UPDATE_FIREBASE_USER} from '../../shared/constants/ActionTypes';
+import {UPDATE_FIREBASE_USER} from '../../utils/constants/ActionTypes';
 
 const INIT_STATE = {
   user: null,

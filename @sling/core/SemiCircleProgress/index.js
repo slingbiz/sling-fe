@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Box, withWidth} from '@material-ui/core';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import {Fonts} from '../../../utils/constants/AppEnums';
 import {getBreakPointsValue} from '../../utility/Utils';
 
 const SemiCircleProgress = ({

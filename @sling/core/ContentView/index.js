@@ -7,7 +7,7 @@ import AppContext from '../../utility/AppContext';
 import PropTypes from 'prop-types';
 import AppFooter from '../AppLayout/AppFooter';
 import Box from '@material-ui/core/Box';
-import {RouteTransition} from '../../../shared/constants/AppEnums';
+import {RouteTransition} from '../../../utils/constants/AppEnums';
 import AppErrorBoundary from '../AppErrorBoundary';
 
 const TransitionWrapper = ({children}) => {

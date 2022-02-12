@@ -8,7 +8,7 @@ import AppFooter from './AppFooter';
 import AppFixedFooter from './AppFixedFooter';
 import AppContext from '../../../utility/AppContext';
 import AppSidebar from './AppSidebar';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import {LayoutType} from '../../../../utils/constants/AppEnums';
 
 const HorLightNav = (props) => {
   const classes = useStyles(props);

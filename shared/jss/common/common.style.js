@@ -1,5 +1,5 @@
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import {Fonts} from '../../constants/AppEnums';
+import {Fonts} from '../../../utils/constants/AppEnums';
 import {fade} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({

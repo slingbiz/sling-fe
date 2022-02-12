@@ -4,7 +4,7 @@ import {Auth as awsAuth, Hub} from 'aws-amplify';
 import {
   UPDATE_AUTH_USER,
   USER_LOADED,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import {auth as firebaseAuth} from '../services/auth/firebase-config';
 import {
   fetchStart,
@@ -12,8 +12,8 @@ import {
   onGetLoggedInCognitoUser,
   setJWTToken,
 } from '../../redux/actions';
-import {AuthType} from '../../shared/constants/AppEnums';
-import {defaultUser} from '../../shared/constants/AppConst';
+import {AuthType} from '../../utils/constants/AppEnums';
+import {defaultUser} from '../../utils/constants/AppConst';
 import jwtAxios from '../services/auth/jwt-auth/jwt-api';
 import {Cookies} from 'react-cookie';
 

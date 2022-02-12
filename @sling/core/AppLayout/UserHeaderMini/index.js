@@ -8,7 +8,7 @@ import useStyles from './index.style';
 import clsx from 'clsx';
 import AppContext from '../../../utility/AppContext';
 import AppFixedFooter from './AppFixedFooter';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import {LayoutType} from '../../../../utils/constants/AppEnums';
 
 const HeaderUserMiniLayout = (props) => {
   const {footer, themeStyle, layoutType, footerType} = useContext(AppContext);

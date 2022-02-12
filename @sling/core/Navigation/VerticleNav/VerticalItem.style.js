@@ -1,5 +1,5 @@
 import {makeStyles} from '@material-ui/core/styles';
-import {Fonts, ThemeMode} from '../../../../shared/constants/AppEnums';
+import {Fonts, ThemeMode} from '../../../../utils/constants/AppEnums';
 
 const useStyles = makeStyles((theme) => {
   return {

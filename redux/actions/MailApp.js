@@ -16,7 +16,7 @@ import {
   UPDATE_MAIL_LABEL,
   UPDATE_STARRED_STATUS,
   UPDATED_MAIL_DETAIL,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import Api from '../../@sling/services/ApiConfig';
 import {mailListMessages} from '../../@sling/services/db/apps/mail/folderList';
 import {appIntl} from '../../@sling/utility/Utils';

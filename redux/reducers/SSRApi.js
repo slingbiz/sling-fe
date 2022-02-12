@@ -1,7 +1,7 @@
 import {
   SET_SSR_API_RESPONSE,
   SET_PRODUCT_FILTER_DATA,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 
 const initialState = {
   ssrApi: {},

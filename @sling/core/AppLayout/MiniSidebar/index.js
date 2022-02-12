@@ -8,7 +8,7 @@ import useStyles from './index.style';
 import AppFixedFooter from './AppFixedFooter';
 import AppContext from '../../../utility/AppContext';
 import clsx from 'clsx';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import {LayoutType} from '../../../../utils/constants/AppEnums';
 
 const MiniSidebar = (props) => {
   const {footer, themeStyle, layoutType, footerType} = useContext(AppContext);

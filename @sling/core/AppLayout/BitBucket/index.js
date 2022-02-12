@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box';
 import AppHeader from './AppHeader';
 import clsx from 'clsx';
 import useStyles from './index.style';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import {LayoutType} from '../../../../utils/constants/AppEnums';
 
 const BitBucket = (props) => {
   const [isCollapsed, setCollapsed] = useState(false);

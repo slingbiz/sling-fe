@@ -7,7 +7,7 @@ import {
   GET_USER_MESSAGES,
   SELECT_USER,
   TOGGLE_CHAT_DRAWER,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 
 const initialState = {
   connectionList: [],

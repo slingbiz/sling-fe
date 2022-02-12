@@ -1,7 +1,7 @@
 import {
   SET_INITIAL_PATH,
   TOGGLE_NAV_COLLAPSED,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 
 const initialSettings = {
   navCollapsed: false,

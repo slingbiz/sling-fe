@@ -4,7 +4,7 @@ import {
   FETCH_START,
   FETCH_SUCCESS,
   GET_GALLERY_PHOTO,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import IntlMessages from '../../@sling/utility/IntlMessages';
 import React from 'react';
 

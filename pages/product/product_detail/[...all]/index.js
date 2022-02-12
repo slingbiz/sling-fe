@@ -1,5 +1,5 @@
 import React from 'react';
 
-import ProductDetail from '../../../../modules/ecommerce/ProductDetail';
+import ProductDetail from '../../../../utils/ecommerce/ProductDetail';
 
 export default ProductDetail;

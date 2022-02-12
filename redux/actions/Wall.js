@@ -6,7 +6,7 @@ import {
   GET_FEED_POSTS,
   GET_WALL_DATA,
   UPDATE_POST,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import Api from '../../@sling/services/ApiConfig';
 import IntlMessages from '../../@sling/utility/IntlMessages';
 import React from 'react';

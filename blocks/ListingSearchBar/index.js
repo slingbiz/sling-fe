@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {setViewType} from '../../redux/actions/Ecommerce';
 import {VIEW_TYPE} from '../../redux/reducers/Ecommerce';
 import {setProductFilters} from '../../redux/actions/SSRActions';
-import PureListingSearchBar from '../../@sling/widgets/PureListingSearchBar';
+import PureListingSearchBar from '../../widgets/PureListingSearchBar';
 import Grid from '@material-ui/core/Grid';
 import {makeStyles} from '@material-ui/core/styles';
 

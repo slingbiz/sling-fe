@@ -12,14 +12,14 @@ import Hidden from '@material-ui/core/Hidden';
 import HorizontalNav from '../../Navigation/HorizontalNav';
 import Box from '@material-ui/core/Box';
 import useStyles from './AppHeader.style';
-import SearchBar from '../../../widgets/SearchBar';
+import SearchBar from '../../../../widgets/SearchBar';
 import NotificationBar from './NotificationBar';
 import clsx from 'clsx';
-import HeaderMessages from '../../../widgets/HeaderMessages';
-import Notifications from '../../../widgets/Notifications';
+import HeaderMessages from '../../../../widgets/HeaderMessages';
+import Notifications from '../../../../widgets/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import HorUserInfo from '../HorUserInfo';
-import AppLogo from '../../../widgets/AppLogo';
+import AppLogo from '../../../../widgets/AppLogo';
 
 const AppHeader = () => {
   const classes = useStyles();

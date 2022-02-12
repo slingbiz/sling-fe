@@ -19,7 +19,7 @@ import Box from '@material-ui/core/Box';
 import IntlMessages from '../../utility/IntlMessages';
 import useStyles from './index.style';
 import CheckIcon from '@material-ui/icons/Check';
-import themeColorSets from '../../../shared/constants/ColorSets';
+import themeColorSets from '../../../utils/constants/ColorSets';
 import CustomColorCell from './CustomColorCell';
 import {
   FooterType,
@@ -27,7 +27,7 @@ import {
   RouteTransition,
   ThemeMode,
   ThemeStyle,
-} from '../../../shared/constants/AppEnums';
+} from '../../../utils/constants/AppEnums';
 
 const ThemeSetting = (props) => {
   const [open, setCustomizerStatus] = useState(false);

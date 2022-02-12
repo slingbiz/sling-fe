@@ -16,7 +16,7 @@ import {
   UPDATE_CUSTOM_DATA,
   UPDATE_DOCUMENT_DATA,
   UPDATE_INLINE_DATA,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import IntlMessages from '../../@sling/utility/IntlMessages';
 import React from 'react';
 

@@ -10,11 +10,11 @@ import LanguageSwitcher from '../../LanguageSwitcher';
 import {toggleNavCollapsed} from '../../../../redux/actions';
 import {useDispatch} from 'react-redux';
 import Box from '@material-ui/core/Box';
-import SearchBar from '../../../widgets/SearchBar';
+import SearchBar from '../../../../widgets/SearchBar';
 import useStyles from './AppHeader.style';
-import HeaderMessages from '../../../widgets/HeaderMessages';
-import Notifications from '../../../widgets/Notifications';
-import AppLogo from '../../../widgets/AppLogo';
+import HeaderMessages from '../../../../widgets/HeaderMessages';
+import Notifications from '../../../../widgets/Notifications';
+import AppLogo from '../../../../widgets/AppLogo';
 import clsx from 'clsx';
 
 const AppHeader = () => {

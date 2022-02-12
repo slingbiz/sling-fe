@@ -14,7 +14,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Box from '@material-ui/core/Box';
 import {orange} from '@material-ui/core/colors';
-import {AuthType, Fonts} from '../../../shared/constants/AppEnums';
+import {AuthType, Fonts} from '../../../utils/constants/AppEnums';
 import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles((theme) => {

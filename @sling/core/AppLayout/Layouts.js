@@ -9,7 +9,7 @@ import DefaultLayout from './DefaultLayout';
 import HeaderUserLayout from './UserHeader';
 import HeaderUserMiniLayout from './UserHeaderMini';
 import MiniSidebarToggle from './MiniSidebarToggle';
-import {NavStyle} from '../../../shared/constants/AppEnums';
+import {NavStyle} from '../../../utils/constants/AppEnums';
 
 const Layouts = {
   // [NavStyle.STANDARD]: Standard,

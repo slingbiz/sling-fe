@@ -1,4 +1,4 @@
-import {SET_ROUTE_CONSTANTS} from '../../shared/constants/ActionTypes';
+import {SET_ROUTE_CONSTANTS} from '../../utils/constants/ActionTypes';
 
 const initialState = {
   routeConstants: {},

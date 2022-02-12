@@ -5,11 +5,11 @@ import {
   SET_AUTH_TOKEN,
   SIGNOUT_AUTH_SUCCESS,
   UPDATE_AUTH_USER
-} from "../../shared/constants/ActionTypes";
+} from "../../utils/constants/ActionTypes";
 import jwtAxios from "../../@sling/services/auth/jwt-auth/jwt-api";
 import { fetchError, fetchStart, fetchSuccess } from "./Common";
-import { AuthType } from "../../shared/constants/AppEnums";
-import { defaultUser } from "../../shared/constants/AppConst";
+import { AuthType } from "../../utils/constants/AppEnums";
+import { defaultUser } from "../../utils/constants/AppConst";
 
 export const onJwtUserSignUp = ({ email, password, name }) => {
   return async (dispatch) => {

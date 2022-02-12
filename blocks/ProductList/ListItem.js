@@ -8,7 +8,7 @@ import IntlMessages from '../../@sling/utility/IntlMessages';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {green, grey} from '@material-ui/core/colors';
-import {Fonts} from '../../shared/constants/AppEnums';
+import {Fonts} from '../../utils/constants/AppEnums';
 import {setCurrentProduct} from '../../redux/actions/Ecommerce';
 import {useDispatch} from 'react-redux';
 import {useRouter} from 'next/router';

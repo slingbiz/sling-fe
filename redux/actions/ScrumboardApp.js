@@ -16,7 +16,7 @@ import {
   GET_MEMBER_LIST,
   GET_SCRUM_LABEL_LIST,
   SHOW_MESSAGE,
-} from '../../shared/constants/ActionTypes';
+} from '../../utils/constants/ActionTypes';
 import Api from '../../@sling/services/ApiConfig';
 import {appIntl} from '../../@sling/utility/Utils';
 
