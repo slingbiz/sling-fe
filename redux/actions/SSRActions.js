@@ -17,7 +17,7 @@ export const getProducts = (filterData) => {
   console.log('[onGetEcommerceData] action start');
   return (dispatch) => {
     dispatch({type: FETCH_START});
-    Api.post('/api/ecommerce/list', {
+    Api.post('/api/product/list', {
       params: {filterData},
     })
       .then((data) => {

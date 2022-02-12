@@ -35,7 +35,7 @@ const Customers = () => {
   return (
     <>
       <AppAnimate animation='transition.slideUpIn' delay={200}>
-        <AppsContainer title={messages['sidebar.ecommerce.customers']} fullView>
+        <AppsContainer title={messages['sidebar.product.customers']} fullView>
           <AppsHeader>
             <Box
               display='flex'

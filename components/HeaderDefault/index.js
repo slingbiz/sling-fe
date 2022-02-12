@@ -5,21 +5,17 @@ import IconButton from '@material-ui/core/IconButton';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import LanguageSwitcher from '../../LanguageSwitcher';
-import {useDispatch} from 'react-redux';
+import LanguageSwitcher from '../../@sling/core/LanguageSwitcher';
 import Box from '@material-ui/core/Box';
-import SearchBar from '../../../widgets/SearchBar';
-import useStyles from '../../../../components/HeaderDefault/Header.style';
-import HeaderMessages from '../../../widgets/HeaderMessages';
-import Notifications from '../../../widgets/Notifications';
-import AppLogo from '../../../widgets/AppLogo';
-import NotificationBar from '../HorDefault/NotificationBar';
-import HorizontalNav from '../../Navigation/HorizontalNav';
+import useStyles from './Header.style';
+import HeaderMessages from '../../@sling/widgets/HeaderMessages';
+import SearchBar from '../../@sling/widgets/SearchBar';
+import Notifications from '../../@sling/widgets/Notifications';
+import AppLogo from '../../@sling/widgets/AppLogo';
 import Hidden from '@material-ui/core/Hidden';
 
-const AppHeader = () => {
+const Header = ({style}) => {
   const classes = useStyles();
-  const dispatch = useDispatch();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -54,7 +50,7 @@ const AppHeader = () => {
 
   return (
     <>
-      <AppBar className='app-bar' color='inherit'>
+      <AppBar className='app-bar' color='inherit' style={{...style}}>
         {/*<NotificationBar />*/}
 
         <Toolbar className={classes.appToolbar}>
@@ -69,7 +65,7 @@ const AppHeader = () => {
 
           <AppLogo />
           <Box className={classes.grow} />
-          <SearchBar borderLight placeholder='Search…' />
+          {/*<SearchBar borderLight placeholder='Search…' />*/}
           <Box className={classes.sectionDesktop}>
             <LanguageSwitcher />
             <HeaderMessages />
@@ -99,4 +95,4 @@ const AppHeader = () => {
     </>
   );
 };
-export default AppHeader;
+export default Header;

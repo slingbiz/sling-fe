@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 import CustomizedBreadcrumbs from '../muiComponents/navigation/BreadCrumbs/CustomizedBreadcrumbs';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
-import FooterDefault from '../../@sling/components/FooterDefault';
+import FooterDefault from '../../components/FooterDefault';
 import Error from 'next/error';
 
 const useStyles = makeStyles((theme) => ({

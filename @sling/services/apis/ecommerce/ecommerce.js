@@ -6,13 +6,13 @@ import ecommerceData, {
 } from '../../db/ecommerce/ecommerceData';
 import {multiPropsFilter} from '../../../utility/Utils';
 
-mock.onGet('/api/ecommerce/list').reply((request) => {
+mock.onGet('/api/product/list').reply((request) => {
   const {filterData} = request.params;
   const data = multiPropsFilter(ecommerceData, filterData);
   return [200, data];
 });
 
-mock.onGet('/api/ecommerce/get').reply((request) => {
+mock.onGet('/api/product/get').reply((request) => {
   const {id} = request.params;
   console.log('id: ', id);
   if (id >= 1 && id <= 12) {
@@ -23,7 +23,7 @@ mock.onGet('/api/ecommerce/get').reply((request) => {
   return [200, ecommerceData[0]];
 });
 
-mock.onGet('/api/ecommerce/orders').reply((request) => {
+mock.onGet('/api/product/orders').reply((request) => {
   const {search, page} = request.params;
 
   let orders = [...recentOrders];
@@ -45,7 +45,7 @@ mock.onGet('/api/ecommerce/orders').reply((request) => {
   ];
 });
 
-mock.onGet('/api/ecommerce/customers').reply((request) => {
+mock.onGet('/api/product/customers').reply((request) => {
   const {search, page} = request.params;
 
   let customers = [...customersData];

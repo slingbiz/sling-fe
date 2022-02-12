@@ -11,7 +11,7 @@ import academy from '../../db/dashboard/academy';
 // Define all mocks of dashboard
 mock.onGet('/dashboard/analytics').reply(200, analytics);
 
-mock.onGet('/dashboard/ecommerce').reply(200, ecommerce);
+mock.onGet('/dashboard/product').reply(200, ecommerce);
 
 mock.onGet('/dashboard/crm').reply(200, crm);
 

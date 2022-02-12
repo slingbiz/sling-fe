@@ -59,7 +59,7 @@ const ItemsList = ({cartItems}) => {
             <Box mt='auto' p={4} display='flex' alignItems='center'>
               <Box component='span' mr={3}>
                 <img
-                  src={'/images/ecommerce/cart-icon.png'}
+                  src={'/images/product/cart-icon.png'}
                   alt='cart'
                 />
               </Box>

@@ -39,7 +39,7 @@ export const onGetAnalyticsData = () => {
 export const onGetECommerceData = () => {
   return (dispatch) => {
     dispatch({type: FETCH_START});
-    Api.get('/dashboard/ecommerce')
+    Api.get('/dashboard/product')
       .then((data) => {
         if (data.status === 200) {
           dispatch({type: FETCH_SUCCESS});

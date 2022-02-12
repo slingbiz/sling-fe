@@ -1,10 +1,10 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
-import Blocks from '../../blocks/index';
+import Blocks from '../../../blocks/index';
 import Widgets from '../../widgets/index';
 import Wrappers from '../../wrappers/index';
-import ComponentBlocks from '../../components/index';
+import ComponentBlocks from '../../../components/index';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 

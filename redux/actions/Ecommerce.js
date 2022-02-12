@@ -18,7 +18,7 @@ export const onGetEcommerceData = (filterData) => {
   console.log('[onGetEcommerceData] action  start');
   return (dispatch) => {
     dispatch({type: FETCH_START});
-    Api.get('/api/ecommerce/list', {
+    Api.get('/api/product/list', {
       params: {filterData},
     })
       .then((data) => {
@@ -42,7 +42,7 @@ export const onGetEcommerceData = (filterData) => {
 export const getProductDetail = (id) => {
   return (dispatch) => {
     dispatch({type: FETCH_START});
-    Api.get('/api/ecommerce/get', {
+    Api.get('/api/product/get', {
       params: {id: id},
     })
       .then((data) => {
@@ -64,7 +64,7 @@ export const getProductDetail = (id) => {
 export const getRecentOrders = (search, page) => {
   return (dispatch) => {
     dispatch({type: FETCH_START});
-    Api.get('/api/ecommerce/orders', {
+    Api.get('/api/product/orders', {
       params: {search, page},
     })
       .then((data) => {
@@ -86,7 +86,7 @@ export const getRecentOrders = (search, page) => {
 export const getCustomers = (search, page) => {
   return (dispatch) => {
     dispatch({type: FETCH_START});
-    Api.get('/api/ecommerce/customers', {
+    Api.get('/api/product/customers', {
       params: {search, page},
     })
       .then((data) => {

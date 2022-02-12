@@ -50,7 +50,7 @@ const AddressInfo = ({address}) => {
                 flexDirection='row'
                 alignItems='center'
                 mb={1}>
-                <img src={'/images/ecommerce/sms-icon.png'} alt='sms' />
+                <img src={'/images/product/sms-icon.png'} alt='sms' />
                 <Box px={4} fontSize={14}>
                   SMS updates at every step
                 </Box>
@@ -77,7 +77,7 @@ const AddressInfo = ({address}) => {
                 alignItems='center'
                 mb={1}>
                 <img
-                  src={'/images/ecommerce/add-person.png'}
+                  src={'/images/product/add-person.png'}
                   alt='sms'
                 />
                 <Box px={4} fontSize={14}>

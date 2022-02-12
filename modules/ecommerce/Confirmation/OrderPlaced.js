@@ -11,7 +11,7 @@ const OrderPlaced = ({cartItems}) => {
       <GridContainer>
         <Grid xs={12} md={8} item>
           <Box display='flex' p={4} alignItems='center'>
-            <img src={'/images/ecommerce/gift.png'} alt='confirm' />
+            <img src={'/images/product/gift.png'} alt='confirm' />
             <Box p={4}>
               <Box component='h3' color='primary.main' mb={0.5} fontSize={16}>
                 Order placed for ${getTotalPrice(cartItems)}!
@@ -35,7 +35,7 @@ const OrderPlaced = ({cartItems}) => {
             <Box ml='auto'>
               <img
                 style={{maxHeight: 60, marginTop: 20}}
-                src={'/images/ecommerce/confirm-box.png'}
+                src={'/images/product/confirm-box.png'}
                 alt='confirm'
               />
             </Box>

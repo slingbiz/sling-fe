@@ -1,18 +1,17 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import {Checkbox, makeStyles} from '@material-ui/core';
-import IntlMessages from '../../../../../@sling/utility/IntlMessages';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {green} from '@material-ui/core/colors';
 import clsx from 'clsx';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
-import {useDispatch} from 'react-redux';
-import {setCurrentProduct} from '../../../../../redux/actions/Ecommerce';
 import {useRouter} from 'next/router';
+import IntlMessages from '../../@sling/utility/IntlMessages';
+import {Fonts} from '../../shared/constants/AppEnums';
+import Typography from '@material-ui/core/Typography';
+const dot = require('dot-object');
 
 const useStyles = makeStyles((theme) => ({
   textUppercase: {
@@ -27,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
   textSm: {
     fontSize: 14,
   },
+  posAbs: {
+    position: 'absolute',
+  },
+  flr: {right: 0},
+  posRel: {position: 'relative'},
   textXs: {
     fontSize: 12,
   },
@@ -37,21 +41,43 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   truncate: {
+    // overflow: 'hidden',
+    // textOverflow: 'ellipsis',
+    // whiteSpace: 'nowrap',
+    display: 'box',
+    lineClamp: 3,
+    boxOrient: 'vertical',
     overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
+  },
+  titleTruncate: {
+    lineClamp: 1,
   },
   btn: {
     fontWeight: Fonts.MEDIUM,
     padding: '4px 12px',
     fontSize: 12,
   },
+  descpMargin: {
+    marginBottom: 10,
+  },
+  itemImg: {
+    width: '100%',
+    maxHeight: '220px !important',
+    height: 220,
+    overflow: 'hidden',
+    objectFit: 'contain',
+    objectPosition: '50% 50%',
+    verticalAlign: 'middle',
+  },
 }));
 
 const GridItem = (props) => {
-  const {item} = props;
-  const dispatch = useDispatch();
+  const {item, slingMapping} = props;
   const router = useRouter();
+
+  const getValue = (key) => {
+    return slingMapping[key] ? dot.pick(slingMapping[key], item) : item[key];
+  };
 
   const classes = useStyles(props);
   return (
@@ -60,12 +86,20 @@ const GridItem = (props) => {
       m={2}
       className='pointer item-hover'
       onClick={() => {
-        dispatch(setCurrentProduct(item));
         router.push('/product/product_detail/' + item.id);
-      }}
-      clone>
-      <Card style={{width: '100%'}}>
-        <Box mt={2} mb={5} display='flex' justifyContent='space-between'>
+      }}>
+      <Box style={{display: 'flex', flexDirection: 'column'}}>
+        <Box
+          mt={2}
+          mb={5}
+          display='flex'
+          justifyContent='space-between'
+          className={classes.posRel}>
+          <img
+            className={classes.itemImg}
+            src={getValue('image') || ''}
+            alt='watch'
+          />
           <Box
             component='span'
             maxHeight={28}
@@ -79,14 +113,15 @@ const GridItem = (props) => {
             alignItems='center'
             fontWeight={Fonts.MEDIUM}
             borderRadius={8}
-            className={classes.textSm}>
-            {item.rating}
+            className={clsx(classes.textSm, classes.posAbs)}>
+            {getValue('rating_count')}
+
             <Box component='span' ml={1}>
               <StarBorderIcon className={classes.textBase} />
             </Box>
           </Box>
-          <img src={item.image[0].src} alt='watch' />
-          <Box mt={-3}>
+
+          <Box mt={-3} className={clsx(classes.posAbs, classes.flr)}>
             <Checkbox
               icon={<FavoriteBorderIcon />}
               checkedIcon={<FavoriteOutlinedIcon />}
@@ -99,18 +134,22 @@ const GridItem = (props) => {
           color='text.primary'
           fontWeight={Fonts.BOLD}
           fontSize={16}
-          component='h3'
-          className={classes.truncate}>
+          component='h4'
+          className={clsx(classes.truncate, classes.titleTruncate)}>
           {item.title}
+          {getValue('title')}
         </Box>
 
-        <Box
-          mb={3}
-          mr={6}
+        <Typography
+          component='h6'
           color='text.secondary'
-          className={clsx(classes.truncate, classes.textSm)}>
-          {item.description}
-        </Box>
+          className={clsx(
+            classes.truncate,
+            classes.textSm,
+            classes.descpMargin,
+          )}>
+          {getValue('description')}
+        </Typography>
 
         <Box
           mx={-1}
@@ -121,21 +160,30 @@ const GridItem = (props) => {
           justifyContent='space-between'
           className={classes.textRes}>
           <Box px={1} mb={2} component='span' color='text.primary'>
-            $ {+item.mrp - Math.round((+item.mrp * +item.discount) / 100)}
+            ${getValue('original_price')}
           </Box>
-          <Box
-            px={1}
-            mb={2}
-            component='span'
-            color='text.disabled'
-            className={classes.lineThrough}>
-            ${item.mrp}
-          </Box>
-          <Box px={1} mb={2} component='span' color={green[500]}>
-            {item.discount}% <IntlMessages id='ecommerce.off' />
-          </Box>
+          {getValue('discounted_price') ? (
+            <>
+              <Box
+                px={1}
+                mb={2}
+                component='span'
+                color='text.disabled'
+                className={classes.lineThrough}>
+                ${getValue('discounted_price')}
+              </Box>
+              <Box px={1} mb={2} component='span' color={green[500]}>
+                {getValue('original_price') -
+                  (getValue('discounted_price') / getValue('original_price')) *
+                    100}
+                % <IntlMessages id='ecommerce.off' />
+              </Box>
+            </>
+          ) : (
+            ''
+          )}
         </Box>
-      </Card>
+      </Box>
     </Box>
   );
 };

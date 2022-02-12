@@ -86,7 +86,7 @@ const ListItem = (props) => {
       className='pointer item-hover'
       onClick={() => {
         dispatch(setCurrentProduct(item));
-        router.push('/ecommerce/product_detail/' + item.id);
+        router.push('/product/product_detail/' + item.id);
       }}
       clone>
       <Card>
