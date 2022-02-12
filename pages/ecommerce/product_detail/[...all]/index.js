@@ -1,6 +1,5 @@
-import React from "react";
-import AppPage from "../../../../@sling/hoc/AppPage";
-import asyncComponent from "../../../../@sling/utility/asyncComponent";
+import React from 'react';
 
-const ProductDetail = asyncComponent(() => import("../../../../modules/ecommerce/ProductDetail"));
-export default AppPage(() => <ProductDetail/>);
+import ProductDetail from '../../../../modules/ecommerce/ProductDetail';
+
+export default ProductDetail;

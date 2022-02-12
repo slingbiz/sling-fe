@@ -14,7 +14,7 @@ import Notifications from '../../widgets/Notifications';
 import AppLogo from '../../widgets/AppLogo';
 import Hidden from '@material-ui/core/Hidden';
 
-const Header = () => {
+const Header = ({style}) => {
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -50,7 +50,7 @@ const Header = () => {
 
   return (
     <>
-      <AppBar className='app-bar' color='inherit'>
+      <AppBar className='app-bar' color='inherit' style={{...style}}>
         {/*<NotificationBar />*/}
 
         <Toolbar className={classes.appToolbar}>

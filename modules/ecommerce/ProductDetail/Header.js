@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(5),
     borderBottom: '1px solid #E5E4EA',
     marginBottom: 20,
-    alignItems: 'center',
+    // alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
     },
