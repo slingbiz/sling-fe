@@ -5,7 +5,7 @@ import {VIEW_TYPE} from '../../redux/reducers/Ecommerce';
 import {useDispatch, useSelector} from 'react-redux';
 import ProductGrid from './ProductGrid';
 import ProductList from './ProductList';
-import PaginationControlled from '../../utils/muiComponents/util/Pagination/Controlled';
+import PaginationControlled from '../../widgets/PaginationControlled/index';
 import {getProducts} from '../../redux/actions/SSRActions';
 
 const dot = require('dot-object');

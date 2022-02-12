@@ -4,6 +4,7 @@ import Notifications from './Notifications';
 import PureListingSearchBar from './PureListingSearchBar';
 import SearchBar from './SearchBar';
 import BreadCrumbsDefault from './BreadCrumbsDefault';
+import PaginationControlled from './PaginationControlled';
 
 const Widgets = {
   ['AppLogo']: AppLogo,
@@ -12,6 +13,7 @@ const Widgets = {
   ['PureListingSearchBar']: PureListingSearchBar,
   ['SearchBar']: SearchBar,
   ['BreadCrumbsDefault']: BreadCrumbsDefault,
+  ['PaginationControlled']: PaginationControlled,
 };
 
 export default Widgets;

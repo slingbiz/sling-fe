@@ -3,7 +3,7 @@ import {Box, fade} from '@material-ui/core';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import GridItem from '../../utils/ecommerce/Products/ProductListing/ProductGrid/GridItem';
+import GridItemStatic from '../ProductList/GridItemStatic';
 import ecommerce from '../../@sling/services/db/ecommerce/ecommerceData';
 import {AppContext} from '../../@sling';
 
@@ -58,7 +58,7 @@ const SimilarProduct = () => {
       <Slider {...settings}>
         {ecommerce.map((item, index) => (
           <Box p={5} key={index}>
-            <GridItem key={index} item={item} />
+            <GridItemStatic key={index} item={item} />
           </Box>
         ))}
       </Slider>
