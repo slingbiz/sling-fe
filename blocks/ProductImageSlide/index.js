@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import Grid from '@material-ui/core/Grid';
-import {addItemToCart} from '../../../../redux/actions/Ecommerce';
+import {addItemToCart} from '../../redux/actions/Ecommerce';
 import {useDispatch} from 'react-redux';
 import { useRouter } from "next/router";
 

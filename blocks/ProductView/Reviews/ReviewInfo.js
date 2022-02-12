@@ -1,9 +1,9 @@
 import React from 'react';
 import {Box} from '@material-ui/core';
-import AppCircularProgress from '../../../../../@sling/core/AppCircularProgress';
-import {Fonts} from '../../../../constants/AppEnums';
+import AppCircularProgress from '../../../@sling/core/AppCircularProgress';
+import {Fonts} from '../../../utils/constants/AppEnums';
 import StarRateIcon from '@material-ui/icons/StarRate';
-import AppLinearProgress from '../../../../../@sling/core/AppLinearProgress';
+import AppLinearProgress from '../../../@sling/core/AppLinearProgress';
 
 const ReviewInfo = () => {
   return (

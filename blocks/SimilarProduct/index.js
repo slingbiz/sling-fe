@@ -3,9 +3,9 @@ import {Box, fade} from '@material-ui/core';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import GridItem from '../../Products/ProductListing/ProductGrid/GridItem';
-import ecommerce from '../../../../@sling/services/db/ecommerce/ecommerceData';
-import {AppContext} from '../../../../@sling';
+import GridItem from '../../utils/ecommerce/Products/ProductListing/ProductGrid/GridItem';
+import ecommerce from '../../@sling/services/db/ecommerce/ecommerceData';
+import {AppContext} from '../../@sling';
 
 const settings = {
   dots: true,

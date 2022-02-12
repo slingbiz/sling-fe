@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box} from '@material-ui/core';
-import {Fonts} from '../../../../constants/AppEnums';
+import {Fonts} from '../../../utils/constants/AppEnums';
 import {makeStyles} from '@material-ui/core/styles';
 import StarRateIcon from '@material-ui/icons/StarRate';
 import Avatar from '@material-ui/core/Avatar';

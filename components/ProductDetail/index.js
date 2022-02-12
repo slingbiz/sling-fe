@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
-import ProductImageSlide from './ProductImageSlide';
+import ProductImageSlide from '../../blocks/ProductImageSlide';
 import {useDispatch, useSelector} from 'react-redux';
 import Header from './Header';
-import HeaderCommon from '../../../components/HeaderDefault';
-import ProductView from './ProductView/index';
-import GridContainer from '../../../@sling/core/GridContainer';
-import SimilarProduct from './SimilarProduct';
-import {getProductDetail} from '../../../redux/actions/Ecommerce';
-import {InfoView} from '../../../@sling';
+import HeaderCommon from '../HeaderDefault';
+import ProductView from '../../blocks/ProductView';
+import GridContainer from '../../@sling/core/GridContainer';
+import SimilarProduct from '../../blocks/SimilarProduct';
+import {getProductDetail} from '../../redux/actions/Ecommerce';
+import {InfoView} from '../../@sling';
 import {useRouter} from 'next/router';
 import {Box, Card} from '@material-ui/core';
 
