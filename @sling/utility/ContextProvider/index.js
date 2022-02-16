@@ -1,11 +1,15 @@
 import React, {useCallback, useReducer} from 'react';
-import defaultConfig from './defaultConfig';
 import AppContext from '../AppContext';
 import PropTypes from 'prop-types';
 import {contextReducer, ThemeSetting} from './ContextReducer';
 
-const ContextProvider = ({children, initConfig}) => {
-
+const ContextProvider = ({
+  children,
+  initConfig,
+  layout,
+  routeConstants,
+  ssrApi,
+}) => {
   const ContextState = {
     theme: initConfig.theme,
     footer: initConfig.footer,
@@ -21,6 +25,9 @@ const ContextProvider = ({children, initConfig}) => {
     primary: initConfig.theme.palette.primary.main,
     sidebarColor: initConfig.theme.palette.sidebar.bgColor,
     secondary: initConfig.theme.palette.secondary.main,
+    layout: layout,
+    routeConstants: routeConstants,
+    ssrApi: ssrApi,
   };
 
   const [state, dispatch] = useReducer(

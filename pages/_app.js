@@ -49,15 +49,17 @@ const MyApp = ({
   return (
     <React.Fragment>
       <PageMeta />
-      <ContextProvider initConfig={initConfig}>
+      <ContextProvider
+        initConfig={initConfig}
+        layout={{layoutConfig, pageTemplate}}
+        routeConstants={routeConstants}
+        ssrApi={apiResponse}>
         <Provider store={store}>
           <SlingThemeProvider>
             <SlingStyleProvider>
               <LocaleProvider>
-                {/*<AuthRoutes>*/}
                 <CssBaseline />
                 <Component />
-                {/*</AuthRoutes>*/}
               </LocaleProvider>
             </SlingStyleProvider>
           </SlingThemeProvider>

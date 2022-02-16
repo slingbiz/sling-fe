@@ -11,8 +11,8 @@ import {
   UPDATE_CART_ITEM,
 } from '../../utils/constants/ActionTypes';
 import {cartItems} from '../../@sling/services/db/ecommerce/ecommerceData';
+import {VIEW_TYPE} from "../../utils/constants/AppConst";
 
-export const VIEW_TYPE = Object.freeze({LIST: 1, GRID: 2});
 const initialState = {
   ecommerceList: [],
   viewType: VIEW_TYPE.GRID,

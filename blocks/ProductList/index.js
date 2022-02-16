@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Box} from '@material-ui/core';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import {VIEW_TYPE} from '../../redux/reducers/Ecommerce';
 import {useDispatch, useSelector} from 'react-redux';
 import ProductGrid from './ProductGrid';
 import ProductList from './ProductList';
 import PaginationControlled from '../../widgets/PaginationControlled/index';
+import {AppContext} from '../../@sling';
+import {VIEW_TYPE} from "../../utils/constants/AppConst";
 
 const dot = require('dot-object');
 
@@ -23,7 +24,8 @@ const Products = ({widgetProps}) => {
   const dispatch = useDispatch();
 
   const {viewType} = useSelector(({ecommerce}) => ecommerce);
-  const {fakeProducts, filterData} = useSelector(({ssrApi}) => ssrApi);
+  const {isRTL, ssrApi} = useContext(AppContext);
+  const {fakeProducts, filterData} = ssrApi;
 
   const {responsePath} = widgetProps;
   let products = fakeProducts;

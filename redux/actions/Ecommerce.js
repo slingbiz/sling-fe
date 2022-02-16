@@ -1,43 +1,12 @@
 import {
-  ADD_CART_ITEM,
   FETCH_ERROR,
   FETCH_START,
   FETCH_SUCCESS,
-  GET_CUSTOMERS,
-  GET_ECOMMERCE_LIST,
-  GET_RECENT_ORDER,
-  REMOVE_CART_ITEM,
   SET_FILTER_DATA,
   SET_PRODUCT_DATA,
   SET_PRODUCT_VIEW_TYPE,
-  UPDATE_CART_ITEM,
 } from '../../utils/constants/ActionTypes';
 import Api from '../../@sling/services/ApiConfig';
-
-export const onGetEcommerceData = (filterData) => {
-  console.log('[onGetEcommerceData] action  start');
-  return (dispatch) => {
-    dispatch({type: FETCH_START});
-    Api.get('/api/product/list', {
-      params: {filterData},
-    })
-      .then((data) => {
-        if (data.status === 200) {
-          console.log(data, '[onGetEcommerceData] action - data Response on 200',);
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_ECOMMERCE_LIST, payload: data.data});
-        } else {
-          dispatch({
-            type: FETCH_ERROR,
-            payload: 'Something went wrong, Please try again!',
-          });
-        }
-      })
-      .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
-      });
-  };
-};
 
 export const getProductDetail = (id) => {
   return (dispatch) => {
@@ -61,99 +30,10 @@ export const getProductDetail = (id) => {
       });
   };
 };
-export const getRecentOrders = (search, page) => {
-  return (dispatch) => {
-    dispatch({type: FETCH_START});
-    Api.get('/api/product/orders', {
-      params: {search, page},
-    })
-      .then((data) => {
-        if (data.status === 200) {
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_RECENT_ORDER, payload: data.data});
-        } else {
-          dispatch({
-            type: FETCH_ERROR,
-            payload: 'Something went wrong, Please try again!',
-          });
-        }
-      })
-      .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
-      });
-  };
-};
-export const getCustomers = (search, page) => {
-  return (dispatch) => {
-    dispatch({type: FETCH_START});
-    Api.get('/api/product/customers', {
-      params: {search, page},
-    })
-      .then((data) => {
-        if (data.status === 200) {
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_CUSTOMERS, payload: data.data});
-        } else {
-          dispatch({
-            type: FETCH_ERROR,
-            payload: 'Something went wrong, Please try again!',
-          });
-        }
-      })
-      .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
-      });
-  };
-};
-
-export const getCartItems = () => {
-  return (dispatch) => {
-    dispatch({type: FETCH_START});
-    //   Api.get('/api/cart/get')
-    //     .then((data) => {
-    //       if (data.status === 200) {
-    dispatch({type: FETCH_SUCCESS});
-    //         dispatch({type: SET_CART_ITEMS, payload: data.data});
-    //       } else {
-    //         dispatch({
-    //           type: FETCH_ERROR,
-    //           payload: 'Something went wrong, Please try again!',
-    //         });
-    //       }
-    //     })
-    //     .catch((error) => {
-    //       dispatch({type: FETCH_ERROR, payload: error.message});
-    //     });
-  };
-};
 
 export const setViewType = (viewType) => {
   return (dispatch) => {
     dispatch({type: SET_PRODUCT_VIEW_TYPE, payload: viewType});
-  };
-};
-
-export const removeCartItem = (data) => {
-  return (dispatch) => {
-    dispatch({type: REMOVE_CART_ITEM, payload: data});
-  };
-};
-
-export const updateCartItem = (data) => {
-  return (dispatch) => {
-    dispatch({type: UPDATE_CART_ITEM, payload: data});
-  };
-};
-
-export const addItemToCart = (data) => {
-  return (dispatch) => {
-    dispatch({type: ADD_CART_ITEM, payload: data});
-  };
-};
-
-export const setCurrentProduct = (product) => {
-  return (dispatch) => {
-    dispatch({type: SET_PRODUCT_DATA, payload: product});
   };
 };
 

@@ -1,15 +1,14 @@
 import React, {useCallback} from 'react';
-import {Box} from '@material-ui/core';
 import ListIcon from '@material-ui/icons/List';
 import AppsIcon from '@material-ui/icons/Apps';
 import IconButton from '@material-ui/core/IconButton';
 import {useDispatch, useSelector} from 'react-redux';
 import {setViewType} from '../../redux/actions/Ecommerce';
-import {VIEW_TYPE} from '../../redux/reducers/Ecommerce';
 import {setProductFilters} from '../../redux/actions/SSRActions';
 import PureListingSearchBar from '../../widgets/PureListingSearchBar';
 import Grid from '@material-ui/core/Grid';
 import {makeStyles} from '@material-ui/core/styles';
+import {VIEW_TYPE} from '../../utils/constants/AppConst';
 
 const _ = require('lodash');
 const useStyles = makeStyles((theme) => ({
