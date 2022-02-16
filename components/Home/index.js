@@ -4,7 +4,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Card from '@material-ui/core/Card';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
-import {Fonts} from '../../utils/constants/AppEnums';
+import {Fonts} from '../../@sling/utility/constants/AppEnums';
 import IntlMessages from '../../@sling/utility/IntlMessages';
 import Header from '../HeaderDefault';
 import FooterDefault from '../FooterDefault';

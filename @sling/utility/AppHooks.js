@@ -12,7 +12,7 @@ import {
   onGetLoggedInCognitoUser,
   setJWTToken,
 } from '../../redux/actions';
-import {AuthType} from '../../utils/constants/AppEnums';
+import {AuthType} from './constants/AppEnums';
 import {defaultUser} from '../../utils/constants/AppConst';
 import jwtAxios from '../services/auth/jwt-auth/jwt-api';
 import {Cookies} from 'react-cookie';

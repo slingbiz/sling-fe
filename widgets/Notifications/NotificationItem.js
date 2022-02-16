@@ -4,7 +4,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import PropTypes from 'prop-types';
 import {ListItem, makeStyles} from '@material-ui/core';
-import {Fonts} from '../../utils/constants/AppEnums';
+import {Fonts} from '../../@sling/utility/constants/AppEnums';
 import clsx from 'clsx';
 
 const useStyles = makeStyles((theme) => ({

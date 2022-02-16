@@ -16,7 +16,7 @@ import Menu from '@material-ui/core/Menu';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
 import {orange} from '@material-ui/core/colors';
-import {AuthType, Fonts, ThemeMode} from '../../utils/constants/AppEnums';
+import {AuthType, Fonts, ThemeMode} from '../../@sling/utility/constants/AppEnums';
 import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles((theme) => {

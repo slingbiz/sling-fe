@@ -12,7 +12,7 @@ import Button from '@material-ui/core/Button';
 import IntlMessages from '../../@sling/utility/IntlMessages';
 import Hidden from '@material-ui/core/Hidden';
 import clsx from 'clsx';
-import {Fonts} from '../../utils/constants/AppEnums';
+import {Fonts} from '../../@sling/utility/constants/AppEnums';
 
 const HeaderMessages = (props) => {
   const [anchorMessages, setAnchorMessages] = React.useState(null);

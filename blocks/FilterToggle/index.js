@@ -8,10 +8,10 @@ import IconButton from '@material-ui/core/IconButton';
 // import MenuIcon from '@material-ui/icons/Filter';
 // import FilterAltIcon from '@material-ui/icons/FilterAlt';
 import FilterListIcon from '@material-ui/icons/FilterList';
-import {Fonts} from '../../utils/constants/AppEnums';
+import {Fonts} from '../../@sling/utility/constants/AppEnums';
 import {AppContext} from '../../@sling';
 import {makeStyles} from '@material-ui/core/styles';
-import {NavStyle} from '../../utils/constants/AppEnums';
+import {NavStyle} from '../../@sling/utility/constants/AppEnums';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({

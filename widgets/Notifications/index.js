@@ -11,7 +11,7 @@ import IntlMessages from '../../@sling/utility/IntlMessages';
 import Hidden from '@material-ui/core/Hidden';
 import clsx from 'clsx';
 import NotificationItem from './NotificationItem';
-import {Fonts} from '../../utils/constants/AppEnums';
+import {Fonts} from '../../@sling/utility/constants/AppEnums';
 
 const useStyles = makeStyles((theme) => ({
   crPopover: {

@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core';
 import {grey} from '@material-ui/core/colors';
-import {Fonts} from '../../utils/constants/AppEnums';
+import {Fonts} from '../../@sling/utility/constants/AppEnums';
 import {initialUrl} from '../../utils/constants/AppConst';
 
 const useStyles = makeStyles((theme) => {

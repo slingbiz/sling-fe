@@ -6,7 +6,7 @@ import ProductGrid from './ProductGrid';
 import ProductList from './ProductList';
 import PaginationControlled from '../../widgets/PaginationControlled/index';
 import {AppContext} from '../../@sling';
-import {VIEW_TYPE} from "../../utils/constants/AppConst";
+import {VIEW_TYPE} from '../../utils/constants/AppConst';
 
 const dot = require('dot-object');
 
@@ -21,7 +21,6 @@ const useStyles = makeStyles(() => ({
 
 const Products = ({widgetProps}) => {
   const classes = useStyles();
-  const dispatch = useDispatch();
 
   const {viewType} = useSelector(({ecommerce}) => ecommerce);
   const {isRTL, ssrApi} = useContext(AppContext);

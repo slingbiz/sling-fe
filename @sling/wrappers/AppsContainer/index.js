@@ -7,7 +7,7 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../utils/constants/AppEnums';
+import {Fonts} from '../../utility/constants/AppEnums';
 import Card from '@material-ui/core/Card';
 import useStyles from './index.style';
 import {AppContext} from '../../index';

@@ -2,7 +2,7 @@ import {
   ThemeMode,
   ThemeStyle,
   ThemeStyleRadius,
-} from '../../../utils/constants/AppEnums';
+} from '../constants/AppEnums';
 import {isBreakPointDown} from '../Utils';
 
 export const ThemeSetting = {

@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core';
-import {Fonts} from '../../../utils/constants/AppEnums';
+import {Fonts} from '../../utility/constants/AppEnums';
 import Button from '@material-ui/core/Button';
 import Link from "next/link";
 

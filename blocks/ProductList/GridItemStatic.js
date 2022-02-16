@@ -9,7 +9,7 @@ import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {green} from '@material-ui/core/colors';
 import clsx from 'clsx';
-import {Fonts} from '../../utils/constants/AppEnums';
+import {Fonts} from '../../@sling/utility/constants/AppEnums';
 import {useDispatch} from 'react-redux';
 import {setCurrentProduct} from '../../redux/actions/Ecommerce';
 import {useRouter} from 'next/router';

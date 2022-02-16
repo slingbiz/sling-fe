@@ -1,5 +1,5 @@
 import {makeStyles} from '@material-ui/core/styles';
-import {NavStyle} from '../../../utils/constants/AppEnums';
+import {NavStyle} from '../../utility/constants/AppEnums';
 
 const getHeaderHeight = (navStyle, screenSize) => {
   if (

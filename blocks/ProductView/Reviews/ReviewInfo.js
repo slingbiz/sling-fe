@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box} from '@material-ui/core';
 import AppCircularProgress from '../../../@sling/core/AppCircularProgress';
-import {Fonts} from '../../../utils/constants/AppEnums';
+import {Fonts} from '../../../@sling/utility/constants/AppEnums';
 import StarRateIcon from '@material-ui/icons/StarRate';
 import AppLinearProgress from '../../../@sling/core/AppLinearProgress';
 

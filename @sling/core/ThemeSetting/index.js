@@ -4,7 +4,6 @@ import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import PrimaryColorPicker from './PrimaryColorPicker';
 import SecondaryColorPicker from './SecondaryColorPicker';
-import IconButton from '@material-ui/core/IconButton';
 import Drawer from '@material-ui/core/Drawer';
 import SidebarColorPicker from './SidebarColorPicker';
 import FormControl from '@material-ui/core/FormControl';
@@ -18,15 +17,13 @@ import Box from '@material-ui/core/Box';
 import IntlMessages from '../../utility/IntlMessages';
 import useStyles from './index.style';
 import CheckIcon from '@material-ui/icons/Check';
-import themeColorSets from '../../../utils/constants/ColorSets';
-import CustomColorCell from './CustomColorCell';
 import {
   FooterType,
   LayoutType,
   RouteTransition,
   ThemeMode,
   ThemeStyle,
-} from '../../../utils/constants/AppEnums';
+} from '../../utility/constants/AppEnums';
 
 const ThemeSetting = (props) => {
   const [open, setCustomizerStatus] = useState(false);
@@ -212,15 +209,7 @@ const ThemeSetting = (props) => {
               </Box>
             ) : (
               <Box mt={4}>
-                <Box component='ul' className={classes.colorOptionList}>
-                  {themeColorSets.map((colorSet, index) => (
-                    <CustomColorCell
-                      key={index}
-                      updateThemeColors={updateThemeColors}
-                      themeColorSet={colorSet}
-                    />
-                  ))}
-                </Box>
+                <Box component='ul' className={classes.colorOptionList}></Box>
               </Box>
             )}
           </Box>

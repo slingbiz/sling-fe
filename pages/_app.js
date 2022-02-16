@@ -10,7 +10,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/index.css';
 import '../@sling/services/index';
 // import AuthRoutes from '../@sling/utility/AuthRoutes';
-import PageMeta from '../@sling/core/PageMeta';
+import {PageMeta} from '../@sling';
 import {default as defaultStaticConfig} from '../@sling/utility/ContextProvider/defaultConfig';
 import {
   GET_INIT_PROPS,

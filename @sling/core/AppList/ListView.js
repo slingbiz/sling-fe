@@ -3,7 +3,7 @@ import {useBottomScrollListener} from 'react-bottom-scroll-listener';
 import PropTypes from 'prop-types';
 import {useTheme} from '@material-ui/core';
 import grey from '@material-ui/core/colors/grey';
-import Box from "@material-ui/core/Box";
+import Box from '@material-ui/core/Box';
 
 const getEmptyContainer = (ListEmptyComponent) => {
   if (ListEmptyComponent)

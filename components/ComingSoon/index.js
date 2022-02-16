@@ -5,13 +5,13 @@ import {useDispatch} from 'react-redux';
 import {Form, Formik, useField} from 'formik';
 import * as yup from 'yup';
 import {showMessage} from '../../redux/actions';
-import InfoView from '../../@sling/core/InfoView';
+import {InfoView} from '../../@sling';
 import IntlMessages from '../../@sling/utility/IntlMessages';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import {grey} from '@material-ui/core/colors';
 import {makeStyles} from '@material-ui/core';
-import {Fonts} from '../../utils/constants/AppEnums';
+import {Fonts} from '../../@sling/utility/constants/AppEnums';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -124,10 +124,7 @@ const ComingSoon = () => {
             </Formik>
           </Box>
           <Box mb={5} maxWidth={{xs: 300, sm: 400, xl: 672}} width='100%'>
-            <img
-              src={'/images/errorPageImages/comingsoon.png'}
-              alt='404'
-            />
+            <img src={'/images/errorPageImages/comingsoon.png'} alt='404' />
           </Box>
         </Box>
         <InfoView />
