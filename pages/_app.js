@@ -45,7 +45,7 @@ const MyApp = ({
     }
   }, []);
 
-  console.log(initConfig, '[initConfig  - in _app.js]');
+  console.log('[initConfig  - in _app.js]');
   return (
     <React.Fragment>
       <PageMeta />

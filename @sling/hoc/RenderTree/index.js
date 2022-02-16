@@ -15,6 +15,7 @@ const NodeTypeMap = {
 };
 
 const RenderTree = (props) => {
+
   const {layout} = props;
   const tree = layout?.root;
   const elements = [];
@@ -44,7 +45,7 @@ const RenderTree = (props) => {
                     if (muiHidden) {
                       console.log('[muiHidden]', muiHidden, key);
                       return (
-                        <Hidden {...muiHidden} >
+                        <Hidden {...muiHidden}>
                           <Grid item display={'flex'} flex={1} {...muiWidths}>
                             <CellComponent
                               parentProps={props}

@@ -15,7 +15,6 @@ const ssrApi = (state = initialState, action) => {
     }
 
     case SET_PRODUCT_FILTER_DATA:
-      console.log(action.payload, 'SET_PRODUCT_FILTER_DATA @SSRApi Reducer');
       return {
         ...state,
         filterData: action.payload,

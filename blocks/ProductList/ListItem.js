@@ -94,7 +94,7 @@ const ListItem = (props) => {
       className='pointer item-hover'
       onClick={() => {
         dispatch(setCurrentProduct(item));
-        router.push('/product/product_detail/' + item.id);
+        router.push('/product/detail/' + item.id);
       }}
       clone>
       <Grid item xs={3}>

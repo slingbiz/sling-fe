@@ -1,16 +1,12 @@
 import React, {useContext} from 'react';
-import languageData from './data';
-import Menu from '@material-ui/core/Menu';
 import AppContext from '../../utility/AppContext';
 import IconButton from '@material-ui/core/IconButton';
-import MenuItem from '@material-ui/core/MenuItem';
 import clsx from 'clsx';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core';
 import {Fonts} from '../../../utils/constants/AppEnums';
 import Button from '@material-ui/core/Button';
-import red from '@material-ui/core/colors/red';
 import Link from "next/link";
 
 const LanguageSwitcher = (props) => {

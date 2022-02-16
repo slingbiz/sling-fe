@@ -9,7 +9,7 @@ import {
   LinkedinIcon,
   LinkedinShareButton,
   TwitterIcon,
-  TwitterShareButton,
+  InstapaperShareButton,
 } from 'react-share';
 
 const useStyles = makeStyles((theme) => ({
@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Header = ({product}) => {
-  const shareUrl = 'http://sling-react.firebaseapp.com/';
   const classes = useStyles();
   return (
     <Box className={classes.root}>
@@ -60,15 +59,19 @@ const Header = ({product}) => {
       </Box>
 
       <Box className={classes.socialButtons}>
-        <LinkedinShareButton url={shareUrl} style={{marginRight: 10}}>
+        <LinkedinShareButton
+          url={'https://www.linkedin.com/company/sling-biz'}
+          style={{marginRight: 10}}>
           <LinkedinIcon size={32} round={true} />
         </LinkedinShareButton>
-        <FacebookShareButton url={shareUrl} style={{marginRight: 10}}>
+        <FacebookShareButton
+          url={'https://www.linkedin.com/company/sling-biz'}
+          style={{marginRight: 10}}>
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
-        <TwitterShareButton url={shareUrl}>
+        <InstapaperShareButton url={'https://www.instagram.com/sling.biz/'}>
           <TwitterIcon size={32} round={true} />
-        </TwitterShareButton>
+        </InstapaperShareButton>
       </Box>
     </Box>
   );

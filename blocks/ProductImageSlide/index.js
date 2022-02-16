@@ -8,16 +8,16 @@ import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import Grid from '@material-ui/core/Grid';
 import {addItemToCart} from '../../redux/actions/Ecommerce';
 import {useDispatch} from 'react-redux';
-import { useRouter } from "next/router";
+import {useRouter} from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'relative',
     display: 'flex',
     /*
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-    },*/ '& .BrainhubCarousel__container': {
+        [theme.breakpoints.down('sm')]: {
+          flexDirection: 'column',
+        },*/ '& .BrainhubCarousel__container': {
       // border: '1px solid #acacac',
       marginLeft: 10,
       borderRadius: 10,

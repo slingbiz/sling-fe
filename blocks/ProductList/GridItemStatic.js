@@ -61,7 +61,7 @@ const GridItemStatic = (props) => {
       className='pointer item-hover'
       onClick={() => {
         dispatch(setCurrentProduct(item));
-        router.push('/product/product_detail/' + item.id);
+        router.push('/product/detail/' + item.id);
       }}
       clone>
       <Card style={{width: '100%'}}>

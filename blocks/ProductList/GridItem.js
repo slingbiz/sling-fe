@@ -86,7 +86,7 @@ const GridItem = (props) => {
       m={2}
       className='pointer item-hover'
       onClick={() => {
-        router.push('/product/product_detail/' + item.id);
+        router.push('/product/detail/' + item.id);
       }}>
       <Box style={{display: 'flex', flexDirection: 'column'}}>
         <Box
