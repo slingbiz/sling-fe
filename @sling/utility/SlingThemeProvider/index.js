@@ -1,13 +1,11 @@
 import React, {useContext, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import MomentUtils from '@date-io/moment';
-// import moment from 'moment';
-import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+import {ThemeProvider} from '@material-ui/core/styles';
 import {MuiPickersUtilsProvider} from '@material-ui/pickers';
 
 import AppContext from '../AppContext';
-import AppLocale from '../../../shared/localization';
-import {responsiveFontSizes} from '@material-ui/core';
+import {createTheme, responsiveFontSizes} from '@material-ui/core';
 import {isBreakPointDown} from '../Utils';
 import {ThemeStyle} from '../constants/AppEnums';
 import {useUrlSearchParams} from 'use-url-search-params';
@@ -23,7 +21,8 @@ const SlingThemeProvider = (props) => {
     updateTheme,
     locale,
   } = useContext(AppContext);
-  const {muiLocale} = AppLocale[locale.locale];
+  const {appLocale} = props;
+  const {muiLocale} = appLocale[locale.locale];
 
   const [params] = useUrlSearchParams({});
 
@@ -86,8 +85,7 @@ const SlingThemeProvider = (props) => {
   }, [params.theme_style, theme, updateTheme, updateThemeStyle]);
 
   return (
-    <ThemeProvider
-      theme={responsiveFontSizes(createMuiTheme(theme, muiLocale))}>
+    <ThemeProvider theme={responsiveFontSizes(createTheme(theme, muiLocale))}>
       <MuiPickersUtilsProvider utils={MomentUtils}>
         {props.children}
       </MuiPickersUtilsProvider>

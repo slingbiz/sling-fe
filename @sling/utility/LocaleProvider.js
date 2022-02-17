@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {IntlProvider} from 'react-intl';
 
-import AppLocale from '../../shared/localization';
+import AppLocale from '../../utils/localization';
 import AppContext from './AppContext';
 import PropTypes from 'prop-types';
 import {IntlGlobalProvider} from './Utils';

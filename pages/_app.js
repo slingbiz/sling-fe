@@ -9,8 +9,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/index.css';
 import '../@sling/services/index';
-// import AuthRoutes from '../@sling/utility/AuthRoutes';
 import {PageMeta} from '../@sling';
+
 import {default as defaultStaticConfig} from '../@sling/utility/ContextProvider/defaultConfig';
 import {
   GET_INIT_PROPS,
@@ -18,6 +18,7 @@ import {
   CLIENT_ID,
 } from '../utils/constants/Services';
 import axios from 'axios';
+import AppLocale from "../utils/localization";
 
 // eslint-disable-next-line react/prop-types
 const MyApp = ({
@@ -55,7 +56,7 @@ const MyApp = ({
         routeConstants={routeConstants}
         ssrApi={apiResponse}>
         <Provider store={store}>
-          <SlingThemeProvider>
+          <SlingThemeProvider appLocale={AppLocale}>
             <SlingStyleProvider>
               <LocaleProvider>
                 <CssBaseline />
