@@ -1,14 +1,14 @@
 import React, {useContext} from 'react';
 import {IntlProvider} from 'react-intl';
 
-import AppLocale from '../../utils/localization';
 import AppContext from './AppContext';
 import PropTypes from 'prop-types';
 import {IntlGlobalProvider} from './Utils';
 
 const LocaleProvider = (props) => {
+  const {appLocale} = props;
   const {locale} = useContext(AppContext);
-  const currentAppLocale = AppLocale[locale.locale];
+  const currentAppLocale = appLocale[locale.locale];
 
   return (
     <IntlProvider

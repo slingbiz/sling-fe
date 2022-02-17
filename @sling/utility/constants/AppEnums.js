@@ -58,3 +58,16 @@ export const AuthType = {
   AUTH0: 'auth0',
   JWT_AUTH: 'jwt_auth',
 };
+
+export default {
+  AuthType: AuthType,
+  Fonts: Fonts,
+  RouteTransition: RouteTransition,
+  HeaderType: HeaderType,
+  FooterType: FooterType,
+  NavStyle: NavStyle,
+  LayoutType: LayoutType,
+  ThemeMode: ThemeMode,
+  ThemeStyleRadius: ThemeStyleRadius,
+  ThemeStyle: ThemeStyle,
+};

@@ -1,10 +1,9 @@
-import { createMuiTheme } from "@material-ui/core/styles";
-import moment from "moment";
-import { useIntl } from "react-intl";
-import { useMediaQuery, useTheme } from "@material-ui/core";
+import moment from 'moment';
+import {useIntl} from 'react-intl';
+import {createTheme, useMediaQuery, useTheme} from '@material-ui/core';
 
 export const isBreakPointDown = (key) => {
-  const defaultTheme = createMuiTheme();
+  const defaultTheme = createTheme();
   return defaultTheme.breakpoints.width(key) > window.innerWidth;
 };
 export const useDownBreakPointChecker = (key) => {
@@ -19,7 +18,7 @@ export const useWidth = () => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
       const matches = useMediaQuery(theme.breakpoints.up(key));
       return !output && matches ? key : output;
-    }, null) || "xs"
+    }, null) || 'xs'
   );
 };
 export const createRoutes = (routeConfigs) => {
@@ -37,7 +36,7 @@ export const setRoutes = (config) => {
       let auth = route.auth
         ? [...config.auth, ...route.auth]
         : [...config.auth];
-      return { ...route, auth };
+      return {...route, auth};
     });
   }
 
@@ -45,15 +44,15 @@ export const setRoutes = (config) => {
 };
 
 export const getBreakPointsValue = (valueSet, breakpoint) => {
-  if (typeof valueSet === "number") return valueSet;
+  if (typeof valueSet === 'number') return valueSet;
   switch (breakpoint) {
-    case "xs":
+    case 'xs':
       return valueSet.xs;
-    case "sm":
+    case 'sm':
       return valueSet.sm || valueSet.xs;
-    case "md":
+    case 'md':
       return valueSet.md || valueSet.sm || valueSet.xs;
-    case "lg":
+    case 'lg':
       return valueSet.lg || valueSet.md || valueSet.sm || valueSet.xs;
     default:
       return (
@@ -63,15 +62,15 @@ export const getBreakPointsValue = (valueSet, breakpoint) => {
 };
 
 export const getFileSize = (bytes) => {
-  if (bytes === 0) return "0 Bytes";
+  if (bytes === 0) return '0 Bytes';
   let k = 1024,
     dm = 2,
-    sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
+    sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
     i = Math.floor(Math.log(bytes) / Math.log(k));
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 };
 
-export const multiPropsFilter = (products, filters, stringKey = "title") => {
+export const multiPropsFilter = (products, filters, stringKey = 'title') => {
   const filterKeys = Object.keys(filters);
   return products.filter((product) => {
     return filterKeys.every((key) => {
@@ -80,7 +79,7 @@ export const multiPropsFilter = (products, filters, stringKey = "title") => {
       if (Array.isArray(product[key])) {
         return product[key].some((keyEle) => filters[key].includes(keyEle));
       }
-      console.log("key", key, filters[key], product[key]);
+      console.log('key', key, filters[key], product[key]);
       if (key === stringKey) {
         return product[key].toLowerCase().includes(filters[key].toLowerCase());
       }
@@ -91,8 +90,8 @@ export const multiPropsFilter = (products, filters, stringKey = "title") => {
 
 export const getCustomDateTime = (
   value = 0,
-  unit = "days",
-  format = "YYYY-MM-DD"
+  unit = 'days',
+  format = 'YYYY-MM-DD',
 ) => {
   if (value === 0) {
     return moment().format(format);
@@ -102,7 +101,7 @@ export const getCustomDateTime = (
 };
 
 export const timeFromNow = (date) => {
-  const timestamp = moment(date).format("X");
+  const timestamp = moment(date).format('X');
   const newDate = moment.unix(timestamp);
   return moment(newDate).fromNow();
 };
@@ -110,7 +109,7 @@ export const timeFromNow = (date) => {
 // 'intl' service singleton reference
 let intl;
 
-export function IntlGlobalProvider({ children }) {
+export function IntlGlobalProvider({children}) {
   intl = useIntl();
   // Keep the 'intl' service reference
   return children;

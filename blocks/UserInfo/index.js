@@ -1,14 +1,8 @@
 import React, {useContext} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import {useDispatch} from 'react-redux';
-import {
-  onCognitoUserSignOut,
-  onJWTAuthSignout,
-  onSignOutAuth0User,
-  onSignOutFirebaseUser,
-} from '../../redux/actions';
-import {useAuthUser} from '../../@sling/utility/AppHooks';
-import AppContext from '../../@sling/utility/AppContext';
+
+import {AppContext} from '../../@sling';
 import clsx from 'clsx';
 import {makeStyles} from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -16,7 +10,7 @@ import Menu from '@material-ui/core/Menu';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
 import {orange} from '@material-ui/core/colors';
-import {AuthType, Fonts} from '../../@sling/utility/constants/AppEnums';
+import { Fonts} from '../../@sling/utility/constants/AppEnums';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -117,20 +111,6 @@ const UserInfo = (props) => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}>
                 <MenuItem>My account</MenuItem>
-                <MenuItem
-                  onClick={() => {
-                    if (user && user.authType === AuthType.AWS_COGNITO) {
-                      dispatch(onCognitoUserSignOut());
-                    } else if (user && user.authType === AuthType.FIREBASE) {
-                      dispatch(onSignOutFirebaseUser());
-                    } else if (user && user.authType === AuthType.AUTH0) {
-                      dispatch(onSignOutAuth0User());
-                    } else if (user && user.authType === AuthType.JWT_AUTH) {
-                      dispatch(onJWTAuthSignout());
-                    }
-                  }}>
-                  Logout
-                </MenuItem>
               </Menu>
             </Box>
           </Box>

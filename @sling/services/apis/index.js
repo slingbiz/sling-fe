@@ -1,11 +1,1 @@
-import './mail';
-import './dashboard/index';
-import './editors/index';
-import './gallery/index';
-import './todo/index';
-import './userList';
 import './ecommerce/ecommerce';
-import './contact/index';
-import './scrumboard/index';
-import './chat/index';
-import './wall/index';

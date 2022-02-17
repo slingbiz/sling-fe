@@ -1,5 +1,4 @@
 import React from 'react';
-import {Box} from '@material-ui/core';
 import {grey} from '@material-ui/core/colors';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Grid from '@material-ui/core/Grid';
@@ -11,9 +10,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     borderBottom: `1px solid ${grey[300]}`,
     justifyContent: 'space-between',
-    // [theme.breakpoints.up('xl')]: {
-    //   height: 77,
-    // },
   },
   checkboxRoot: {
     marginRight: 8,

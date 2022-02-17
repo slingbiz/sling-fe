@@ -58,7 +58,7 @@ const MyApp = ({
         <Provider store={store}>
           <SlingThemeProvider appLocale={AppLocale}>
             <SlingStyleProvider>
-              <LocaleProvider>
+              <LocaleProvider appLocale={AppLocale}>
                 <CssBaseline />
                 <Component />
               </LocaleProvider>

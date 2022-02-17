@@ -1,10 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 
-// export const useAppsContentStyles = makeStyles((theme) => ({}));
-
 const DefaultContent = (props) => {
-  // const classes = useAppsContentStyles(props);
   return (
     <Grid
       container

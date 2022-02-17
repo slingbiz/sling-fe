@@ -82,6 +82,7 @@ const ContextProvider = ({
   const updateThemeMode = useCallback((themeMode) => {
     dispatch({type: ThemeSetting.UPDATE_THEME_MODE, payload: themeMode});
   }, []);
+
   const updateTheme = (theme) => {
     dispatch({type: ThemeSetting.UPDATE_THEME, payload: theme});
   };

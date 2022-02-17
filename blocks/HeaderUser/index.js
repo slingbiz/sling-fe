@@ -1,14 +1,6 @@
 import React, {useContext} from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import {useDispatch} from 'react-redux';
-import {
-  onCognitoUserSignOut,
-  onJWTAuthSignout,
-  onSignOutAuth0User,
-  onSignOutFirebaseUser,
-} from '../../redux/actions';
-import {useAuthUser} from '../../@sling/utility/AppHooks';
-import AppContext from '../../@sling/utility/AppContext';
+import {AppContext, AppEnums, useDefaultUser} from '../../@sling';
 import clsx from 'clsx';
 import {makeStyles} from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -16,7 +8,6 @@ import Menu from '@material-ui/core/Menu';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
 import {orange} from '@material-ui/core/colors';
-import {AuthType, Fonts, ThemeMode} from '../../@sling/utility/constants/AppEnums';
 import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles((theme) => {
@@ -49,9 +40,9 @@ const useStyles = makeStyles((theme) => {
       cursor: 'pointer',
       whiteSpace: 'nowrap',
       fontSize: 15,
-      fontWeight: Fonts.MEDIUM,
+      fontWeight: AppEnums.Fonts.MEDIUM,
       color: (props) =>
-        props.themeMode === ThemeMode.DARK || !props.header
+        props.themeMode === AppEnums.ThemeMode.DARK || !props.header
           ? 'white'
           : '#313541',
     },
@@ -63,8 +54,8 @@ const useStyles = makeStyles((theme) => {
 
 const HeaderUser = (props) => {
   const {themeMode} = useContext(AppContext);
-  const dispatch = useDispatch();
-  const user = useAuthUser();
+
+  const user = useDefaultUser();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -109,7 +100,7 @@ const HeaderUser = (props) => {
                 {user.displayName ? user.displayName : user.email}
                 <Box
                   fontSize={13}
-                  fontWeight={Fonts.LIGHT}
+                  fontWeight={AppEnums.Fonts.LIGHT}
                   color='text.secondary'>
                   System Manager
                 </Box>
@@ -119,7 +110,7 @@ const HeaderUser = (props) => {
               ml={{md: 3}}
               className={classes.pointer}
               color={
-                themeMode === ThemeMode.DARK || !props.header
+                themeMode === AppEnums.ThemeMode.DARK || !props.header
                   ? 'white'
                   : '#313541'
               }>
@@ -138,20 +129,6 @@ const HeaderUser = (props) => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}>
                 <MenuItem>My account</MenuItem>
-                <MenuItem
-                  onClick={() => {
-                    if (user && user.authType === AuthType.AWS_COGNITO) {
-                      dispatch(onCognitoUserSignOut());
-                    } else if (user && user.authType === AuthType.FIREBASE) {
-                      dispatch(onSignOutFirebaseUser());
-                    } else if (user && user.authType === AuthType.AUTH0) {
-                      dispatch(onSignOutAuth0User());
-                    } else if (user && user.authType === AuthType.JWT_AUTH) {
-                      dispatch(onJWTAuthSignout());
-                    }
-                  }}>
-                  Logout
-                </MenuItem>
               </Menu>
             </Box>
           </Box>

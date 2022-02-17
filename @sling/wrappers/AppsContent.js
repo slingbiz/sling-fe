@@ -1,7 +1,7 @@
 import React from 'react';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import {fade} from '@material-ui/core';
-import Box from "@material-ui/core/Box";
+import Box from '@material-ui/core/Box';
 
 export const useAppsContentStyles = makeStyles((theme) => ({
   appsContentContainer: (props) => ({
@@ -47,12 +47,7 @@ export const useAppsContentStyles = makeStyles((theme) => ({
 }));
 
 const AppsContent = (props) => {
-  const classes = useAppsContentStyles(props);
-  return (
-    <Box>
-      {props.children}
-    </Box>
-  );
+  return <Box>{props.children}</Box>;
 };
 
 export default AppsContent;

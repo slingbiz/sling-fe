@@ -8,7 +8,6 @@ import {Box} from '@material-ui/core';
 import useStyles from './AppsContainer/index.style';
 import {useDispatch} from 'react-redux';
 import {makeStyles} from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 
 const AppSidebar = (props) => {
   const {
