@@ -2,7 +2,7 @@ import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import SmsIcon from '@material-ui/icons/Sms';
-import messages from '../../@sling/services/db/messages/messages';
+import messages from '../../utils/constants/MessageNotifications';
 import {makeStyles} from '@material-ui/core';
 import MessageItem from './MessageItem';
 import Popover from '@material-ui/core/Popover';

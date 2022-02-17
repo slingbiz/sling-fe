@@ -7,7 +7,7 @@ import PriceSelector from './PriceSelector';
 import {makeStyles} from '@material-ui/core/styles';
 import AppList from '../../@sling/core/AppList';
 import CheckedCell from './CheckedCell';
-import {BrandData, DiscountList, IdealFor, ProductColors,} from '../../@sling/services/db/ecommerce/ecommerceData';
+import {BrandData, DiscountList, IdealFor, ProductColors,} from '../../utils/services/db/ecommerce/ecommerceData';
 import ColorCell from './ColorCell';
 import RatingCell from './RatingCell';
 import {useDispatch, useSelector} from 'react-redux';

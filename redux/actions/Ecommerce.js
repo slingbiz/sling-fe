@@ -6,7 +6,7 @@ import {
   SET_PRODUCT_DATA,
   SET_PRODUCT_VIEW_TYPE,
 } from '../../utils/constants/ActionTypes';
-import Api from '../../@sling/services/ApiConfig';
+import Api from '../../utils/services/ApiConfig';
 
 export const getProductDetail = (id) => {
   return (dispatch) => {

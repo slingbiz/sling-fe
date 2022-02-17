@@ -1,4 +1,4 @@
-import {LayoutType, NavStyle} from '../../utility/constants/AppEnums';
+import {LayoutType, NavStyle} from '../../../@sling/utility/constants/AppEnums';
 
 export const navStyles = [
   {

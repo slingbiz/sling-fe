@@ -4,7 +4,8 @@ import ecommerceData, {
   customersData,
   recentOrders,
 } from '../../db/ecommerce/ecommerceData';
-import {multiPropsFilter} from '../../../utility/Utils';
+import {Utils} from '../../../../@sling';
+const {multiPropsFilter} = Utils;
 
 mock.onGet('/api/product/list').reply((request) => {
   const {filterData} = request.params;

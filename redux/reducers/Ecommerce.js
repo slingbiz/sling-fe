@@ -10,7 +10,7 @@ import {
   SET_PRODUCT_VIEW_TYPE,
   UPDATE_CART_ITEM,
 } from '../../utils/constants/ActionTypes';
-import {cartItems} from '../../@sling/services/db/ecommerce/ecommerceData';
+import {cartItems} from '../../utils/services/db/ecommerce/ecommerceData';
 import {VIEW_TYPE} from "../../utils/constants/AppConst";
 
 const initialState = {
