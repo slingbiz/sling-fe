@@ -4,7 +4,8 @@ import TreeItem from '@material-ui/lab/TreeItem';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {makeStyles} from '@material-ui/core/styles';
-import {Fonts} from '../../@sling/utility/constants/AppEnums';
+import {AppEnums} from '../../@sling'
+const {Fonts}  = AppEnums;
 
 const useStyles = makeStyles({
   root: {

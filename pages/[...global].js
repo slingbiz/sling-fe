@@ -1,4 +1,4 @@
 import React from 'react';
-import GlobalPage from '../@sling/utility/global/index';
+import {GlobalPage} from '../@sling';
 
 export default GlobalPage;

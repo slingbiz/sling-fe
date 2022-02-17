@@ -9,7 +9,6 @@ import {LanguageSwitcher} from '../../@sling';
 import Box from '@material-ui/core/Box';
 import useStyles from './Header.style';
 import HeaderMessages from '../../widgets/HeaderMessages';
-import SearchBar from '../../widgets/SearchBar';
 import Notifications from '../../widgets/Notifications';
 import AppLogo from '../../widgets/AppLogo';
 import Hidden from '@material-ui/core/Hidden';

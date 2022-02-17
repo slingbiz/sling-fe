@@ -4,15 +4,11 @@ import {useDispatch} from 'react-redux';
 import {Box} from '@material-ui/core';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-// import MenuIcon from '@material-ui/icons/Filter';
-// import FilterAltIcon from '@material-ui/icons/FilterAlt';
 import FilterListIcon from '@material-ui/icons/FilterList';
-import {Fonts} from '../../@sling/utility/constants/AppEnums';
-import {AppContext} from '../../@sling';
+import {AppContext, AppEnums} from '../../@sling';
 import {makeStyles} from '@material-ui/core/styles';
-import {NavStyle} from '../../@sling/utility/constants/AppEnums';
-import Grid from '@material-ui/core/Grid';
+
+const {Fonts} = AppEnums;
 
 const useStyles = makeStyles((theme) => ({
   appsContainer: (props) => ({
@@ -52,9 +48,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   scLauncher: {
-    '& .sc-header, & .sc-message--content.sent .sc-message--text, & .sc-header--close-button:hover': {
-      backgroundColor: `${theme.palette.primary.main} !important`,
-    },
+    '& .sc-header, & .sc-message--content.sent .sc-message--text, & .sc-header--close-button:hover':
+      {
+        backgroundColor: `${theme.palette.primary.main} !important`,
+      },
   },
 }));
 
