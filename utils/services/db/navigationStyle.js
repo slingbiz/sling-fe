@@ -1,5 +1,5 @@
-import {LayoutType, NavStyle} from '../../../@sling/utility/constants/AppEnums';
-
+import {AppEnums} from 'sling-fe-core';
+const {LayoutType, NavStyle} = AppEnums;
 export const navStyles = [
   {
     id: 1,

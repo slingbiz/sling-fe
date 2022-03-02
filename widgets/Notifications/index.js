@@ -7,11 +7,11 @@ import {makeStyles, Popover} from '@material-ui/core';
 import List from '@material-ui/core/List';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import {IntlMessages} from '../../@sling';
 import Hidden from '@material-ui/core/Hidden';
 import clsx from 'clsx';
 import NotificationItem from './NotificationItem';
-import {Fonts} from '../../@sling/utility/constants/AppEnums';
+import {AppEnums, IntlMessages} from 'sling-fe-core';
+const {Fonts} = AppEnums;
 
 const useStyles = makeStyles((theme) => ({
   crPopover: {

@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import {LanguageSwitcher} from '../../@sling';
+import {LanguageSwitcher} from 'sling-fe-core';
 import Box from '@material-ui/core/Box';
 import useStyles from './Header.style';
 import HeaderMessages from '../../widgets/HeaderMessages';

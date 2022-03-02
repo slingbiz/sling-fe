@@ -1,19 +1,25 @@
 import React, {useContext, useEffect, useState} from 'react';
 import ProductsCategory from './ProductsCategory';
 import {Box} from '@material-ui/core';
-import {Fonts} from '../../@sling/utility/constants/AppEnums';
+import {AppEnums} from 'sling-fe-core';
+
+const {Fonts} = AppEnums;
 import Divider from '@material-ui/core/Divider';
 import PriceSelector from './PriceSelector';
 import {makeStyles} from '@material-ui/core/styles';
-import AppList from '../../@sling/core/AppList';
+import {AppList} from 'sling-fe-core';
 import CheckedCell from './CheckedCell';
-import {BrandData, DiscountList, IdealFor, ProductColors,} from '../../utils/services/db/ecommerce/ecommerceData';
+import {
+  BrandData,
+  DiscountList,
+  IdealFor,
+  ProductColors,
+} from '../../utils/services/db/ecommerce/ecommerceData';
 import ColorCell from './ColorCell';
 import RatingCell from './RatingCell';
 import {useDispatch, useSelector} from 'react-redux';
 import {setFilters} from '../../redux/actions/Ecommerce';
-import AppSidebar from '../../@sling/wrappers/AppSidebar';
-import {AppContext} from '../../@sling';
+import {AppContext, AppSidebar} from 'sling-fe-core';
 
 const useStyles = makeStyles({
   divider: {

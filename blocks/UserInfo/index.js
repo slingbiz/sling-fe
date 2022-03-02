@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import {useDispatch} from 'react-redux';
 
-import {AppContext} from '../../@sling';
 import clsx from 'clsx';
 import {makeStyles} from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -10,7 +9,8 @@ import Menu from '@material-ui/core/Menu';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
 import {orange} from '@material-ui/core/colors';
-import { Fonts} from '../../@sling/utility/constants/AppEnums';
+import {AppContext, AppEnums} from 'sling-fe-core';
+const {Fonts} = AppEnums;
 
 const useStyles = makeStyles((theme) => {
   return {

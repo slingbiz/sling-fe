@@ -5,7 +5,7 @@ import {Box, fade} from '@material-ui/core';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import SearchIcon from '@material-ui/icons/Search';
-import {AppEnums} from '../../@sling';
+import {AppEnums} from 'sling-fe-core';
 const {Fonts} = AppEnums;
 
 const useStyles = makeStyles((theme) => ({

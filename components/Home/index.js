@@ -1,16 +1,15 @@
-import React, {useState} from 'react';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
+import React from 'react';
 import Card from '@material-ui/core/Card';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
-import {Fonts} from '../../@sling/utility/constants/AppEnums';
-import IntlMessages from '../../@sling/utility/IntlMessages';
+import {AppEnums} from 'sling-fe-core';
 import Header from '../HeaderDefault';
 import FooterDefault from '../FooterDefault';
 import AppLogo from '../../widgets/AppLogo';
 import Link from 'next/link';
 import Typography from '@material-ui/core/Typography';
+
+const {Fonts} = AppEnums;
 
 const useStyles = makeStyles((theme) => ({
   p10: {padding: 10},

@@ -5,7 +5,7 @@ import {Box} from '@material-ui/core';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import FilterListIcon from '@material-ui/icons/FilterList';
-import {AppContext, AppEnums} from '../../@sling';
+import {AppContext, AppEnums} from 'sling-fe-core';
 import {makeStyles} from '@material-ui/core/styles';
 
 const {Fonts} = AppEnums;

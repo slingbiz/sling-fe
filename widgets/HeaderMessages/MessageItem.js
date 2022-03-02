@@ -5,7 +5,8 @@ import Avatar from '@material-ui/core/Avatar';
 import PropTypes from 'prop-types';
 import ListItem from '@material-ui/core/ListItem';
 import {makeStyles} from '@material-ui/core/styles';
-import {Fonts} from '../../@sling/utility/constants/AppEnums';
+import {AppEnums} from 'sling-fe-core';
+const {Fonts} = AppEnums;
 import clsx from 'clsx';
 
 const MessageItem = (props) => {

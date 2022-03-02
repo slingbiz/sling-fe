@@ -8,7 +8,8 @@ import PropTypes from 'prop-types';
 import {green} from '@material-ui/core/colors';
 import clsx from 'clsx';
 import {useRouter} from 'next/router';
-import {IntlMessages, AppEnums} from '../../@sling';
+
+import {IntlMessages, AppEnums} from 'sling-fe-core';
 const {Fonts} = AppEnums;
 import Typography from '@material-ui/core/Typography';
 const dot = require('dot-object');

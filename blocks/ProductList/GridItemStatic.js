@@ -4,12 +4,14 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import {Checkbox, makeStyles} from '@material-ui/core';
-import IntlMessages from '../../@sling/utility/IntlMessages';
+import {IntlMessages} from 'sling-fe-core';
+
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {green} from '@material-ui/core/colors';
 import clsx from 'clsx';
-import {Fonts} from '../../@sling/utility/constants/AppEnums';
+import {AppEnums} from 'sling-fe-core';
+const {Fonts} = AppEnums;
 import {useDispatch} from 'react-redux';
 import {setCurrentProduct} from '../../redux/actions/Ecommerce';
 import {useRouter} from 'next/router';

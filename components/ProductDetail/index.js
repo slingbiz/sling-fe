@@ -4,10 +4,9 @@ import {useDispatch, useSelector} from 'react-redux';
 import Header from './Header';
 import HeaderCommon from '../HeaderDefault';
 import ProductView from '../../blocks/ProductView';
-import {GridContainer} from '../../@sling/';
+import {GridContainer, InfoView} from 'sling-fe-core';
 import SimilarProduct from '../../blocks/SimilarProduct';
 import {getProductDetail} from '../../redux/actions/Ecommerce';
-import {InfoView} from '../../@sling';
 import {useRouter} from 'next/router';
 import {Box, Card} from '@material-ui/core';
 

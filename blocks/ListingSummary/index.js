@@ -1,6 +1,7 @@
 import React from 'react';
-import {Box, Hidden} from '@material-ui/core';
-import {Fonts} from '../../@sling/utility/constants/AppEnums';
+import {Box} from '@material-ui/core';
+import {AppEnums} from 'sling-fe-core';
+const {Fonts} = AppEnums;
 import {useSelector} from 'react-redux';
 
 const dot = require('dot-object');

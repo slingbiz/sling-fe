@@ -1,12 +1,12 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { useRouter } from 'next/router'
-import IntlMessages from '../../@sling/utility/IntlMessages';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core';
 import {grey} from '@material-ui/core/colors';
-import {Fonts} from '../../@sling/utility/constants/AppEnums';
+import {AppEnums, IntlMessages} from 'sling-fe-core';
+const {Fonts} = AppEnums;
 import {initialUrl} from '../../utils/constants/AppConst';
 
 const useStyles = makeStyles((theme) => {

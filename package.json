@@ -123,6 +123,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
+    "sling-fe-core": "^1.2.3",
     "use-url-search-params": "^2.3.13",
     "yup": "^0.29.3"
   },

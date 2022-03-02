@@ -1,5 +1,6 @@
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import {Fonts} from '../../../@sling/utility/constants/AppEnums';
+import {AppEnums} from 'sling-fe-core';
+const {Fonts} = AppEnums;
 import {fade} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({

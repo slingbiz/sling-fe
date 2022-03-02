@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import ProductGrid from './ProductGrid';
 import ProductList from './ProductList';
 import PaginationControlled from '../../widgets/PaginationControlled/index';
-import {AppContext} from '../../@sling';
+import {AppContext} from 'sling-fe-core';
 import {VIEW_TYPE} from '../../utils/constants/AppConst';
 
 const dot = require('dot-object');

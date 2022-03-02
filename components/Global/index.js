@@ -1,9 +1,12 @@
 import React from 'react';
-import RenderTree from '../../hoc/RenderTree';
 import {useSelector} from 'react-redux';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
 import Error from 'next/error';
+import {RenderTree} from 'sling-fe-core';
+import Blocks from '../../blocks';
+import ComponentBlocks from '../index';
+import Widgets from '../../widgets';
 
 const useStyles = makeStyles((theme) => ({
   bodyMain: {padding: '20px 20px 0'},
@@ -31,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 const GlobalPage = () => {
   const classes = useStyles();
-
+  console.log(RenderTree, 'RenderTree');
   const {layoutConfig, pageTemplate} = useSelector(({layout}) => layout);
   const layout = layoutConfig[pageTemplate];
 
@@ -41,7 +44,12 @@ const GlobalPage = () => {
   return (
     <Box className={classes.appMain}>
       <Box className={classes.bodyMain}>
-        <RenderTree layout={layout} />
+        <RenderTree
+          layout={layout}
+          Blocks={Blocks}
+          ComponentBlocks={ComponentBlocks}
+          Widgets={Widgets}
+        />
       </Box>
     </Box>
   );

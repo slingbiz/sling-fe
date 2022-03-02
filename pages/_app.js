@@ -1,24 +1,26 @@
 import React, {useEffect} from 'react';
 import {Provider} from 'react-redux';
 import {useStore} from '../redux/store';
-import ContextProvider from '../@sling/utility/ContextProvider';
-import SlingThemeProvider from '../@sling/utility/SlingThemeProvider';
-import SlingStyleProvider from '../@sling/utility/SlingStyleProvider';
-import LocaleProvider from '../@sling/utility/LocaleProvider';
+import {
+  ContextProvider,
+  SlingThemeProvider,
+  SlingStyleProvider,
+  PageMeta,
+} from 'sling-fe-core';
+import {LocaleProvider} from 'sling-fe-core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/index.css';
 import '../utils/services/index';
-import {PageMeta} from '../@sling';
 
-import {default as defaultStaticConfig} from '../@sling/utility/ContextProvider/defaultConfig';
+import { defaultStaticConfig} from 'sling-fe-core';
 import {
   GET_INIT_PROPS,
   CLIENT_KEY_SECRET,
   CLIENT_ID,
 } from '../utils/constants/Services';
 import axios from 'axios';
-import AppLocale from "../utils/localization";
+import AppLocale from '../utils/localization';
 
 // eslint-disable-next-line react/prop-types
 const MyApp = ({

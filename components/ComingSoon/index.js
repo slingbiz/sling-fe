@@ -5,13 +5,12 @@ import {useDispatch} from 'react-redux';
 import {Form, Formik, useField} from 'formik';
 import * as yup from 'yup';
 import {showMessage} from '../../redux/actions';
-import {InfoView} from '../../@sling';
-import IntlMessages from '../../@sling/utility/IntlMessages';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import {grey} from '@material-ui/core/colors';
 import {makeStyles} from '@material-ui/core';
-import {Fonts} from '../../@sling/utility/constants/AppEnums';
+import {AppEnums, IntlMessages, InfoView} from 'sling-fe-core';
+const {Fonts} = AppEnums;
 
 const useStyles = makeStyles((theme) => {
   return {

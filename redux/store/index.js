@@ -2,8 +2,6 @@ import {useMemo} from 'react';
 import {applyMiddleware, createStore} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import reducers from '../reducers';
-// import {setAuthToken} from '../../@sling/services/auth/jwt-auth/jwt-api';
-// import {createWrapper, Context, HYDRATE} from 'next-redux-wrapper';
 
 let store;
 

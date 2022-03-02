@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {Box} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import AppContext from '../../@sling/utility/AppContext';
-import {ThemeMode} from '../../@sling/utility/constants/AppEnums';
+import {AppEnums, AppContext} from 'sling-fe-core';
+const {ThemeMode} = AppEnums;
 import Hidden from '@material-ui/core/Hidden';
 import Link from 'next/link';
 
