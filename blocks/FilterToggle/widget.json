@@ -1,14 +1,15 @@
 {
   "version": 1,
-  "global": false,
-  "name": "Filter toggle",
+  "name": "Filter Toggle for Mobile devices ",
   "description": "h1 value to be shown on mobile.",
-  "type": "pure",
-  "availableToAllPages": true,
-  "requiredProps": {
-    "h1": {
-      "type": "static",
+  "type": "block",
+  "ownership": "private",
+  "icon": "",
+  "props": [
+    {
+      "name": "h1",
+      "propType": "static",
       "dataType": "string"
     }
-  }
+  ]
 }

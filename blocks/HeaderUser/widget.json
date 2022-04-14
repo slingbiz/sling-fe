@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "name": "Default Header User",
+  "description": "header user",
+  "type": "block",
+  "ownership": "private",
+  "icon": "",
+  "props": [
+  ]
+}

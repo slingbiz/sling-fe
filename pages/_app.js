@@ -13,7 +13,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/index.css';
 import '../utils/services/index';
 
-import { defaultStaticConfig} from 'sling-fe-core';
+import {defaultStaticConfig} from 'sling-fe-core';
 import {
   GET_INIT_PROPS,
   CLIENT_KEY_SECRET,

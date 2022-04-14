@@ -3,7 +3,6 @@ import {Box} from '@material-ui/core';
 import {AppList} from 'sling-fe-core';
 import ReviewCell from './ReviewCell';
 import Divider from '@material-ui/core/Divider';
-import ReviewInfo from './ReviewInfo';
 
 const Review = () => {
   return (

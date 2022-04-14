@@ -1,15 +1,16 @@
 {
   "version": 1,
-  "global": false,
   "name": "Shows Product List",
   "description": "Takes product array path from the Api response.",
-  "type": "pure",
-  "availableToAllPages": true,
-  "requiredProps": {
-    "responsePath": {
-      "type": "response-derived",
+  "type": "block",
+  "ownership": "private",
+  "icon": "",
+  "props": [
+    {
+      "name": "responsePath",
+      "propType": "response-derived",
       "dataType": "string",
       "default": "data"
     }
-  }
+  ]
 }
