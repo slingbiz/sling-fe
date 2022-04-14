@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "name": "Notification Widget",
+  "description": "Modify props to make notifications dynamic.",
+  "type": "widget",
+  "ownership": "private",
+  "icon": "",
+  "props": [
+  ]
+}

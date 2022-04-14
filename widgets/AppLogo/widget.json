@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "name": "Widget to Display App Logo",
+  "description": "Edit this to change logo for your company and name",
+  "type": "widget",
+  "ownership": "private",
+  "icon": "",
+  "props": [
+  ]
+}

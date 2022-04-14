@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
 
 const GlobalPage = () => {
   const classes = useStyles();
-  console.log(RenderTree, 'RenderTree');
   const {layoutConfig, pageTemplate} = useSelector(({layout}) => layout);
   const layout = layoutConfig[pageTemplate];
 

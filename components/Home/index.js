@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Signin = (props) => {
+const HomeComponent = (props) => {
   const classes = useStyles(props);
 
   return (
@@ -142,4 +142,4 @@ const Signin = (props) => {
   );
 };
 
-export default Signin;
+export default HomeComponent;

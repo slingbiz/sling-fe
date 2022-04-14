@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "name": "Widget to notifications on Header",
+  "description": "Modify props to make notifications dynamic.",
+  "type": "widget",
+  "ownership": "private",
+  "icon": "",
+  "props": [
+  ]
+}

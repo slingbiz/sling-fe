@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "name": "Error 404 component",
+  "description": "Use this to show 404 Error section on your new web page. ",
+  "type": "component",
+  "ownership": "private",
+  "icon": "",
+  "props": [
+
+  ]
+}

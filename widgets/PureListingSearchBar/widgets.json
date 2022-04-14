@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "name": "Search Bar Widget",
+  "description": "Pure Search Widget.",
+  "type": "widget",
+  "ownership": "private",
+  "icon": "",
+  "props": [
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "name": "Footer Default",
+  "description": "Default Footer Component/ Edit this to customize default footer and use it on your pages. ",
+  "type": "component",
+  "ownership": "private",
+  "icon": "",
+  "props": [
+
+  ]
+}
