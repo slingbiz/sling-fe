@@ -64,6 +64,7 @@ const Header = ({style}) => {
 
           <AppLogo />
           <Box className={classes.grow} />
+
           {/*<SearchBar borderLight placeholder='Search…' />*/}
           <Box className={classes.sectionDesktop}>
             <LanguageSwitcher />

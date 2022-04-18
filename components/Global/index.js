@@ -2,11 +2,11 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
-import Error from 'next/error';
 import {RenderTree} from 'sling-fe-core';
 import Blocks from '../../blocks';
 import ComponentBlocks from '../index';
 import Widgets from '../../widgets';
+import ErrorSling from '../ErrorSling';
 
 const useStyles = makeStyles((theme) => ({
   bodyMain: {padding: '20px 20px 0'},
@@ -34,11 +34,12 @@ const useStyles = makeStyles((theme) => ({
 
 const GlobalPage = () => {
   const classes = useStyles();
-  const {layoutConfig, pageTemplate} = useSelector(({layout}) => layout);
+  const layoutInitial = useSelector(({layout}) => layout);
+  const {layoutConfig, pageTemplate} = layoutInitial;
   const layout = layoutConfig[pageTemplate];
 
   if (!layout) {
-    return <Error statusCode={'404'} />;
+    return <ErrorSling statusCode={404} />;
   }
   return (
     <Box className={classes.appMain}>

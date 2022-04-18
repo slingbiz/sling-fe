@@ -164,6 +164,7 @@ const HeaderMessages = (props) => {
           </Box>
         </Box>
       </Popover>
+
     </>
   );
 };

@@ -24,7 +24,7 @@ const Products = ({widgetProps}) => {
 
   const {viewType} = useSelector(({ecommerce}) => ecommerce);
   const {isRTL, ssrApi} = useContext(AppContext);
-  const {fakeProducts, filterData} = ssrApi;
+  const {fakeProducts = {}, filterData} = ssrApi;
 
   const {responsePath} = widgetProps;
   let products = fakeProducts;
@@ -32,7 +32,7 @@ const Products = ({widgetProps}) => {
     products = dot.pick(responsePath.value, fakeProducts);
   }
 
-  const {sling_mapping: slingMapping} = fakeProducts;
+  const {sling_mapping: slingMapping = {}} = fakeProducts;
   const {loading} = useSelector(({common}) => common);
 
   return (

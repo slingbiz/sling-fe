@@ -31,6 +31,7 @@ const MyApp = ({
   layoutConfig,
   routeConstants,
   apiResponse,
+  error,
 }) => {
   const store = useStore({
     ...pageProps,
@@ -48,7 +49,9 @@ const MyApp = ({
     }
   }, []);
 
-  console.log('[initConfig  - in _app.js]');
+  if (error) {
+    // return <Error status={500} />;
+  }
   return (
     <React.Fragment>
       <PageMeta />
@@ -106,11 +109,12 @@ MyApp.getInitialProps = async (appContext) => {
     console.log('[MyApp.getInitialProps] - Message', e.message);
 
     response = {
-      initConfigData: defaultStaticConfig,
+      initConfig: defaultStaticConfig,
       layoutConfig: {},
       routeConstants: {},
       apiResponse: {},
       pageTemplate: '',
+      error: true,
     };
   }
 
