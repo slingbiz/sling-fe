@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import {grey} from '@material-ui/core/colors';
+import {useSelector} from 'react-redux';
 
 const {Fonts} = AppEnums;
 
@@ -80,6 +81,19 @@ const useStyles = makeStyles((theme) => ({
 const HomeComponent = (props) => {
   const classes = useStyles(props);
 
+  const layoutInitial = useSelector(({layout}) => layout);
+  let setupInstructions = '';
+  if (!Object.keys(layoutInitial?.layoutConfig || {}).length) {
+    setupInstructions = (
+      <code>
+        {' '}
+        <span>
+          Note - Seems like Sling FE is not connected to any Studio. Please
+          check the API Keys and follow setup instructions,{' '}
+        </span>
+      </code>
+    );
+  }
   return (
     <>
       <Header />
@@ -138,7 +152,11 @@ const HomeComponent = (props) => {
               {/*<AppLogo />*/}
 
               <Box style={{height: '100%'}}>
-                <Box>Edit pages/index.js and save to reload.</Box>
+                <Box>
+                  {setupInstructions
+                    ? setupInstructions
+                    : 'Edit pages/index.js and save to reload.'}
+                </Box>
                 <Box className={classes.p10}>
                   <Link color='inherit' href='https://sling.biz/documentation/'>
                     <a target={'_blank'}>Learn More</a>
