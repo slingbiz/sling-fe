@@ -1,6 +1,7 @@
 {
   "version": 1,
   "name": "Shows User Info",
+  "key": "UserInfo",
   "description": "React Block to display User info.",
   "type": "block",
   "ownership": "private",

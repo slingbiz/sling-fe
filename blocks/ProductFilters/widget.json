@@ -1,6 +1,7 @@
 {
   "version": 1,
   "name": "Product Filters",
+  "key": "ProductFilters",
   "description": "Select Filters and calls updateFilters which triggers Fetch products call.",
   "type": "block",
   "ownership": "private",

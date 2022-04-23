@@ -1,6 +1,7 @@
 {
   "version": 1,
   "name": "Widget to Display Bread Crumbs",
+  "key": "BreadCrumbsDefault",
   "description": "Modify props to expect custom params to make breadcrumbs dynamic",
   "type": "widget",
   "ownership": "private",

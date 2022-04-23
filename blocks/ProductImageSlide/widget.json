@@ -1,6 +1,7 @@
 {
   "version": 1,
   "name": "Product Image Slider",
+  "key": "ProductImageSlider",
   "description": "List of images for displaying detailed information of the product.",
   "type": "block",
   "ownership": "private",

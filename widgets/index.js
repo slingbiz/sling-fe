@@ -9,7 +9,7 @@ import PaginationControlled from './PaginationControlled';
 const Widgets = {
   ['AppLogo']: AppLogo,
   ['HeaderMessages']: HeaderMessages,
-  ['Notifications']: Notifications,
+  ['NotificationWidget']: Notifications,
   ['PureListingSearchBar']: PureListingSearchBar,
   ['SearchBar']: SearchBar,
   ['BreadCrumbsDefault']: BreadCrumbsDefault,

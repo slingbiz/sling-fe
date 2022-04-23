@@ -1,6 +1,7 @@
 {
   "version": 1,
   "name": "Listing Search Bar",
+  "key": "ListingSearchBar",
   "description": "Search Bar Wrapper - accepts List or Grid option ",
   "type": "block",
   "ownership": "private",

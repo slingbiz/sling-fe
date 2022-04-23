@@ -1,6 +1,7 @@
 {
   "version": 1,
   "name": "Filter Toggle for Mobile devices ",
+  "key": "FilterToggle",
   "description": "h1 value to be shown on mobile.",
   "type": "block",
   "ownership": "private",

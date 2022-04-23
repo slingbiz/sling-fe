@@ -1,6 +1,7 @@
 {
   "version": 1,
-  "name": "Custom Sling Error component",
+  "name": "Custom Sling Error Component",
+  "key": "CustomSlingErrorComponent",
   "description": "Use this to show no routes and Error section on your new web page. ",
   "type": "component",
   "ownership": "private",

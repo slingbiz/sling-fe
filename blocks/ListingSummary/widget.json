@@ -1,6 +1,7 @@
 {
   "version": 1,
   "name": "Listing Summary Top Bar",
+  "key": "ListingSummaryTopBar",
   "description": "Summary of total count and current page. h1 & h2 values.",
   "type": "block",
   "ownership": "private",

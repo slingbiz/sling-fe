@@ -1,6 +1,7 @@
 {
   "version": 1,
   "name": "Widget to notifications on Header",
+  "key": "HeaderMessages",
   "description": "Modify props to make notifications dynamic.",
   "type": "widget",
   "ownership": "private",
