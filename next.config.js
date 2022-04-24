@@ -7,8 +7,8 @@ module.exports = (phase) => {
   console.log(phase, 'phase@next.config.js');
   if (phase === PHASE_PRODUCTION_BUILD) {
     return {
-      basePath: '/frontend',
-      assetPrefix: 'frontend',
+      // basePath: '/frontend',
+      // assetPrefix: 'frontend',
       // distDir: 'build',
       env: {
         FIREBASE_API_KEY: 'AIzaSyAzL_2jiVBhmiIUFGs2z6-cDR-Hgoedh3k',
