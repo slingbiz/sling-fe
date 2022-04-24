@@ -88,7 +88,7 @@ const HomeComponent = (props) => {
       <code>
         {' '}
         <span>
-          Note - Seems like Sling FE is not connected to any Studio. Please
+          Note - Seems like Sling FE is not connected to any Studio account. Please
           check the API Keys and follow setup instructions,{' '}
         </span>
       </code>

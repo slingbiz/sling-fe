@@ -103,10 +103,10 @@ MyApp.getInitialProps = async (appContext) => {
       headers: getHeaders(),
       data: {pathname, query, asPath},
     });
-    console.log(
-      JSON.stringify(response.data.layoutConfig.listing.root.header),
-      '@_app.js response',
-    );
+    // console.log(
+    //   JSON.stringify(response.data.layoutConfig.listing.root.header),
+    //   '@_app.js response',
+    // );
     response = response.data;
   } catch (e) {
     console.log('[MyApp.getInitialProps] - Message', e.message);
