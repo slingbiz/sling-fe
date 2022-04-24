@@ -5,15 +5,12 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import {Checkbox, makeStyles} from '@material-ui/core';
 import {IntlMessages} from 'sling-fe-core';
-
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {green} from '@material-ui/core/colors';
 import clsx from 'clsx';
 import {AppEnums} from 'sling-fe-core';
 const {Fonts} = AppEnums;
-import {useDispatch} from 'react-redux';
-import {setCurrentProduct} from '../../redux/actions/Ecommerce';
 import {useRouter} from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
@@ -52,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
 
 const GridItemStatic = (props) => {
   const {item} = props;
-  const dispatch = useDispatch();
   const router = useRouter();
 
   const classes = useStyles(props);
@@ -62,7 +58,7 @@ const GridItemStatic = (props) => {
       m={2}
       className='pointer item-hover'
       onClick={() => {
-        dispatch(setCurrentProduct(item));
+        // dispatch(setCurrentProduct(item));
         router.push('/product/detail/' + item.id);
       }}
       clone>

@@ -6,8 +6,6 @@ import Box from '@material-ui/core/Box';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import Grid from '@material-ui/core/Grid';
-import {addItemToCart} from '../../redux/actions/Ecommerce';
-import {useDispatch} from 'react-redux';
 import {useRouter} from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
@@ -60,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
 
 const ProductImageSlide = ({product}) => {
   const [value, setValue] = useState(0);
-  const dispatch = useDispatch();
   const router = useRouter();
   const slides = product.image.map((data) => <img src={data.src} alt='' />);
   const onChange = (value) => {
@@ -68,7 +65,7 @@ const ProductImageSlide = ({product}) => {
   };
   const classes = useStyles();
   const onAddToCard = () => {
-    dispatch(addItemToCart(product));
+    // dispatch(addItemToCart(product));
   };
   const onButNowToCard = () => {
     onAddToCard();

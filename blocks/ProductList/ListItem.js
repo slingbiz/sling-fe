@@ -4,18 +4,16 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import Rating from '@material-ui/lab/Rating';
 import Slider from 'react-slick';
-import {IntlMessages} from 'sling-fe-core';
+import {AppEnums, IntlMessages} from 'sling-fe-core';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {green, grey} from '@material-ui/core/colors';
-import {AppEnums} from 'sling-fe-core';
-const {Fonts} = AppEnums;
-import {setCurrentProduct} from '../../redux/actions/Ecommerce';
-import {useDispatch} from 'react-redux';
 import {useRouter} from 'next/router';
 import Grid from '@material-ui/core/Grid';
 import clsx from 'clsx';
 import Typography from '@material-ui/core/Typography';
+
+const {Fonts} = AppEnums;
 
 const dot = require('dot-object');
 
@@ -77,7 +75,7 @@ const settings = {
 const ListItem = (props) => {
   const {item, slingMapping} = props;
   console.log(slingMapping, 'slingMappingslingMappingslingMappingslingMapping');
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const router = useRouter();
 
   const getValue = (key) => {
@@ -94,7 +92,7 @@ const ListItem = (props) => {
       m={2}
       className='pointer item-hover'
       onClick={() => {
-        dispatch(setCurrentProduct(item));
+        // dispatch(setCurrentProduct(item));
         router.push('/product/detail/' + item.id);
       }}
       clone>
