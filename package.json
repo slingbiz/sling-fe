@@ -2,18 +2,14 @@
   "name": "sling-next",
   "version": "2.0.0",
   "private": true,
-  "main": "function.js",
   "cacheDirectories": [
     ".next/cache"
   ],
   "scripts": {
     "dev": "next -p 4087",
     "build": "next build",
-    "build:prod": "ENVIRONMENT=./.env.production next build",
     "export": "next export",
     "start": "NEXT_PUBLIC_APP_ENV=prod next start -p 4087",
-    "main": "function.js",
-    "heroku-postbuild": "npm run build",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "lint:fix": "eslint --fix",
     "format": "prettier --write"
