@@ -11605,10 +11605,10 @@ slick-carousel@^1.8.1:
   resolved "https://registry.yarnpkg.com/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
   integrity sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA==
 
-sling-fe-core@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/sling-fe-core/-/sling-fe-core-1.2.5.tgz#66f437131fd49ee0b3466e8941e05bea660c5c8c"
-  integrity sha512-ebQvlxXd+11eAKX9LUib8D+RngQbdzRcVKhc6fKPtHbZMVjt/RgLWuw7QvHGngozPU6IkYqmfEDh36h4+EcakQ==
+sling-fe-core@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/sling-fe-core/-/sling-fe-core-1.2.6.tgz#15a7594f4c4198559499e5c8b0475c05506918f3"
+  integrity sha512-+UL7jPiIap1BPvrRSYr9m9uJBSOoelRCinDS4k63MhiIP1Y/Y4Jy80FygBHbXTaOv28Tr5F11ZBXZpXNvYVyRw==
   dependencies:
     "@babel/polyfill" "^7.12.1"
     "@babel/preset-stage-0" "^7.8.3"

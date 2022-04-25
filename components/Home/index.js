@@ -82,14 +82,15 @@ const HomeComponent = (props) => {
   const classes = useStyles(props);
 
   const layoutInitial = useSelector(({layout}) => layout);
+  console.log(layoutInitial, '[layoutInitial]');
   let setupInstructions = '';
   if (!Object.keys(layoutInitial?.layoutConfig || {}).length) {
     setupInstructions = (
       <code>
         {' '}
         <span>
-          Note - Seems like Sling FE is not connected to any Studio account. Please
-          check the API Keys and follow setup instructions,{' '}
+          Note - Seems like Sling FE is not connected to any Studio account.
+          Please check the API Keys and follow setup instructions,{' '}
         </span>
       </code>
     );
@@ -153,7 +154,7 @@ const HomeComponent = (props) => {
 
               <Box style={{height: '100%'}}>
                 <Box>
-                  {setupInstructions
+                  {!setupInstructions
                     ? setupInstructions
                     : 'Edit pages/index.js and save to reload.'}
                 </Box>
@@ -193,8 +194,20 @@ const HomeComponent = (props) => {
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText
-                      primary='Sling Comes with default set of routes'
-                      secondary='Try /dubai/women/clothes/products'
+                      primary={<b>Sling Comes with default set of routes</b>}
+                      secondary={
+                        <Box>
+                          <a
+                            href='/dubai/women/clothes/products'
+                            style={{textDecoration: 'none'}}>
+                            <span style={{color: 'grey'}}>Try</span>
+                            <span
+                              style={{color: '#ff9800', fontWeight: 'bold'}}>
+                              Product Listing
+                            </span>
+                          </a>
+                        </Box>
+                      }
                     />
                   </ListItem>
                   <ListItem>

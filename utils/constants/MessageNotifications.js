@@ -2,26 +2,20 @@ const messageData = [
   {
     id: 201,
     image: 'https://via.placeholder.com/150',
-    message: 'Hey man! Whatsapp?',
-    name: 'Angelina Joew',
+    message: 'No, I haven’t cleaned my room yet.',
+    name: 'Dolores Abernathy',
   },
   {
     id: 202,
     image: 'https://via.placeholder.com/150',
-    message: 'I am fine, what about you?',
-    name: 'John Matthew',
-  },
-  {
-    id: 203,
-    image: 'https://via.placeholder.com/150',
-    message: 'Call me when you are free!',
-    name: 'George Bailey',
+    message: 'Do you think our lives will ever go back to normal?',
+    name: 'Maeve Millay',
   },
   {
     id: 204,
     image: 'https://via.placeholder.com/150',
     message: 'Send your contact details!',
-    name: 'Maria Lee',
+    name: 'William',
   },
 ];
 export default messageData;
