@@ -33,7 +33,13 @@ const AppLogoWhite = () => {
           alt='sling-logo'
         />
       </Hidden>
-      <Box color='white' fontSize={16} fontWeight={500} mt={4} mb={3} onClick={()=> {}}>
+      <Box
+        color='white'
+        fontSize={16}
+        fontWeight={500}
+        mt={4}
+        mb={3}
+        onClick={() => {}}>
         Demo
       </Box>
     </Box>
