@@ -5,7 +5,7 @@ const PureListingSearchBar = ({onSearch}) => {
   return (
     <AppSearch
       placeholder='Search'
-      onChange={(e) => onSearch(e.target.value)}
+      onChange={(e) => onSearch? onSearch(e.target.value): console.log('Please add a search function for PureListingSearchBar widget.')}
     />
   );
 };

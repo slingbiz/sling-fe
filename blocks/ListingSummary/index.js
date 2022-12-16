@@ -11,7 +11,7 @@ const ListingSummary = ({widgetProps}) => {
   const {fakeProducts} = useSelector(({ssrApi}) => ssrApi);
   const {value: rPath, default: defaultVal} = _.find(widgetProps, {
     type: 'response-derived',
-  });
+  }) || {};
 
   const totalCount =
     (rPath ? dot.pick(rPath, fakeProducts) : defaultVal) || defaultVal;

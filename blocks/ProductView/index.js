@@ -9,6 +9,9 @@ import Reviews from './Reviews';
 import AvailableOffers from './AvailableOffers';
 
 const ProductView = ({product}) => {
+  if(!product){
+     return <></>;
+  }
   return (
     <Grid item sm={12} md={8}>
       <Box component='h3' color='text.primary' fontSize={20} mb={1}>

@@ -57,9 +57,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProductImageSlide = ({product}) => {
+  if(!product){
+    return <></>;
+  }
   const [value, setValue] = useState(0);
   const router = useRouter();
-  const slides = product.image.map((data) => <img src={data.src} alt='' />);
+  const slides = product?.image?.map((data) => <img src={data.src} alt='' />);
   const onChange = (value) => {
     setValue(value);
   };

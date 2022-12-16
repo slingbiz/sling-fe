@@ -26,7 +26,7 @@ const Products = ({widgetProps}) => {
   const {isRTL, ssrApi} = useContext(AppContext);
   const {fakeProducts = {}, filterData} = ssrApi;
 
-  const {responsePath} = widgetProps;
+  const {responsePath} = widgetProps || {};
   let products = fakeProducts;
   if (responsePath?.value) {
     products = dot.pick(responsePath.value, fakeProducts);

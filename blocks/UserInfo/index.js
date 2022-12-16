@@ -58,7 +58,10 @@ const useStyles = makeStyles((theme) => {
 const UserInfo = (props) => {
   const {themeMode} = useContext(AppContext);
   const dispatch = useDispatch();
-  const user = useAuthUser();
+  const {user} = props;
+  if (!user){
+    return <></>;
+  }
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
