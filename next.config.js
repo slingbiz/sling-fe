@@ -4,7 +4,6 @@ const {
 } = require('next/constants');
 
 module.exports = (phase) => {
-  console.log(phase, 'phase@next.config.js');
   if (phase === PHASE_PRODUCTION_BUILD) {
     return {
       // basePath: '/frontend',
@@ -16,6 +15,7 @@ module.exports = (phase) => {
         FIREBASE_MESSAGING_SENDER_ID: '369173776768',
         imageBasePath: '',
         FIREBASE_MEASUREMENT_ID: 'G-976YVMRB4R',
+        NODE_OPTIONS: '-openssl-legacy-provider',
       },
     };
   }
@@ -37,6 +37,7 @@ module.exports = (phase) => {
         FIREBASE_MESSAGING_SENDER_ID: '369173776768',
         imageBasePath: 'http://localhost:4087',
         FIREBASE_MEASUREMENT_ID: 'G-976YVMRB4R',
+        NODE_OPTIONS: '-openssl-legacy-provider',
       },
     };
   }
