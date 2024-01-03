@@ -18,7 +18,7 @@ import List from '@material-ui/core/List';
 
 const {Fonts} = AppEnums;
 
-const useStyles = makeStyles((theme) => {
+const useStyles = makeStyles(() => {
   return {
     button: {
       fontWeight: Fonts.BOLD,

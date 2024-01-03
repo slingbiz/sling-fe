@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core';
@@ -9,7 +9,7 @@ import {AppEnums, IntlMessages} from 'sling-fe-core';
 const {Fonts} = AppEnums;
 import {initialUrl} from '../../utils/constants/AppConst';
 
-const useStyles = makeStyles((theme) => {
+const useStyles = makeStyles(() => {
   return {
     button: {
       fontWeight: Fonts.BOLD,
@@ -32,7 +32,7 @@ const Error500 = () => {
   const classes = useStyles();
 
   return (
-    <Box >
+    <Box>
       <Box
         py={{xl: 8}}
         flex={1}

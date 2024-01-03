@@ -9,7 +9,7 @@ import {AppEnums, IntlMessages} from 'sling-fe-core';
 const {Fonts} = AppEnums;
 import {initialUrl} from '../../utils/constants/AppConst';
 
-const useStyles = makeStyles((theme) => {
+const useStyles = makeStyles(() => {
   return {
     button: {
       fontWeight: Fonts.BOLD,

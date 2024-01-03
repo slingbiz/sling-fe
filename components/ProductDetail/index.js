@@ -10,7 +10,7 @@ import {getProductDetail} from '../../redux/actions/Ecommerce';
 import {useRouter} from 'next/router';
 import {Box, Card} from '@material-ui/core';
 
-const ProductDetail = (props) => {
+const ProductDetail = () => {
   const dispatch = useDispatch();
   const {currentProduct} = useSelector(({ecommerce}) => ecommerce);
   const router = useRouter();

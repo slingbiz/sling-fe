@@ -15,7 +15,6 @@ module.exports = (phase) => {
         FIREBASE_MESSAGING_SENDER_ID: '369173776768',
         imageBasePath: '',
         FIREBASE_MEASUREMENT_ID: 'G-976YVMRB4R',
-        NODE_OPTIONS: '-openssl-legacy-provider',
       },
     };
   }
@@ -37,7 +36,6 @@ module.exports = (phase) => {
         FIREBASE_MESSAGING_SENDER_ID: '369173776768',
         imageBasePath: 'http://localhost:4087',
         FIREBASE_MEASUREMENT_ID: 'G-976YVMRB4R',
-        NODE_OPTIONS: '-openssl-legacy-provider',
       },
     };
   }

@@ -12,7 +12,7 @@ import {makeStyles} from '@material-ui/core';
 import {AppEnums, IntlMessages, InfoView} from 'sling-fe-core';
 const {Fonts} = AppEnums;
 
-const useStyles = makeStyles((theme) => {
+const useStyles = makeStyles(() => {
   return {
     form: {
       display: 'flex',

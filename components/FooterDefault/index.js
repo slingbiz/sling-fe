@@ -41,7 +41,10 @@ const FooterDefault = (props) => {
           flexDirection='row'
           justifyContent='center'
           display='flex'>
-          <Box>© {new Date().getFullYear()} Brewed Passionately in Dubai. All Rights Reserved.</Box>
+          <Box>
+            © {new Date().getFullYear()} Brewed Passionately in Dubai. All
+            Rights Reserved.
+          </Box>
           {/*<Box ml='auto'>*/}
           {/*  <Button className={classes.btnRoot} color='primary'>*/}
           {/*    More*/}
