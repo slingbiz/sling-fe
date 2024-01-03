@@ -35,7 +35,7 @@ const AppLogo = () => {
         />
       </Hidden>
       <Hidden xsDown>
-        <Link href='/'>
+        <Link href='/' legacyBehavior>
           <img
             className={classes.logo}
             src={
