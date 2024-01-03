@@ -1,12 +1,14 @@
 import {useMemo} from 'react';
 import {applyMiddleware, createStore} from 'redux';
-import thunkMiddleware from 'redux-thunk';
+// import thunk from 'redux-thunk';
+import {thunk} from 'redux-thunk';
+
 import reducers from '../reducers';
 
 let store;
 
 function initStore(initialState) {
-  return createStore(reducers, initialState, applyMiddleware(thunkMiddleware));
+  return createStore(reducers, initialState, applyMiddleware(thunk));
 }
 
 export const initializeStore = (preloadedState) => {
