@@ -1,21 +1,21 @@
 const notificationData = [
   {
-    id: '1000',
-    name: 'Clementine Pennyfeather',
+    id: '2000',
+    name: 'John Doe',
     image: 'https://via.placeholder.com/150',
-    message: 'requested to view document.',
+    message: 'liked your post.',
   },
   {
-    id: '1001',
-    name: 'Charlotte Hale',
+    id: '2001',
+    name: 'Jane Smith',
     image: 'https://via.placeholder.com/150',
-    message: 'shared a file.',
+    message: 'commented on your photo.',
   },
   {
-    id: '1002',
-    name: 'Robert Ford',
+    id: '2002',
+    name: 'Alice Johnson',
     image: 'https://via.placeholder.com/150',
-    message: 'sent a calendar invite.',
+    message: 'mentioned you in a comment.',
   },
 ];
 export default notificationData;

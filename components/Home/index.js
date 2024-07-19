@@ -161,7 +161,7 @@ const HomeComponent = (props) => {
                 <Box className={classes.p10}>
                   <Link
                     color='inherit'
-                    href='https://sling.biz/documentation/'
+                    href='https://sling.biz/documentation'
                     target={'_blank'}>
                     Learn More
                   </Link>
@@ -197,17 +197,24 @@ const HomeComponent = (props) => {
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText
-                      primary={<b>Sling Comes with default set of routes</b>}
+                      primary={
+                        <b>Sling Comes with default set of page routes</b>
+                      }
                       secondary={
                         <Box>
                           <a
                             href='/dubai/women/clothes/products'
-                            style={{textDecoration: 'none'}}>
-                            <span style={{color: 'grey'}}>Try</span>
-                            <span
-                              style={{color: '#ff9800', fontWeight: 'bold'}}>
-                              Product Listing
-                            </span>
+                            style={{textDecoration: 'none', display: 'flex'}}>
+                            <p style={{color: 'grey'}}>Try</p>
+                            <p
+                              style={{
+                                color: '#ff9800',
+                                fontWeight: 'bold',
+                                paddingLeft: 3,
+                                paddingTop: 1,
+                              }}>
+                              Product Listing Page
+                            </p>
                           </a>
                         </Box>
                       }
@@ -221,7 +228,7 @@ const HomeComponent = (props) => {
                     </ListItemAvatar>
                     <ListItemText
                       primary='There are around 20+ Widgets'
-                      secondary='Add a Route in Sling Studio matching this route'
+                      secondary='Add a Page Route in Sling Studio and see the magic.'
                     />
                   </ListItem>
                 </List>
@@ -234,6 +241,7 @@ const HomeComponent = (props) => {
         style={{
           position: 'fixed',
           width: '100%',
+
           bottom: 0,
           display: 'flex',
           justifyContent: 'center',

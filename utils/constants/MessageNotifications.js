@@ -1,21 +1,21 @@
 const messageData = [
   {
-    id: 201,
+    id: 301,
     image: 'https://via.placeholder.com/150',
-    message: 'No, I haven’t cleaned my room yet.',
-    name: 'Dolores Abernathy',
+    message: 'Can we reschedule our meeting?',
+    name: 'Emily Turner',
   },
   {
-    id: 202,
+    id: 302,
     image: 'https://via.placeholder.com/150',
-    message: 'Do you think our lives will ever go back to normal?',
-    name: 'Maeve Millay',
+    message: 'I finished the report you asked for.',
+    name: 'Michael Scott',
   },
   {
-    id: 204,
+    id: 303,
     image: 'https://via.placeholder.com/150',
-    message: 'Send your contact details!',
-    name: 'William',
+    message: 'Don’t forget about our dinner plans tonight!',
+    name: 'Sarah Connor',
   },
 ];
 export default messageData;

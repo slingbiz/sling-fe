@@ -46,7 +46,7 @@ const AppLogo = () => {
         ml={2}
         mt={4}
         mb={3}>
-        Demo
+        Sling Demo
       </Box>
     </Box>
   );
