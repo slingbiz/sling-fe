@@ -32,7 +32,7 @@ const ReviewCell = () => {
         <Avatar
           className={classes.logo}
           alt='user image'
-          src={`${process.env.imageBasePath}/images/avatar/A1.jpg`}
+          src={`/images/avatar/A1.jpg`}
         />
 
         <Box flex={1} ml={4}>
