@@ -121,7 +121,7 @@ const HomeComponent = (props) => {
             <img
               className={classes.imgRoot}
               style={{width: '100%'}}
-              src={`${process.env.imageBasePath}/images/home-min.png`}
+              src={`/images/home-min.png`}
               alt='sling-logo'
             />
             <Box
