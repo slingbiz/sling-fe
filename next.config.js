@@ -10,16 +10,7 @@ module.exports = (phase) => {
     };
   }
   if (phase === PHASE_DEVELOPMENT_SERVER) {
-    const rewrites = () => {
-      return [
-        {
-          source: '/api/:slug*',
-          destination: 'http://localhost:10001/:slug*',
-        },
-      ];
-    };
     return {
-      rewrites,
       distDir: 'build',
       env: {},
     };

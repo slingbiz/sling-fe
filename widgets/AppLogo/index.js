@@ -26,11 +26,7 @@ const AppLogo = () => {
       <Hidden smUp>
         <img
           className={classes.logo}
-          src={
-            themeMode === ThemeMode.DARK
-              ? `${process.env.imageBasePath}/images/logo.png`
-              : `${process.env.imageBasePath}/images/logo.png`
-          }
+          src={`/images/logo.png`}
           alt='sling-logo'
         />
       </Hidden>
@@ -38,11 +34,7 @@ const AppLogo = () => {
         <Link href='/' legacyBehavior>
           <img
             className={classes.logo}
-            src={
-              themeMode === ThemeMode.DARK
-                ? `${process.env.imageBasePath}/images/sling-fe.png`
-                : `${process.env.imageBasePath}/images/sling-fe.png`
-            }
+            src={`/images/logo.png`}
             alt='Sling Frontend Demo'
           />
         </Link>
