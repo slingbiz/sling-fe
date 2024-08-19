@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   search: {
     position: 'relative',
-    borderRadius: theme.overrides.MuiCard.root.borderRadius,
+    borderRadius: theme.overrides.MuiCard?.root?.borderRadius || 8,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),

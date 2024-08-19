@@ -12,6 +12,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/index.css';
 import '../utils/services/index';
+import '../widgets/index';
 
 import {defaultStaticConfig} from 'sling-fe-core';
 import {
