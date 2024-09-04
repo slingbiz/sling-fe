@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 import clsx from 'clsx';
 import {AppEnums, IntlMessages} from 'sling-fe-core';
+import {registerWidget} from 'sling-core';
 const {Fonts} = AppEnums;
 
 const HeaderMessages = (props) => {
@@ -168,5 +169,15 @@ const HeaderMessages = (props) => {
     </>
   );
 };
+
+// Register the widget
+registerWidget('Widget to notifications on Header', HeaderMessages, {
+  description: 'This widget is used to display messages in the header.',
+  ownership: 'private',
+  type: 'widget',
+  key: 'HeaderMessages',
+  icon: 'Widgets',
+  props: [],
+});
 
 export default HeaderMessages;

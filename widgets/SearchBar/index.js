@@ -8,6 +8,9 @@ import SearchIcon from '@material-ui/icons/Search';
 import {AppEnums} from 'sling-fe-core';
 const {Fonts} = AppEnums;
 
+//use widget registry to register the widget
+import {registerWidget} from 'sling-core';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -165,20 +168,13 @@ const AppSearch = ({
   );
 };
 
+registerWidget('Custom Search Bar Widget', AppSearch, {
+  description: 'Search Widget.',
+  ownership: 'public',
+  type: 'widget',
+  key: 'SearchBar',
+  icon: 'search',
+  props: [],
+});
+
 export default AppSearch;
-
-AppSearch.prototype = {
-  iconPosition: PropTypes.string,
-  align: PropTypes.string,
-  onlyIcon: PropTypes.bool,
-};
-
-AppSearch.defaultProps = {
-  onlyIcon: false,
-  overlap: true,
-  iconPosition: 'left',
-  align: 'left',
-  iconStyle: {
-    color: 'grey',
-  },
-};

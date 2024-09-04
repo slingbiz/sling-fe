@@ -11,6 +11,7 @@ import Hidden from '@material-ui/core/Hidden';
 import clsx from 'clsx';
 import NotificationItem from './NotificationItem';
 import {AppEnums, IntlMessages} from 'sling-fe-core';
+import {registerWidget} from 'sling-core';
 const {Fonts} = AppEnums;
 
 const useStyles = makeStyles((theme) => ({
@@ -168,5 +169,15 @@ const Notifications = (props) => {
     </>
   );
 };
+
+// Register the Notifications widget
+registerWidget('Notification Widget', Notifications, {
+  description: 'Modify props to make notifications dynamic.',
+  ownership: 'private',
+  type: 'widget',
+  key: 'NotificationWidget',
+  icon: '', // Add icon path or leave empty
+  props: [], // Add any props if necessary
+});
 
 export default Notifications;
