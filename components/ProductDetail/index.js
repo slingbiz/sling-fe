@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import Header from './Header';
 import HeaderCommon from '../HeaderDefault';
 import ProductView from '../../blocks/ProductView';
-import {GridContainer, InfoView} from 'sling-fe-core';
+import {GridContainer, InfoView} from 'sling-core';
 import SimilarProduct from '../../blocks/SimilarProduct';
 import {getProductDetail} from '../../redux/actions/Ecommerce';
 import {useRouter} from 'next/router';

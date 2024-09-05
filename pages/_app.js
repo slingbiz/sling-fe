@@ -6,15 +6,15 @@ import {
   SlingThemeProvider,
   SlingStyleProvider,
   PageMeta,
-} from 'sling-fe-core';
-import {LocaleProvider} from 'sling-fe-core';
+} from 'sling-core';
+import {LocaleProvider} from 'sling-core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/index.css';
 import '../utils/services/index';
 import '../widgets/index';
 
-import {defaultStaticConfig} from 'sling-fe-core';
+import {defaultStaticConfig} from 'sling-core';
 import {
   GET_INIT_PROPS,
   CLIENT_KEY_SECRET,

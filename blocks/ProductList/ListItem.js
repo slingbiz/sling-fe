@@ -4,7 +4,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import Rating from '@material-ui/lab/Rating';
 import Slider from 'react-slick';
-import {AppEnums, IntlMessages} from 'sling-fe-core';
+import {AppEnums, IntlMessages} from 'sling-core';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {green, grey} from '@material-ui/core/colors';

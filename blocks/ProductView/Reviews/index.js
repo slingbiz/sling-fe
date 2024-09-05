@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box} from '@material-ui/core';
-import {AppList} from 'sling-fe-core';
+import {AppList} from 'sling-core';
 import ReviewCell from './ReviewCell';
 import Divider from '@material-ui/core/Divider';
 

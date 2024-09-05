@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import Rating from '@material-ui/lab/Rating';
-import {AppEnums} from 'sling-fe-core';
+import {AppEnums} from 'sling-core';
 const {Fonts} = AppEnums;
 import {makeStyles} from '@material-ui/core';
 import {

@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 import clsx from 'clsx';
 import NotificationItem from './NotificationItem';
-import {AppEnums, IntlMessages} from 'sling-fe-core';
+import {AppEnums, IntlMessages} from 'sling-core';
 import {registerWidget} from 'sling-core';
 const {Fonts} = AppEnums;
 

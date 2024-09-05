@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box} from '@material-ui/core';
-import {AppEnums} from 'sling-fe-core';
+import {AppEnums} from 'sling-core';
 const {Fonts} = AppEnums;
 import {makeStyles} from '@material-ui/core/styles';
 import StarRateIcon from '@material-ui/icons/StarRate';

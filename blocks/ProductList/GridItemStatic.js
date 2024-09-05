@@ -4,12 +4,12 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import {Checkbox, makeStyles} from '@material-ui/core';
-import {IntlMessages} from 'sling-fe-core';
+import {IntlMessages} from 'sling-core';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import {green} from '@material-ui/core/colors';
 import clsx from 'clsx';
-import {AppEnums} from 'sling-fe-core';
+import {AppEnums} from 'sling-core';
 const {Fonts} = AppEnums;
 import {useRouter} from 'next/router';
 

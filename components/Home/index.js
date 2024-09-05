@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
-import {AppEnums} from 'sling-fe-core';
+import {AppEnums} from 'sling-core';
 import Header from '../HeaderDefault';
 import FooterDefault from '../FooterDefault';
 import AppLogo from '../../widgets/AppLogo';

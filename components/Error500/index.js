@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core';
 import {grey} from '@material-ui/core/colors';
-import {AppEnums, IntlMessages} from 'sling-fe-core';
+import {AppEnums, IntlMessages} from 'sling-core';
 const {Fonts} = AppEnums;
 import {initialUrl} from '../../utils/constants/AppConst';
 

@@ -4,7 +4,7 @@ import ecommerceData, {
   customersData,
   recentOrders,
 } from '../../db/ecommerce/ecommerceData';
-import {Utils} from 'sling-fe-core';
+import {Utils} from 'sling-core';
 const {multiPropsFilter} = Utils;
 
 mock.onGet('/api/product/list').reply((request) => {

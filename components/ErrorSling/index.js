@@ -10,7 +10,7 @@ import {
   makeStyles,
 } from '@material-ui/core';
 import {grey} from '@material-ui/core/colors';
-import {AppEnums, IntlMessages} from 'sling-fe-core';
+import {AppEnums, IntlMessages} from 'sling-core';
 import AppLogo from '../../widgets/AppLogo';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';

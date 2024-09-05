@@ -5,7 +5,7 @@ import Avatar from '@material-ui/core/Avatar';
 import PropTypes from 'prop-types';
 import ListItem from '@material-ui/core/ListItem';
 import {makeStyles} from '@material-ui/core/styles';
-import {AppEnums} from 'sling-fe-core';
+import {AppEnums} from 'sling-core';
 const {Fonts} = AppEnums;
 import clsx from 'clsx';
 

@@ -1,4 +1,4 @@
-import {AppEnums} from 'sling-fe-core';
+import {AppEnums} from 'sling-core';
 
 const {ApiConfig} = AppEnums;
 
