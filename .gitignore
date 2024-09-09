@@ -13,6 +13,8 @@ react-sortable-hoc# See https://help.github.com/articles/ignoring-files/ for mor
 /.idea/workspace.xml
 /.idea/*
 
+.yalc
+
 # testing
 /coverage
 

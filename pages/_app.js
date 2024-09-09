@@ -1,12 +1,7 @@
 import React, {useEffect} from 'react';
 import {Provider} from 'react-redux';
 import {useStore} from '../redux/store';
-import {
-  ContextProvider,
-  SlingThemeProvider,
-  SlingStyleProvider,
-  PageMeta,
-} from 'sling-core';
+import {ContextProvider, SlingStyleProvider, PageMeta} from 'sling-core';
 import {LocaleProvider} from 'sling-core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import 'react-perfect-scrollbar/dist/css/styles.css';
@@ -14,7 +9,6 @@ import '../styles/index.css';
 import '../utils/services/index';
 import '../widgets/index';
 
-import {defaultStaticConfig} from 'sling-core';
 import {
   GET_INIT_PROPS,
   CLIENT_KEY_SECRET,
@@ -22,6 +16,8 @@ import {
 } from '../utils/constants/Services';
 import axios from 'axios';
 import AppLocale from '../utils/localization';
+import SlingThemeProvider from '../utils/context/SlingThemeProvider';
+import defaultConfig from '../utils/context/defaultConfig';
 
 // eslint-disable-next-line react/prop-types
 const MyApp = ({
@@ -62,7 +58,7 @@ const MyApp = ({
         routeConstants={routeConstants}
         ssrApi={apiResponse}>
         <Provider store={store}>
-          <SlingThemeProvider appLocale={AppLocale}>
+          <SlingThemeProvider appLocale={AppLocale} theme={defaultConfig}>
             <SlingStyleProvider>
               <LocaleProvider appLocale={AppLocale}>
                 <CssBaseline />
@@ -110,7 +106,7 @@ MyApp.getInitialProps = async (appContext) => {
     console.log('[MyApp.getInitialProps] - Message', e.message);
 
     response = {
-      initConfig: defaultStaticConfig,
+      initConfig: defaultConfig,
       layoutConfig: {},
       routeConstants: {},
       apiResponse: {},

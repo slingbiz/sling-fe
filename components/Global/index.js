@@ -5,8 +5,9 @@ import {makeStyles} from '@material-ui/core/styles';
 import {RenderTree} from 'sling-core';
 import Blocks from '../../blocks';
 import ComponentBlocks from '../index';
-import Widgets from '../../widgets';
+// import Widgets from '../../widgets';
 import ErrorSling from '../ErrorSling';
+import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   bodyMain: {padding: '20px 20px 0'},
@@ -38,6 +39,9 @@ const GlobalPage = () => {
   const {layoutConfig, pageTemplate} = layoutInitial;
   const layout = layoutConfig[pageTemplate];
 
+  const theme = useTheme();
+  console.log('Theme:', JSON.stringify(theme));  //
+
   if (!layout) {
     return <ErrorSling statusCode={404} />;
   }
@@ -48,7 +52,7 @@ const GlobalPage = () => {
           layout={layout}
           Blocks={Blocks}
           ComponentBlocks={ComponentBlocks}
-          Widgets={Widgets}
+          // Widgets={Widgets}
         />
       </Box>
     </Box>
