@@ -55,10 +55,9 @@ registerWidget(
   ProductView, // The React component associated with the block from the Blocks object
   {
     key: 'ProductView', // Key used for identifying the block
-    widgetType: 'block', // This is a block
-    type: 'block', // Keeping both widgetType and type as requested
+    type: 'block', 
     description: 'PDP - Detail level information for a product.', // Description of the block
-    ownership: 'public', // This is a public block
+    ownership: 'private', // This is a private block
     icon: 'shopping_basket', // Icon representing the block
     props: [], // No props defined for this block
     availableToAllPages: true, // If applicable

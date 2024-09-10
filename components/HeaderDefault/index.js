@@ -102,11 +102,10 @@ registerWidget(
   Header, // The React component associated with this component
   {
     key: 'DefaultHeaderComponent', // Key used for identifying the component
-    widgetType: 'component', // This is a component
     type: 'component', // Type is also set to 'component'
     description:
       'Edit this to make changes in the default Header component of Sling FE', // Description of the component
-    ownership: 'public', // This is a public component
+    ownership: 'private', // This is a private component
     icon: 'line_style', // Icon representing the component
     props: [], // No props defined for this component
     availableToAllPages: true, // If applicable

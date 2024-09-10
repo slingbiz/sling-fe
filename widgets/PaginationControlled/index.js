@@ -33,7 +33,7 @@ const PaginationControlled = () => {
 registerWidget('Pagination Widget', PaginationControlled, {
   description:
     'Modify props to make pagination style controlled by the Sling Studio.',
-  ownership: 'public',
+  ownership: 'private',
   type: 'widget',
   key: 'PaginationControlled',
   icon: 'settings_ethernet', // Using the provided icon

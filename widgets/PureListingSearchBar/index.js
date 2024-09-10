@@ -22,7 +22,7 @@ const PureListingSearchBar = ({onSearch}) => {
 // Register the PureListingSearchBar widget
 registerWidget('Search Bar Widget', PureListingSearchBar, {
   description: 'Pure Search Widget.',
-  ownership: 'public',
+  ownership: 'private',
   type: 'widget',
   key: 'PureListingSearchBar',
   icon: 'search', // Using the provided icon

@@ -88,10 +88,9 @@ registerWidget(
   Error404, // The React component associated with this component
   {
     key: 'Error404component', // Key used for identifying the component
-    widgetType: 'component', // This is a component
     type: 'component', // Type is also set to 'component'
     description: 'Use this to show 404 Error section on your new web page.', // Description of the component
-    ownership: 'public', // This is a public component
+    ownership: 'private', // This is a private component
     icon: 'pan_tool', // Icon representing the component
     props: [], // No props defined for this component
     availableToAllPages: true, // If applicable

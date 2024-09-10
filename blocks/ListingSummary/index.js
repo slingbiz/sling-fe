@@ -17,7 +17,6 @@ const ListingSummary = ({widgetProps}) => {
   const totalCount =
     (rPath ? dot.pick(rPath, fakeProducts) : defaultVal) || defaultVal;
   h2 = h2.value.replace(/<totalCount>/g, totalCount);
-  console.log(h2.value, 'h2.value - before');
   console.log(
     rPath,
     fakeProducts,
@@ -42,10 +41,9 @@ registerWidget(
   ListingSummary, // The React component associated with the block from the Blocks object
   {
     key: 'ListingSummaryTopBar', // Key used for identifying the block
-    widgetType: 'block', // This is a block
-    type: 'block', // Keeping both widgetType and type as requested
+    type: 'block',
     description: 'Summary of total count and current page. h1 & h2 values.', // Description of the block
-    ownership: 'public', // This is a public block
+    ownership: 'private', // This is a private block
     icon: 'picture_in_picture_alt', // Icon representing the block
     props: [
       {

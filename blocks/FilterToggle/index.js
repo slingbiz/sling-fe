@@ -93,10 +93,9 @@ registerWidget(
   FilterToggle, // The React component associated with the block from the Blocks object
   {
     key: 'FilterToggle', // Key used for identifying the block
-    widgetType: 'block', // This is a block
-    type: 'block', // Keeping both widgetType and type as requested
+    type: 'block',
     description: 'h1 value to be shown on mobile.', // Description of the block
-    ownership: 'public', // This is a public block
+    ownership: 'private', // This is a private block
     icon: 'account_balance', // Icon representing the block
     props: [
       {

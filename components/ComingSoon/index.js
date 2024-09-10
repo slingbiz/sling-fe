@@ -137,10 +137,9 @@ registerWidget(
   ComingSoon, // The React component associated with this component
   {
     key: 'ComingSoonComponent', // Key used for identifying the component
-    widgetType: 'component', // This is a component
     type: 'component', // Type is also set to 'component'
     description: 'Use this to show Coming Soon on your new web page.', // Description of the component
-    ownership: 'public', // This is a public component
+    ownership: 'private', // This is a private component
     icon: 'query_builder', // Icon representing the component
     props: [], // No props defined for this component
     availableToAllPages: true, // If applicable

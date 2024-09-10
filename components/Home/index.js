@@ -249,10 +249,9 @@ registerWidget(
   HomeComponent, // The React component associated with this component
   {
     key: 'DefaultSlingHomePage', // Key used for identifying the component
-    widgetType: 'component', // This is a component
     type: 'component', // Type is also set to 'component'
     description: 'Edit this to make changes in the Home Page for Sling FE', // Description of the component
-    ownership: 'public', // This is a public component
+    ownership: 'private', // This is a private component
     icon: 'home', // Icon representing the component
     props: [], // No props defined for this component
     availableToAllPages: true, // If applicable

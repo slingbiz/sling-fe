@@ -12261,14 +12261,15 @@ slick-carousel@^1.8.1:
   resolved "https://registry.yarnpkg.com/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
   integrity sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA==
 
-sling-core@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/sling-core/-/sling-core-1.2.2.tgz#bded78619e3ed6dda8feee89102f3da59023be93"
-  integrity sha512-1OT6i58XrnW3IOQZdm7539f5iDHfs4+uKlAA/Q/346UYu5groj0tI6wN/aRPDO2EfYdtvOaMRyGm5guesdYCYg==
+sling-core@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/sling-core/-/sling-core-1.2.3.tgz#cfa1c7c5b3cd3203eced5504b5594cd35bda79a0"
+  integrity sha512-6Thr5vDLDcwYshj6yudXD/0GnYuN0SpxVCFev5ssmtaKJhyYxyqSdRbhy2HN/+WSVcuO5Yju2WolzNrfuwby4w==
   dependencies:
     "@date-io/moment" "^3.0.0"
     "@material-ui/core" "^4.12.4"
     "@material-ui/icons" "^4.11.3"
+    "@material-ui/lab" "^4.0.0-alpha.61"
     "@material-ui/pickers" "^3.3.11"
     axios "^1.7.3"
     jss-rtl "^0.3.0"

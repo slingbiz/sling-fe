@@ -71,8 +71,7 @@ registerWidget(
   SimilarProduct, // The React component associated with the block from the Blocks object
   {
     key: 'SimilarProductList', // Key used for identifying the block
-    widgetType: 'block', // This is a block
-    type: 'block', // Keeping both widgetType and type as requested
+    type: 'block', 
     description: 'Shows Similar Product List, Used on the PDP page.', // Description of the block
     ownership: 'private', // This is a private block
     icon: '', // No icon provided

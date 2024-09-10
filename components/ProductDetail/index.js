@@ -48,10 +48,9 @@ registerWidget(
   ProductDetail, // The React component associated with this component
   {
     key: 'ProductDetailPageComponent', // Key used for identifying the component
-    widgetType: 'component', // This is a component
     type: 'component', // Type is also set to 'component'
     description: 'Detail page wrapper for Sling FE PDP', // Description of the component
-    ownership: 'public', // This is a public component
+    ownership: 'private', // This is a private component
     icon: 'add_shopping_cart', // Icon representing the component
     props: [], // No props defined for this component
     availableToAllPages: true, // If applicable

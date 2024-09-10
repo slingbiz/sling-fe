@@ -3,11 +3,10 @@ import {useSelector} from 'react-redux';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
 import {RenderTree} from 'sling-core';
-import Blocks from '../../blocks';
-import Components from '../index';
+// import Blocks from '../../blocks';
+// import Components from '../index';
 // import Widgets from '../../widgets';
 import ErrorSling from '../ErrorSling';
-import {useTheme} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   bodyMain: {padding: '20px 20px 0'},
@@ -39,9 +38,6 @@ const GlobalPage = () => {
   const {layoutConfig, pageTemplate} = layoutInitial;
   const layout = layoutConfig[pageTemplate];
 
-  const theme = useTheme();
-  console.log('Theme:', JSON.stringify(theme)); //
-
   if (!layout) {
     return <ErrorSling statusCode={404} />;
   }
@@ -50,8 +46,8 @@ const GlobalPage = () => {
       <Box className={classes.bodyMain}>
         <RenderTree
           layout={layout}
-          Blocks={Blocks}
-          Components={Components}
+          // Blocks={Blocks}
+          // Components={Components}
           // Widgets={Widgets}
         />
       </Box>

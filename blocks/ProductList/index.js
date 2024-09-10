@@ -68,9 +68,8 @@ registerWidget(
   Products, // The React component associated with the block from the Blocks object
   {
     key: 'ProductList', // Key used for identifying the block
-    widgetType: 'block', // This is a block
     description: 'Takes product array path from the Api response.', // Description of the block
-    ownership: 'public', // This is a public block
+    ownership: 'private', // This is a private block
     type: 'block', // Type is block
     icon: 'account_balance_wallet', // Icon representing the block
     props: [

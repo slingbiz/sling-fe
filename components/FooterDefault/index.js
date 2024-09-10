@@ -62,11 +62,10 @@ registerWidget(
   FooterDefault, // The React component associated with this component
   {
     key: 'FooterDefault', // Key used for identifying the component
-    widgetType: 'component', // This is a component
     type: 'component', // Type is also set to 'component'
     description:
       'Default Footer Component/ Edit this to customize default footer and use it on your pages.', // Description of the component
-    ownership: 'public', // This is a public component
+    ownership: 'private', // This is a private component
     icon: 'perm_device_information', // Icon representing the component
     props: [], // No props defined for this component
     availableToAllPages: true, // If applicable

@@ -144,9 +144,8 @@ registerWidget(
   HeaderUser, // The React component associated with the block
   {
     key: 'DefaultHeaderUser', // Key used for identifying the block
-    widgetType: 'block', // This is a block
     description: 'header user', // Description of the block
-    ownership: 'public', // This is a public block
+    ownership: 'private', // This is a private block
     type: 'block', // Type is block
     icon: 'account_box', // Icon representing the block
     props: [], // No props defined for this block

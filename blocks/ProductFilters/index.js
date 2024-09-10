@@ -205,10 +205,9 @@ registerWidget(
   ProductSidebar, // The React component associated with the block from the Blocks object
   {
     key: 'ProductFilters', // Key used for identifying the block
-    widgetType: 'block', // This is a block
     description:
       'Select Filters and calls updateFilters which triggers Fetch products call.', // Description of the block
-    ownership: 'public', // This is a public block
+    ownership: 'private', // This is a private block
     type: 'block', // Type is block
     icon: 'face', // Icon representing the block
     props: [], // No props defined for this block

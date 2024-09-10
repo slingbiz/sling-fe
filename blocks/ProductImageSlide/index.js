@@ -128,11 +128,10 @@ const ProductImageSlide = ({product}) => {
 
 registerWidget('Product Image Slider', ProductImageSlide, {
   key: 'ProductImageSlider',
-  widgetType: 'block',
   type: 'block',
   description:
     'List of images for displaying detailed information of the product.',
-  ownership: 'public',
+  ownership: 'private',
   icon: 'camera_enhance',
   props: [],
   availableToAllPages: true,

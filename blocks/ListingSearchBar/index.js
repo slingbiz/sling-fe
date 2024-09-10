@@ -77,9 +77,8 @@ registerWidget(
   ListingSearchBar, // The React component associated with the block
   {
     key: 'ListingSearchBar', // Key used for identifying the block
-    widgetType: 'block', // This is a block
     description: 'Search Bar Wrapper - accepts List or Grid option',
-    ownership: 'public', // This is a public block
+    ownership: 'private', // This is a private block
     type: 'block', // Type is block
     icon: 'settings_cell', // Icon representing the block
     props: [

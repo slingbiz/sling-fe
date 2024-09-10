@@ -141,7 +141,6 @@ registerWidget(
   ErrorSling, // The React component associated with this component
   {
     key: 'CustomSlingErrorComponent', // Key used for identifying the component
-    widgetType: 'component', // This is a component
     type: 'component', // Type is also set to 'component'
     description:
       'Use this to show no routes and Error section on your new web page.', // Description of the component

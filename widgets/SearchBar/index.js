@@ -170,7 +170,7 @@ const AppSearch = ({
 
 registerWidget('Custom Search Bar Widget', AppSearch, {
   description: 'Search Widget.',
-  ownership: 'public',
+  ownership: 'private',
   type: 'widget',
   key: 'SearchBar',
   icon: 'search',
