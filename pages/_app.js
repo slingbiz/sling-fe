@@ -9,6 +9,7 @@ import '../styles/index.css';
 import '../utils/services/index';
 import '../widgets/index';
 import '../blocks/index';
+import '../components/index';
 
 import {
   GET_INIT_PROPS,
