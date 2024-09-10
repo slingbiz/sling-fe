@@ -12261,10 +12261,10 @@ slick-carousel@^1.8.1:
   resolved "https://registry.yarnpkg.com/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
   integrity sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA==
 
-sling-core@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/sling-core/-/sling-core-1.1.4.tgz#4ba3707dd7505733fecea131516bcf451ce83ae0"
-  integrity sha512-HhRwDxA7sX80yk9ehCKsiUxsE32caVT9pdtBR68Fs4mQO4sbqS7mWKmQbjCZITsmGb7xlH/+b+erhaXPgL2L+Q==
+sling-core@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/sling-core/-/sling-core-1.1.8.tgz#fc0eaa664b617e14ab50d94dc93c9a310eada0ce"
+  integrity sha512-IpqMpIAPa5iR3WIncT1HqKbFkcPPBWDQylAf0JRlilneHFGHsX9AYoKMAGpzcTQcw1ncL1zeQW2qE54VtE2vZw==
   dependencies:
     "@date-io/moment" "^3.0.0"
     "@material-ui/core" "^4.12.4"

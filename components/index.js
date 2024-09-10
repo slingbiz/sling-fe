@@ -7,7 +7,7 @@ import DefaultSlingHomePage from './Home';
 import CustomSlingErrorComponent from './ErrorSling';
 import ProductDetailPageComponent from './ProductDetail';
 
-const ComponentBlocks = {
+const Components = {
   FooterDefault,
   ComingSoonComponent,
   Error404component,
@@ -18,4 +18,4 @@ const ComponentBlocks = {
   DefaultHeaderComponent,
 };
 
-export default ComponentBlocks;
+export default Components;

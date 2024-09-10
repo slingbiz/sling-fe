@@ -12,6 +12,7 @@ import HeaderMessages from '../../widgets/HeaderMessages';
 import Notifications from '../../widgets/Notifications';
 import AppLogo from '../../widgets/AppLogo';
 import Hidden from '@material-ui/core/Hidden';
+import {registerWidget} from 'sling-core';
 
 const Header = ({style}) => {
   const classes = useStyles();
@@ -95,4 +96,23 @@ const Header = ({style}) => {
     </>
   );
 };
+
+registerWidget(
+  'Default Header Component', // Name of the component
+  Header, // The React component associated with this component
+  {
+    key: 'DefaultHeaderComponent', // Key used for identifying the component
+    widgetType: 'component', // This is a component
+    type: 'component', // Type is also set to 'component'
+    description:
+      'Edit this to make changes in the default Header component of Sling FE', // Description of the component
+    ownership: 'public', // This is a public component
+    icon: 'line_style', // Icon representing the component
+    props: [], // No props defined for this component
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this component
+  },
+);
+
 export default Header;

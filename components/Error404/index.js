@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import {grey} from '@material-ui/core/colors';
 import {makeStyles} from '@material-ui/core';
-import {AppEnums, IntlMessages} from 'sling-core';
+import {AppEnums, IntlMessages, registerWidget} from 'sling-core';
 const {Fonts} = AppEnums;
 import {initialUrl} from '../../utils/constants/AppConst';
 
@@ -82,5 +82,22 @@ const Error404 = () => {
     </Box>
   );
 };
+
+registerWidget(
+  'Error 404 component', // Name of the component
+  Error404, // The React component associated with this component
+  {
+    key: 'Error404component', // Key used for identifying the component
+    widgetType: 'component', // This is a component
+    type: 'component', // Type is also set to 'component'
+    description: 'Use this to show 404 Error section on your new web page.', // Description of the component
+    ownership: 'public', // This is a public component
+    icon: 'pan_tool', // Icon representing the component
+    props: [], // No props defined for this component
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this component
+  },
+);
 
 export default Error404;

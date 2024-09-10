@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
 import {RenderTree} from 'sling-core';
 import Blocks from '../../blocks';
-import ComponentBlocks from '../index';
+import Components from '../index';
 // import Widgets from '../../widgets';
 import ErrorSling from '../ErrorSling';
 import {useTheme} from '@material-ui/core/styles';
@@ -51,7 +51,7 @@ const GlobalPage = () => {
         <RenderTree
           layout={layout}
           Blocks={Blocks}
-          ComponentBlocks={ComponentBlocks}
+          Components={Components}
           // Widgets={Widgets}
         />
       </Box>

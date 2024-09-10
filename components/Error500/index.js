@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core';
 import {grey} from '@material-ui/core/colors';
-import {AppEnums, IntlMessages} from 'sling-core';
+import {AppEnums, IntlMessages, registerWidget} from 'sling-core';
 const {Fonts} = AppEnums;
 import {initialUrl} from '../../utils/constants/AppConst';
 
@@ -83,5 +83,22 @@ const Error500 = () => {
     </Box>
   );
 };
+
+registerWidget(
+  'Error 500 component', // Name of the component
+  Error500, // The React component associated with this component
+  {
+    key: 'Error500component', // Key used for identifying the component
+    widgetType: 'component', // This is a component
+    type: 'component', // Type is also set to 'component'
+    description: 'Use this to show 500 Error section on your new web page.', // Description of the component
+    ownership: 'public', // This is a public component
+    icon: 'pan_tool', // Icon representing the component
+    props: [], // No props defined for this component
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this component
+  },
+);
 
 export default Error500;

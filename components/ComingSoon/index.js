@@ -9,7 +9,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import {grey} from '@material-ui/core/colors';
 import {makeStyles} from '@material-ui/core';
-import {AppEnums, IntlMessages, InfoView} from 'sling-core';
+import {AppEnums, IntlMessages, InfoView, registerWidget} from 'sling-core';
 const {Fonts} = AppEnums;
 
 const useStyles = makeStyles(() => {
@@ -131,5 +131,22 @@ const ComingSoon = () => {
     </Box>
   );
 };
+
+registerWidget(
+  'Coming Soon Component', // Name of the component
+  ComingSoon, // The React component associated with this component
+  {
+    key: 'ComingSoonComponent', // Key used for identifying the component
+    widgetType: 'component', // This is a component
+    type: 'component', // Type is also set to 'component'
+    description: 'Use this to show Coming Soon on your new web page.', // Description of the component
+    ownership: 'public', // This is a public component
+    icon: 'query_builder', // Icon representing the component
+    props: [], // No props defined for this component
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this component
+  },
+);
 
 export default ComingSoon;
