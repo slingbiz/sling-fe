@@ -7,7 +7,7 @@ import Blocks from '../../blocks';
 import ComponentBlocks from '../index';
 // import Widgets from '../../widgets';
 import ErrorSling from '../ErrorSling';
-import { useTheme } from '@material-ui/core/styles';
+import {useTheme} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   bodyMain: {padding: '20px 20px 0'},
@@ -40,7 +40,7 @@ const GlobalPage = () => {
   const layout = layoutConfig[pageTemplate];
 
   const theme = useTheme();
-  console.log('Theme:', JSON.stringify(theme));  //
+  console.log('Theme:', JSON.stringify(theme)); //
 
   if (!layout) {
     return <ErrorSling statusCode={404} />;

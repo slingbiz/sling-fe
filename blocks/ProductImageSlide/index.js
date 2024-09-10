@@ -7,16 +7,13 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import Grid from '@material-ui/core/Grid';
 import {useRouter} from 'next/router';
+import {registerWidget} from 'sling-core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'relative',
     display: 'flex',
-    /*
-        [theme.breakpoints.down('sm')]: {
-          flexDirection: 'column',
-        },*/ '& .BrainhubCarousel__container': {
-      // border: '1px solid #acacac',
+    '& .BrainhubCarousel__container': {
       marginLeft: 10,
       borderRadius: 10,
       maxWidth: 450,
@@ -39,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: 10,
         border: '1px solid #A0A5B9',
         '&.BrainhubCarousel__thumbnail--selected': {
-          border: `solid 2px #7c7c7c`,
+          border: 'solid 2px #7c7c7c',
         },
       },
       flexDirection: 'column',
@@ -57,21 +54,28 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProductImageSlide = ({product}) => {
-  if(!product){
-    return <></>;
+  if (!product?.image) {
+    return null;
   }
+
   const [value, setValue] = useState(0);
   const router = useRouter();
-  const slides = product?.image?.map((data) => <img src={data.src} alt='' />);
+  const slides = product.image.map((data, index) => (
+    <img key={index} src={data.src} alt={`Product Image ${index}`} />
+  ));
+
   const onChange = (value) => {
     setValue(value);
   };
+
   const classes = useStyles();
-  const onAddToCard = () => {
+
+  const onAddToCart = () => {
     // dispatch(addItemToCart(product));
   };
-  const onButNowToCard = () => {
-    onAddToCard();
+
+  const onBuyNowToCart = () => {
+    onAddToCart();
     router.push('/ecommerce/cart');
   };
 
@@ -106,7 +110,7 @@ const ProductImageSlide = ({product}) => {
         <Button
           variant='contained'
           color='primary'
-          onClick={onAddToCard}
+          onClick={onAddToCart}
           style={{marginRight: 20, width: 140}}>
           Add to cart
         </Button>
@@ -114,12 +118,26 @@ const ProductImageSlide = ({product}) => {
           style={{width: 140}}
           variant='contained'
           color='secondary'
-          onClick={onButNowToCard}>
+          onClick={onBuyNowToCart}>
           Buy now
         </Button>
       </Box>
     </Grid>
   );
 };
+
+registerWidget('Product Image Slider', ProductImageSlide, {
+  key: 'ProductImageSlider',
+  widgetType: 'block',
+  type: 'block',
+  description:
+    'List of images for displaying detailed information of the product.',
+  ownership: 'public',
+  icon: 'camera_enhance',
+  props: [],
+  availableToAllPages: true,
+  config: {},
+  requiredProps: [],
+});
 
 export default ProductImageSlide;

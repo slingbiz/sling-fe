@@ -2,6 +2,7 @@ import React from 'react';
 import {Box} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import Hidden from '@material-ui/core/Hidden';
+import {registerWidget} from 'sling-core';
 
 const AppLogoWhite = () => {
   const useStyles = makeStyles(() => ({
@@ -45,5 +46,23 @@ const AppLogoWhite = () => {
     </Box>
   );
 };
+
+registerWidget(
+  'White Logo', // Name of the block
+  AppLogoWhite, // The React component associated with the block from the Blocks object
+  {
+    key: 'WhiteLogo', // Key used for identifying the block
+    widgetType: 'block', // This is a block
+    type: 'block', // Keeping both widgetType and type as requested
+    description:
+      'Wrapper component which displays White version of the logo & name', // Description of the block
+    ownership: 'public', // This is a public block
+    icon: 'rounded_corner', // Icon representing the block
+    props: [], // No props defined for this block
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this block
+  },
+);
 
 export default AppLogoWhite;

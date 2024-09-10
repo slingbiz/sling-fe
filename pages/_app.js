@@ -8,6 +8,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/index.css';
 import '../utils/services/index';
 import '../widgets/index';
+import '../blocks/index';
 
 import {
   GET_INIT_PROPS,

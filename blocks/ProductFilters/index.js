@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import ProductsCategory from './ProductsCategory';
 import {Box} from '@material-ui/core';
-import {AppEnums} from 'sling-core';
+import {AppEnums, registerWidget} from 'sling-core';
 
 const {Fonts} = AppEnums;
 import Divider from '@material-ui/core/Divider';
@@ -199,5 +199,23 @@ const ProductSidebar = () => {
     </AppSidebar>
   );
 };
+
+registerWidget(
+  'Product Filters', // Name of the block
+  ProductSidebar, // The React component associated with the block from the Blocks object
+  {
+    key: 'ProductFilters', // Key used for identifying the block
+    widgetType: 'block', // This is a block
+    description:
+      'Select Filters and calls updateFilters which triggers Fetch products call.', // Description of the block
+    ownership: 'public', // This is a public block
+    type: 'block', // Type is block
+    icon: 'face', // Icon representing the block
+    props: [], // No props defined for this block
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this block
+  },
+);
 
 export default ProductSidebar;

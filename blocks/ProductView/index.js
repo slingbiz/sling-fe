@@ -7,10 +7,11 @@ import ProductInfo from './ProductInfo';
 import DeliveryInfo from './DeliveryInfo';
 import Reviews from './Reviews';
 import AvailableOffers from './AvailableOffers';
+import {registerWidget} from 'sling-core';
 
 const ProductView = ({product}) => {
-  if(!product){
-     return <></>;
+  if (!product) {
+    return <></>;
   }
   return (
     <Grid item sm={12} md={8}>
@@ -48,5 +49,22 @@ const ProductView = ({product}) => {
     </Grid>
   );
 };
+
+registerWidget(
+  'Product View', // Name of the block
+  ProductView, // The React component associated with the block from the Blocks object
+  {
+    key: 'ProductView', // Key used for identifying the block
+    widgetType: 'block', // This is a block
+    type: 'block', // Keeping both widgetType and type as requested
+    description: 'PDP - Detail level information for a product.', // Description of the block
+    ownership: 'public', // This is a public block
+    icon: 'shopping_basket', // Icon representing the block
+    props: [], // No props defined for this block
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this block
+  },
+);
 
 export default ProductView;
