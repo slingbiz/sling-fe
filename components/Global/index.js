@@ -2,10 +2,10 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
-import {RenderTree} from 'sling-fe-core';
-import Blocks from '../../blocks';
-import ComponentBlocks from '../index';
-import Widgets from '../../widgets';
+import {RenderTree} from 'sling-core';
+// import Blocks from '../../blocks';
+// import Components from '../index';
+// import Widgets from '../../widgets';
 import ErrorSling from '../ErrorSling';
 
 const useStyles = makeStyles((theme) => ({
@@ -46,9 +46,9 @@ const GlobalPage = () => {
       <Box className={classes.bodyMain}>
         <RenderTree
           layout={layout}
-          Blocks={Blocks}
-          ComponentBlocks={ComponentBlocks}
-          Widgets={Widgets}
+          // Blocks={Blocks}
+          // Components={Components}
+          // Widgets={Widgets}
         />
       </Box>
     </Box>

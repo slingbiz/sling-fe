@@ -4,6 +4,9 @@ import Paper from '@material-ui/core/Paper';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Chip from '@material-ui/core/Chip';
 
+//use widget registry to register the widget
+import {registerWidget} from 'sling-core';
+
 const StyledBreadcrumb = withStyles((theme) => ({
   root: {
     padding: 0,
@@ -20,12 +23,6 @@ const StyledBreadcrumb = withStyles((theme) => ({
     },
   },
 }))(Chip); // TypeScript only: need a type cast here because https://github.com/Microsoft/TypeScript/issues/26591
-
-function handleClick(event) {
-  event.preventDefault();
-  console.log('Breadcrumb Clicked. Act on!');
-  // alert('You clicked a breadcrumb.');
-}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,8 +46,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedBreadcrumbs() {
+const CustomizedBreadcrumbs = () => {
   const classes = useStyles();
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    console.log('Breadcrumb Clicked. Act on!');
+    // alert('You clicked a breadcrumb.');
+  };
 
   return (
     <Paper elevation={0} className={classes.root}>
@@ -84,4 +87,15 @@ export default function CustomizedBreadcrumbs() {
       </Breadcrumbs>
     </Paper>
   );
-}
+};
+
+registerWidget('Widget to Display Bread Crumbs', CustomizedBreadcrumbs, {
+  description: 'Edit 2 this to change logo for your company and name',
+  ownership: 'private',
+  type: 'widget',
+  key: 'BreadCrumbsDefault',
+  icon: 'Widgets',
+  props: [],
+});
+
+export default CustomizedBreadcrumbs;

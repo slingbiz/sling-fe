@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core';
 import clsx from 'clsx';
+import {registerWidget} from 'sling-core';
 
 const FooterDefault = (props) => {
   const useStyles = makeStyles((theme) => ({
@@ -55,5 +56,22 @@ const FooterDefault = (props) => {
     </>
   );
 };
+
+registerWidget(
+  'Footer Default', // Name of the component
+  FooterDefault, // The React component associated with this component
+  {
+    key: 'FooterDefault', // Key used for identifying the component
+    type: 'component', // Type is also set to 'component'
+    description:
+      'Default Footer Component/ Edit this to customize default footer and use it on your pages.', // Description of the component
+    ownership: 'private', // This is a private component
+    icon: 'perm_device_information', // Icon representing the component
+    props: [], // No props defined for this component
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this component
+  },
+);
 
 export default FooterDefault;

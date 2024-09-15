@@ -9,7 +9,7 @@ import {green} from '@material-ui/core/colors';
 import clsx from 'clsx';
 import {useRouter} from 'next/router';
 
-import {IntlMessages, AppEnums} from 'sling-fe-core';
+import {IntlMessages, AppEnums} from 'sling-core';
 const {Fonts} = AppEnums;
 import Typography from '@material-ui/core/Typography';
 const dot = require('dot-object');

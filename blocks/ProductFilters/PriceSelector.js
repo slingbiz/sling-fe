@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from '@material-ui/core/Slider';
 import {Box, withStyles} from '@material-ui/core';
-import {AppEnums} from 'sling-fe-core';
+import {AppEnums} from 'sling-core';
 const {Fonts} = AppEnums;
 
 const ThumbBoxShadow =

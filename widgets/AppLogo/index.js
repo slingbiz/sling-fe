@@ -1,10 +1,13 @@
 import React, {useContext} from 'react';
 import {Box} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import {AppEnums, AppContext} from 'sling-fe-core';
+import {AppEnums, AppContext} from 'sling-core';
 const {ThemeMode} = AppEnums;
 import Hidden from '@material-ui/core/Hidden';
 import Link from 'next/link';
+
+//use widget registry to register the widget
+import {registerWidget} from 'sling-core';
 
 const AppLogo = () => {
   const {themeMode} = useContext(AppContext);
@@ -51,5 +54,15 @@ const AppLogo = () => {
     </Box>
   );
 };
+
+// Register the widget
+registerWidget('AppLogo', AppLogo, {
+  description: 'Edit 2 this to change logo for your company and name',
+  ownership: 'private',
+  type: 'widget',
+  key: 'AppLogo',
+  icon: 'Widgets',
+  props: [],
+});
 
 export default AppLogo;

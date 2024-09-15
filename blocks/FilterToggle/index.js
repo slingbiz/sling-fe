@@ -5,7 +5,7 @@ import {Box} from '@material-ui/core';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import FilterListIcon from '@material-ui/icons/FilterList';
-import {AppContext, AppEnums} from 'sling-fe-core';
+import {AppContext, AppEnums, registerWidget} from 'sling-core';
 import {makeStyles} from '@material-ui/core/styles';
 
 const {Fonts} = AppEnums;
@@ -87,4 +87,28 @@ const FilterToggle = ({widgetProps}) => {
     </Box>
   );
 };
+
+registerWidget(
+  'Filter Toggle for Mobile devices', // Name of the block
+  FilterToggle, // The React component associated with the block from the Blocks object
+  {
+    key: 'FilterToggle', // Key used for identifying the block
+    type: 'block',
+    description: 'h1 value to be shown on mobile.', // Description of the block
+    ownership: 'private', // This is a private block
+    icon: 'account_balance', // Icon representing the block
+    props: [
+      {
+        name: 'h1',
+        propType: 'static', // Static prop type
+        dataType: 'string', // Data type is string
+        default: 'default h1', // Default value for the prop
+      },
+    ],
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: ['h1'], // Required props for the block
+  },
+);
+
 export default FilterToggle;

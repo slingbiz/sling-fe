@@ -1,9 +1,9 @@
 import React from 'react';
 import {Box} from '@material-ui/core';
-import {AppCircularProgress} from 'sling-fe-core';
-import {AppEnums} from 'sling-fe-core';
+import {AppCircularProgress} from 'sling-core';
+import {AppEnums} from 'sling-core';
 
-const {AppLinearProgress} = require('sling-fe-core');
+const {AppLinearProgress} = require('sling-core');
 const {Fonts} = AppEnums;
 import StarRateIcon from '@material-ui/icons/StarRate';
 

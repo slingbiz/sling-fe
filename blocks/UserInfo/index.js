@@ -9,7 +9,7 @@ import Menu from '@material-ui/core/Menu';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
 import {orange} from '@material-ui/core/colors';
-import {AppContext, AppEnums} from 'sling-fe-core';
+import {AppContext, AppEnums, registerWidget} from 'sling-core';
 const {Fonts} = AppEnums;
 
 const useStyles = makeStyles((theme) => {
@@ -59,7 +59,7 @@ const UserInfo = (props) => {
   const {themeMode} = useContext(AppContext);
   const dispatch = useDispatch();
   const {user} = props;
-  if (!user){
+  if (!user) {
     return <></>;
   }
 
@@ -123,5 +123,21 @@ const UserInfo = (props) => {
     </Box>
   );
 };
+
+registerWidget(
+  'Shows User Info', // Name of the block
+  UserInfo, // The React component associated with the block from the Blocks object
+  {
+    key: 'UserInfo', // Key used for identifying the block
+    type: 'block', 
+    description: 'React Block to display User info.', // Description of the block
+    ownership: 'private', // This is a private block
+    icon: 'verified_user', // Icon representing the block
+    props: [], // No props defined for this block
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this block
+  },
+);
 
 export default UserInfo;

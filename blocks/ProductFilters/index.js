@@ -1,13 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
 import ProductsCategory from './ProductsCategory';
 import {Box} from '@material-ui/core';
-import {AppEnums} from 'sling-fe-core';
+import {AppEnums, registerWidget} from 'sling-core';
 
 const {Fonts} = AppEnums;
 import Divider from '@material-ui/core/Divider';
 import PriceSelector from './PriceSelector';
 import {makeStyles} from '@material-ui/core/styles';
-import {AppList} from 'sling-fe-core';
+import {AppList} from 'sling-core';
 import CheckedCell from './CheckedCell';
 import {
   BrandData,
@@ -19,7 +19,7 @@ import ColorCell from './ColorCell';
 import RatingCell from './RatingCell';
 import {useDispatch, useSelector} from 'react-redux';
 import {setFilters} from '../../redux/actions/Ecommerce';
-import {AppContext, AppSidebar} from 'sling-fe-core';
+import {AppContext, AppSidebar} from 'sling-core';
 
 const useStyles = makeStyles({
   divider: {
@@ -199,5 +199,22 @@ const ProductSidebar = () => {
     </AppSidebar>
   );
 };
+
+registerWidget(
+  'Product Filters', // Name of the block
+  ProductSidebar, // The React component associated with the block from the Blocks object
+  {
+    key: 'ProductFilters', // Key used for identifying the block
+    description:
+      'Select Filters and calls updateFilters which triggers Fetch products call.', // Description of the block
+    ownership: 'private', // This is a private block
+    type: 'block', // Type is block
+    icon: 'face', // Icon representing the block
+    props: [], // No props defined for this block
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this block
+  },
+);
 
 export default ProductSidebar;
