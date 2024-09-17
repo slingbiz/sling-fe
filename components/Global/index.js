@@ -49,4 +49,4 @@ const GlobalPage = () => {
 };
 
 // Disable SSR for GlobalPage
-export default dynamic(() => Promise.resolve(GlobalPage), {ssr: false});
+export default dynamic(() => Promise.resolve(GlobalPage), {ssr: true});
