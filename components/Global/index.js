@@ -1,11 +1,9 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
 import {RenderTree} from 'sling-core';
-// import Blocks from '../../blocks';
-// import Components from '../index';
-// import Widgets from '../../widgets';
 import ErrorSling from '../ErrorSling';
 
 const useStyles = makeStyles((theme) => ({
@@ -44,15 +42,11 @@ const GlobalPage = () => {
   return (
     <Box className={classes.appMain}>
       <Box className={classes.bodyMain}>
-        <RenderTree
-          layout={layout}
-          // Blocks={Blocks}
-          // Components={Components}
-          // Widgets={Widgets}
-        />
+        <RenderTree layout={layout} />
       </Box>
     </Box>
   );
 };
 
-export default GlobalPage;
+// Disable SSR for GlobalPage
+export default dynamic(() => Promise.resolve(GlobalPage), {ssr: false});
