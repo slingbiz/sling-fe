@@ -38,7 +38,6 @@ const MyApp = ({
     layout: {layoutConfig, pageTemplate},
     routeConstants,
     ssrApi: apiResponse,
-    initConfig,
   });
 
   useEffect(() => {

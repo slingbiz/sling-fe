@@ -170,7 +170,7 @@ const ProductSidebar = () => {
           <Box
             data={Object.values(ProductColors)}
             column={6}
-            itemPadding={10}
+            // itemPadding={10}
             renderRow={(data, index) => (
               <ColorCell
                 key={'color-' + index}

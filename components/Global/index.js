@@ -41,7 +41,7 @@ const GlobalPage = () => {
   }, []);
   const layoutInitial = useSelector(({layout}) => layout);
   const {layoutConfig, pageTemplate} = layoutInitial;
-  const layout = layoutConfig[pageTemplate];
+  const layout = layoutConfig?.[pageTemplate];
 
   if (!layout) {
     return <ErrorSling statusCode={404} />;

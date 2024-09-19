@@ -141,7 +141,3 @@ const HeaderUser = (props) => {
 };
 
 export default HeaderUser;
-
-HeaderUser.defaultProps = {
-  header: true,
-};

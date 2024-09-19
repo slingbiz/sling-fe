@@ -67,7 +67,7 @@ const Header = ({style}) => {
 
           {/*<SearchBar borderLight placeholder='Search…' />*/}
           <Box className={classes.sectionDesktop}>
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */}
             <HeaderMessages />
             <Notifications />
           </Box>

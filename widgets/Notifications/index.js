@@ -1,8 +1,7 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
-import notification from '../../utils/constants/notification';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
+import notification from '../../utils/constants/notification';
 import {makeStyles, Popover} from '@material-ui/core';
 import List from '@material-ui/core/List';
 import Box from '@material-ui/core/Box';
@@ -82,9 +81,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 0,
     paddingBottom: 0,
   },
-  badge: {
-    marginRight: 8,
-  },
 }));
 
 const Notifications = (props) => {
@@ -100,17 +96,12 @@ const Notifications = (props) => {
     <>
       <IconButton
         className={clsx(classes.notiBtn, 'notiBtn')}
-        aria-label='show 17 new notifications'
+        aria-label='show new notifications'
         color='inherit'
         onClick={onClickNotificationButton}>
-        <Badge
-          className={classes.badge}
-          badgeContent={notification.length}
-          color='secondary'>
-          <NotificationsActiveIcon
-            className={clsx(classes.notiIcon, 'notiIcon')}
-          />
-        </Badge>
+        <NotificationsActiveIcon
+          className={clsx(classes.notiIcon, 'notiIcon')}
+        />
         <Hidden mdUp>
           <Box
             ml={4}
@@ -150,7 +141,7 @@ const Notifications = (props) => {
               onClick={() => {
                 setAnchorNotification(null);
               }}>
-              {notification.map((item, index) => (
+              {notification.map((item) => (
                 <NotificationItem key={item.id} item={item} />
               ))}
             </List>

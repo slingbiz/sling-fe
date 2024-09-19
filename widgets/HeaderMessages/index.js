@@ -1,6 +1,5 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
 import SmsIcon from '@material-ui/icons/Sms';
 import messages from '../../utils/constants/MessageNotifications';
 import {makeStyles} from '@material-ui/core';
@@ -80,9 +79,6 @@ const HeaderMessages = (props) => {
         paddingRight: '2.5rem',
       },
     },
-    badgeStyle: {
-      marginRight: 8,
-    },
     smsIcon: {
       fontSize: 22,
       color: theme.palette.text.secondary,
@@ -102,15 +98,10 @@ const HeaderMessages = (props) => {
     <>
       <IconButton
         className={clsx(classes.notiBtn, 'notiBtn')}
-        aria-label='show 4 new mails'
+        aria-label='show messages'
         color='inherit'
         onClick={onClickMessagesButton}>
-        <Badge
-          className={classes.badgeStyle}
-          badgeContent={messages.length}
-          color='secondary'>
-          <SmsIcon className={clsx(classes.smsIcon, 'smsIcon')} />
-        </Badge>
+        <SmsIcon className={clsx(classes.smsIcon, 'smsIcon')} />
         <Hidden mdUp>
           <Box
             ml={4}

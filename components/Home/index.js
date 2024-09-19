@@ -180,7 +180,7 @@ const HomeComponent = (props) => {
                   padding: '20px',
                   margin: '20px',
                 }}>
-                <Typography style={{fontSize: 18}}>
+                <Typography style={{fontSize: 18}} component='div'>
                   <b>Did you know?</b>
                 </Typography>
 
