@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import ProductsCategory from './ProductsCategory';
 import {Box} from '@material-ui/core';
-import {AppEnums} from 'sling-core';
 
 const {Fonts} = AppEnums;
 import Divider from '@material-ui/core/Divider';
@@ -19,7 +18,9 @@ import ColorCell from './ColorCell';
 import RatingCell from './RatingCell';
 import {useDispatch, useSelector} from 'react-redux';
 import {setFilters} from '../../redux/actions/Ecommerce';
-import {AppContext, AppSidebar} from 'sling-core';
+import AppContext from '../../utils/context/AppContext';
+import AppEnums from '../../utils/constants/AppEnums';
+import {AppSidebar} from 'sling-core';
 
 const useStyles = makeStyles({
   divider: {

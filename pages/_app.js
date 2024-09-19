@@ -1,8 +1,6 @@
 import React, {useEffect} from 'react';
 import {Provider} from 'react-redux';
 import {useStore} from '../redux/store';
-import {ContextProvider, SlingStyleProvider, PageMeta} from 'sling-core';
-import {LocaleProvider} from 'sling-core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/index.css';
@@ -19,9 +17,12 @@ import {
 import axios from 'axios';
 import AppLocale from '../utils/localization';
 import SlingThemeProvider from '../utils/context/SlingThemeProvider';
+import SlingStyleProvider from '../utils/context/SlingStyleProvider';
+import ContextProvider from '../utils/context/ContextProvider';
+import PageMeta from '../utils/context/PageMeta';
+import LocaleProvider from '../utils/context/LocaleProvider';
 import defaultConfig from '../utils/context/defaultConfig';
 
-// eslint-disable-next-line react/prop-types
 const MyApp = ({
   Component,
   pageProps,

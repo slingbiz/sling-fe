@@ -1,6 +1,8 @@
 import React, {useContext} from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import {AppContext, AppEnums, useDefaultUser} from 'sling-core';
+import {useDefaultUser} from 'sling-core';
+import AppContext from '../../utils/context/AppContext';
+import AppEnums from '../../utils/constants/AppEnums';
 import clsx from 'clsx';
 import {makeStyles} from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';

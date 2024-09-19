@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import GridItemStatic from '../ProductList/GridItemStatic';
 import ecommerce from '../../utils/services/db/ecommerce/ecommerceData';
-import {AppContext} from 'sling-core';
+import AppContext from '../../utils/context/AppContext';
 
 const settings = {
   dots: true,

@@ -9,7 +9,8 @@ import Menu from '@material-ui/core/Menu';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
 import {orange} from '@material-ui/core/colors';
-import {AppContext, AppEnums} from 'sling-core';
+import AppContext from '../../utils/context/AppContext';
+import AppEnums from '../../utils/constants/AppEnums';
 const {Fonts} = AppEnums;
 
 const useStyles = makeStyles((theme) => {

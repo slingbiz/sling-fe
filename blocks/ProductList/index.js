@@ -1,11 +1,11 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import {Box} from '@material-ui/core';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import ProductGrid from './ProductGrid';
 import ProductList from './ProductList';
 import PaginationControlled from '../../widgets/PaginationControlled/index';
-import {AppContext} from 'sling-core';
+import AppContext from '../../utils/context/AppContext';
 import {VIEW_TYPE} from '../../utils/constants/AppConst';
 
 const dot = require('dot-object');
