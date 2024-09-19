@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
-import {AppEnums, registerWidget} from 'sling-core';
+import {AppEnums} from 'sling-core';
 import Header from '../HeaderDefault';
 import FooterDefault from '../FooterDefault';
 import AppLogo from '../../widgets/AppLogo';
@@ -243,21 +243,5 @@ const HomeComponent = (props) => {
     </>
   );
 };
-
-registerWidget(
-  'Default Sling Home Page', // Name of the component
-  HomeComponent, // The React component associated with this component
-  {
-    key: 'DefaultSlingHomePage', // Key used for identifying the component
-    type: 'component', // Type is also set to 'component'
-    description: 'Edit this to make changes in the Home Page for Sling FE', // Description of the component
-    ownership: 'private', // This is a private component
-    icon: 'home', // Icon representing the component
-    props: [], // No props defined for this component
-    availableToAllPages: true, // If applicable
-    config: {}, // Add config if needed
-    requiredProps: [], // No required props for this component
-  },
-);
 
 export default HomeComponent;

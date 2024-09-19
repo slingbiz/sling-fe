@@ -9,7 +9,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
 import {orange} from '@material-ui/core/colors';
 import Hidden from '@material-ui/core/Hidden';
-import { registerWidget } from 'sling-core';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -138,22 +137,6 @@ const HeaderUser = (props) => {
     </Box>
   );
 };
-
-registerWidget(
-  'Default Header User', // Name of the block
-  HeaderUser, // The React component associated with the block
-  {
-    key: 'DefaultHeaderUser', // Key used for identifying the block
-    description: 'header user', // Description of the block
-    ownership: 'private', // This is a private block
-    type: 'block', // Type is block
-    icon: 'account_box', // Icon representing the block
-    props: [], // No props defined for this block
-    availableToAllPages: true, // If applicable
-    config: {}, // Add config if needed
-    requiredProps: [], // No required props for this block
-  },
-);
 
 export default HeaderUser;
 

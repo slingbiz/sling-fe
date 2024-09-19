@@ -7,7 +7,6 @@ import ProductList from './ProductList';
 import PaginationControlled from '../../widgets/PaginationControlled/index';
 import {AppContext} from 'sling-core';
 import {VIEW_TYPE} from '../../utils/constants/AppConst';
-import {registerWidget} from 'sling-core';
 
 const dot = require('dot-object');
 
@@ -62,28 +61,5 @@ const Products = ({widgetProps}) => {
     </Box>
   );
 };
-
-registerWidget(
-  'Shows Product List', // Name of the block
-  Products, // The React component associated with the block from the Blocks object
-  {
-    key: 'ProductList', // Key used for identifying the block
-    description: 'Takes product array path from the Api response.', // Description of the block
-    ownership: 'private', // This is a private block
-    type: 'block', // Type is block
-    icon: 'account_balance_wallet', // Icon representing the block
-    props: [
-      {
-        name: 'responsePath',
-        propType: 'response-derived', // Derived from API response
-        dataType: 'string', // Data type is string
-        default: 'data', // Default value for the prop
-      },
-    ],
-    availableToAllPages: true, // If applicable
-    config: {}, // Add config if needed
-    requiredProps: ['responsePath'], // Required props for the block
-  },
-);
 
 export default Products;

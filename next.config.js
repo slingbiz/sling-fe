@@ -11,13 +11,11 @@ module.exports = (phase) => {
   }
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
-      distDir: 'build',
       env: {},
     };
   }
 
   return {
-    distDir: 'build',
     env: {},
   };
 };

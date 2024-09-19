@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import GridItemStatic from '../ProductList/GridItemStatic';
 import ecommerce from '../../utils/services/db/ecommerce/ecommerceData';
-import {AppContext, registerWidget} from 'sling-core';
+import {AppContext} from 'sling-core';
 
 const settings = {
   dots: true,
@@ -65,21 +65,5 @@ const SimilarProduct = () => {
     </Box>
   );
 };
-
-registerWidget(
-  'Similar Product List', // Name of the block
-  SimilarProduct, // The React component associated with the block from the Blocks object
-  {
-    key: 'SimilarProductList', // Key used for identifying the block
-    type: 'block', 
-    description: 'Shows Similar Product List, Used on the PDP page.', // Description of the block
-    ownership: 'private', // This is a private block
-    icon: '', // No icon provided
-    props: [], // No props defined for this block
-    availableToAllPages: true, // If applicable
-    config: {}, // Add config if needed
-    requiredProps: [], // No required props for this block
-  },
-);
 
 export default SimilarProduct;

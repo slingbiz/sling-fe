@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box} from '@material-ui/core';
-import {AppEnums, registerWidget} from 'sling-core';
+import {AppEnums} from 'sling-core';
 const {Fonts} = AppEnums;
 import {useSelector} from 'react-redux';
 
@@ -35,40 +35,4 @@ const ListingSummary = ({widgetProps}) => {
     </Box>
   );
 };
-
-registerWidget(
-  'Listing Summary Top Bar', // Name of the block
-  ListingSummary, // The React component associated with the block from the Blocks object
-  {
-    key: 'ListingSummaryTopBar', // Key used for identifying the block
-    type: 'block',
-    description: 'Summary of total count and current page. h1 & h2 values.', // Description of the block
-    ownership: 'private', // This is a private block
-    icon: 'picture_in_picture_alt', // Icon representing the block
-    props: [
-      {
-        name: 'totalCount',
-        propType: 'response-derived', // Derived from API response
-        dataType: 'string', // Data type is string
-        default: '341', // Default value
-      },
-      {
-        name: 'h1',
-        propType: 'static', // Static prop type
-        dataType: 'string', // Data type is string
-        default: '', // Default value
-      },
-      {
-        name: 'h2',
-        propType: 'static-derived', // Derived from static value
-        dataType: 'string', // Data type is string
-        default: '', // Default value
-      },
-    ],
-    availableToAllPages: true, // If applicable
-    config: {}, // Add config if needed
-    requiredProps: ['totalCount', 'h1', 'h2'], // Required props for the block
-  },
-);
-
 export default ListingSummary;

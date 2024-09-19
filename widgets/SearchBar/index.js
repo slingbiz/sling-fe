@@ -2,14 +2,10 @@ import React from 'react';
 import InputBase from '@material-ui/core/InputBase';
 import {makeStyles} from '@material-ui/core/styles';
 import {Box, fade} from '@material-ui/core';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import SearchIcon from '@material-ui/icons/Search';
 import {AppEnums} from 'sling-core';
 const {Fonts} = AppEnums;
-
-//use widget registry to register the widget
-import {registerWidget} from 'sling-core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -167,14 +163,5 @@ const AppSearch = ({
     </Box>
   );
 };
-
-registerWidget('Custom Search Bar Widget', AppSearch, {
-  description: 'Search Widget.',
-  ownership: 'private',
-  type: 'widget',
-  key: 'SearchBar',
-  icon: 'search',
-  props: [],
-});
 
 export default AppSearch;

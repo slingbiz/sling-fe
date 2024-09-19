@@ -7,7 +7,6 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import Grid from '@material-ui/core/Grid';
 import {useRouter} from 'next/router';
-import {registerWidget} from 'sling-core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -125,18 +124,5 @@ const ProductImageSlide = ({product}) => {
     </Grid>
   );
 };
-
-registerWidget('Product Image Slider', ProductImageSlide, {
-  key: 'ProductImageSlider',
-  type: 'block',
-  description:
-    'List of images for displaying detailed information of the product.',
-  ownership: 'private',
-  icon: 'camera_enhance',
-  props: [],
-  availableToAllPages: true,
-  config: {},
-  requiredProps: [],
-});
 
 export default ProductImageSlide;

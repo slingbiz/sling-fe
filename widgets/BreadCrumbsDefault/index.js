@@ -4,9 +4,6 @@ import Paper from '@material-ui/core/Paper';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Chip from '@material-ui/core/Chip';
 
-//use widget registry to register the widget
-import {registerWidget} from 'sling-core';
-
 const StyledBreadcrumb = withStyles((theme) => ({
   root: {
     padding: 0,
@@ -88,14 +85,5 @@ const CustomizedBreadcrumbs = () => {
     </Paper>
   );
 };
-
-registerWidget('Widget to Display Bread Crumbs', CustomizedBreadcrumbs, {
-  description: 'Edit 2 this to change logo for your company and name',
-  ownership: 'private',
-  type: 'widget',
-  key: 'BreadCrumbsDefault',
-  icon: 'Widgets',
-  props: [],
-});
 
 export default CustomizedBreadcrumbs;

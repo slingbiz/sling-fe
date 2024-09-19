@@ -10,9 +10,6 @@ import Grid from '@material-ui/core/Grid';
 import {makeStyles} from '@material-ui/core/styles';
 import {VIEW_TYPE} from '../../utils/constants/AppConst';
 
-//use widget registry to register the widget
-import {registerWidget} from 'sling-core';
-
 const _ = require('lodash');
 const useStyles = makeStyles((theme) => ({
   viewType: {
@@ -71,32 +68,5 @@ const ListingSearchBar = ({widgetProps}) => {
     </Grid>
   );
 };
-
-registerWidget(
-  'Listing Search Bar', // Name of the block
-  ListingSearchBar, // The React component associated with the block
-  {
-    key: 'ListingSearchBar', // Key used for identifying the block
-    description: 'Search Bar Wrapper - accepts List or Grid option',
-    ownership: 'private', // This is a private block
-    type: 'block', // Type is block
-    icon: 'settings_cell', // Icon representing the block
-    props: [
-      {
-        name: 'viewType',
-        propType: 'static', // Static prop type
-        dataType: 'option', // Option type for the data
-        options: [
-          {value: 1, label: 'List'},
-          {value: 2, label: 'Grid'},
-        ],
-        default: 2, // Default is 'Grid'
-      },
-    ],
-    availableToAllPages: true, // If applicable
-    config: {}, // Add config if needed
-    requiredProps: ['viewType'], // Required props for the block
-  },
-);
 
 export default ListingSearchBar;

@@ -11,7 +11,6 @@ import {
 } from '@material-ui/core';
 import {grey} from '@material-ui/core/colors';
 import {AppEnums, IntlMessages} from 'sling-core';
-import {registerWidget} from 'sling-core';
 
 import AppLogo from '../../widgets/AppLogo';
 import Avatar from '@material-ui/core/Avatar';
@@ -135,22 +134,5 @@ const ErrorSling = () => {
     </Box>
   );
 };
-
-registerWidget(
-  'Custom Sling Error Component', // Name of the component
-  ErrorSling, // The React component associated with this component
-  {
-    key: 'CustomSlingErrorComponent', // Key used for identifying the component
-    type: 'component', // Type is also set to 'component'
-    description:
-      'Use this to show no routes and Error section on your new web page.', // Description of the component
-    ownership: 'private', // This is a private component
-    icon: '', // No icon provided
-    props: [], // No props defined for this component
-    availableToAllPages: true, // If applicable
-    config: {}, // Add config if needed
-    requiredProps: [], // No required props for this component
-  },
-);
 
 export default ErrorSling;
