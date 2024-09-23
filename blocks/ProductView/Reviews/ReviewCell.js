@@ -60,7 +60,7 @@ const ReviewCell = () => {
             </Box>
             Parmar Ravikumar
           </Box>
-          <Box component='p' fontSize={14} color='text.secondary'>
+          <Box component='p' fontSize={14} color='textSecondary'>
             If several languages coalesce, the grammar of the resulting language
           </Box>
           <Box component='p' fontSize={12} color='text.hint'>

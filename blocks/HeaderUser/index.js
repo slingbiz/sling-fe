@@ -103,7 +103,7 @@ const HeaderUser = (props) => {
                 <Box
                   fontSize={13}
                   fontWeight={AppEnums.Fonts.LIGHT}
-                  color='text.secondary'>
+                  color='textSecondary'>
                   System Manager
                 </Box>
               </Box>

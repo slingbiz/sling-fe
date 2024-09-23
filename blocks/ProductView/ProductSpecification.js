@@ -50,7 +50,7 @@ const ProductSpecification = () => {
         {productSpecification.map((data) => (
           <React.Fragment key={data.id}>
             <Grid item xs={4}>
-              <Box color='text.secondary'> {data.title}</Box>
+              <Box color='textSecondary'> {data.title}</Box>
             </Grid>
             <Grid item xs={8}>
               <Box> {data.desc}</Box>

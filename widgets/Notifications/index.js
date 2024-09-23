@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
   notiIcon: {
     fontSize: 22,
-    color: theme.palette.text.secondary,
+    color: theme.palette.textSecondary,
     [theme.breakpoints.up('xl')]: {
       fontSize: 30,
     },

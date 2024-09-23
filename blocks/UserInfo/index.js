@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => {
       marginTop: -2,
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
-      color: theme.palette.text.secondary,
+      color: theme.palette.textSecondary,
     },
     pointer: {
       cursor: 'pointer',

@@ -105,7 +105,7 @@ const GridItemStatic = (props) => {
         <Box
           mb={3}
           mr={6}
-          color='text.secondary'
+          color='textSecondary'
           className={clsx(classes.truncate, classes.textSm)}>
           {item.description}
         </Box>

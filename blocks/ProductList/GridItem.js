@@ -143,7 +143,7 @@ const GridItem = (props) => {
 
         <Typography
           component='h6'
-          color='text.secondary'
+          color='textSecondary'
           className={clsx(
             classes.truncate,
             classes.textSm,

@@ -13,19 +13,19 @@ import AppLogo from '../../widgets/AppLogo';
 import Hidden from '@material-ui/core/Hidden';
 import LanguageSwitcher from '../../utils/context/LanguageSwitcher';
 
-const Header = ({style}) => {
+const Header = () => {
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  function handleMobileMenuClose() {
+  const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
-  }
+  };
 
-  function handleMobileMenuOpen(event) {
+  const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
-  }
+  };
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -43,31 +43,20 @@ const Header = ({style}) => {
       <MenuItem className={classes.menuItemRoot}>
         <Notifications />
       </MenuItem>
-      <LanguageSwitcher />
+      <MenuItem className={classes.menuItemRoot}>
+        {/* Ensure proper color props for Button */}
+        <LanguageSwitcher />
+      </MenuItem>
     </Menu>
   );
 
   return (
     <>
-      <AppBar className='app-bar' color='inherit' style={{...style}}>
-        {/*<NotificationBar />*/}
-
+      <AppBar className='app-bar' color='inherit'>
         <Toolbar className={classes.appToolbar}>
-          {/*<IconButton*/}
-          {/*  edge='start'*/}
-          {/*  className={classes.menuButton}*/}
-          {/*  color='inherit'*/}
-          {/*  aria-label='open drawer'*/}
-          {/*  onClick={() => dispatch(toggleNavCollapsed())}>*/}
-          {/*  <MenuIcon className={classes.menuIconRoot} />*/}
-          {/*</IconButton>*/}
-
           <AppLogo />
           <Box className={classes.grow} />
-
-          {/*<SearchBar borderLight placeholder='Search…' />*/}
           <Box className={classes.sectionDesktop}>
-            {/* <LanguageSwitcher /> */}
             <HeaderMessages />
             <Notifications />
           </Box>
@@ -85,8 +74,7 @@ const Header = ({style}) => {
         <Hidden mdDown>
           <Box className={classes.headerNav}>
             <Box className={classes.headerContainer}>
-              {/*<HorizontalNav />*/}
-              {/*TODO: Add Category Menu here*/}
+              {/* Add your navigation here */}
             </Box>
           </Box>
         </Hidden>

@@ -41,7 +41,7 @@ const AppLogo = () => {
         </Link>
       </Hidden>
       <Box
-        color='text.secondary'
+        color='textSecondary'
         fontSize={16}
         fontWeight={500}
         ml={2}

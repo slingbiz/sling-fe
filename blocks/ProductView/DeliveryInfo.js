@@ -26,7 +26,7 @@ const DeliveryInfo = () => {
           <Box component='span' color='#49BD65' mx={3}>
             Free
           </Box>
-          <Box component='span' color='text.secondary'>
+          <Box component='span' color='textSecondary'>
             $40
           </Box>
         </Box>

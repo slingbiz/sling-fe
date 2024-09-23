@@ -94,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: Fonts.MEDIUM,
     border: '1px solid',
     borderColor: (props) =>
-      props.borderLight ? '#efefef' : theme.palette.text.secondary,
+      props.borderLight ? '#efefef' : theme.palette.textSecondary,
     color: 'black',
     borderRadius: 4,
 

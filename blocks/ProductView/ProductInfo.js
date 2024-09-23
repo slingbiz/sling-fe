@@ -84,7 +84,7 @@ const ProductInfo = () => {
         {productInfo.map((data) => (
           <React.Fragment key={data.id}>
             <Grid item xs={4}>
-              <Box color='text.secondary' pr={2}>
+              <Box color='textSecondary' pr={2}>
                 {data.title}
               </Box>
             </Grid>

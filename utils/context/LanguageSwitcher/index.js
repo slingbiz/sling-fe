@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import clsx from 'clsx';
 import Box from '@material-ui/core/Box';
-import PropTypes from 'prop-types';
 import {makeStyles, MenuItem, Menu} from '@material-ui/core';
 import {Fonts} from '../../constants/AppEnums';
 import Button from '@material-ui/core/Button';
@@ -165,20 +164,10 @@ const LanguageSwitcher = (props) => {
         ))}
       </Menu>
       <Link href={'https://studio.sling.biz'}>
-        <Button className={classes.dashboardBtn} color='yellow'>
-          Studio
-        </Button>
+        <Button className={classes.dashboardBtn}>Studio</Button>
       </Link>
     </Box>
   );
 };
 
 export default LanguageSwitcher;
-
-LanguageSwitcher.defaultProps = {
-  iconOnly: false,
-};
-
-LanguageSwitcher.propTypes = {
-  iconOnly: PropTypes.bool,
-};

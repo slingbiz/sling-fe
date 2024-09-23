@@ -52,7 +52,7 @@ const ReviewInfo = () => {
             component='span'
             ml={2}
             style={{fontSize: 14}}
-            color='text.secondary'>
+            color='textSecondary'>
             432
           </Box>
         </Box>
@@ -69,7 +69,7 @@ const ReviewInfo = () => {
             component='span'
             ml={2}
             style={{fontSize: 14}}
-            color='text.secondary'>
+            color='textSecondary'>
             122
           </Box>
         </Box>
@@ -86,7 +86,7 @@ const ReviewInfo = () => {
             component='span'
             ml={2}
             style={{fontSize: 14}}
-            color='text.secondary'>
+            color='textSecondary'>
             20
           </Box>
         </Box>
@@ -103,7 +103,7 @@ const ReviewInfo = () => {
             component='span'
             ml={2}
             style={{fontSize: 14}}
-            color='text.secondary'>
+            color='textSecondary'>
             3
           </Box>
         </Box>
@@ -120,7 +120,7 @@ const ReviewInfo = () => {
             component='span'
             ml={2}
             style={{fontSize: 14}}
-            color='text.secondary'>
+            color='textSecondary'>
             4
           </Box>
         </Box>

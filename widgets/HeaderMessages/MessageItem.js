@@ -40,7 +40,7 @@ const MessageItem = (props) => {
         <Box mb={0.5} component='p' fontWeight={Fonts.MEDIUM} fontSize={14}>
           {item.name}
         </Box>
-        <Box component='p' color='text.secondary'>
+        <Box component='p' color='textSecondary'>
           {item.message}
         </Box>
       </Box>

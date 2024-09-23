@@ -38,7 +38,7 @@ const NotificationItem = (props) => {
           />
         </ListItemAvatar>
       </Box>
-      <Box component='p' className={classes.textBase} color='text.secondary'>
+      <Box component='p' className={classes.textBase} color='textSecondary'>
         <Box
           mr={2}
           component='span'

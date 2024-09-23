@@ -46,13 +46,13 @@ const Header = ({product}) => {
         </Box>
         <Box display='flex'>
           <Rating defaultValue={product.rating} size='small' readOnly />
-          <Box ml={2} mr={4} color='text.secondary'>
+          <Box ml={2} mr={4} color='textSecondary'>
             {product.reviews + ' reviews'}
           </Box>
 
           <Box>
             SKU :{' '}
-            <Box component='span' ml={2} color='text.secondary'>
+            <Box component='span' ml={2} color='textSecondary'>
               MB023
             </Box>
           </Box>

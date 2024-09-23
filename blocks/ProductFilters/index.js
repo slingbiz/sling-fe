@@ -1,12 +1,12 @@
 import React, {useContext, useEffect, useState} from 'react';
 import ProductsCategory from './ProductsCategory';
 import {Box} from '@material-ui/core';
-
-const {Fonts} = AppEnums;
 import Divider from '@material-ui/core/Divider';
 import PriceSelector from './PriceSelector';
 import {makeStyles} from '@material-ui/core/styles';
 import {AppList} from 'sling-core';
+const {Fonts} = AppEnums;
+
 import CheckedCell from './CheckedCell';
 import {
   BrandData,
@@ -27,6 +27,7 @@ const useStyles = makeStyles({
     marginTop: 16,
   },
 });
+
 const ProductSidebar = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -110,17 +111,17 @@ const ProductSidebar = () => {
         <Box component='h5' mb={2} fontWeight={Fonts.MEDIUM}>
           Filter By
         </Box>
-        <Box color='text.secondary' mb={4} fontWeight={Fonts.MEDIUM}>
+        <Box color='textSecondary' mb={4} fontWeight={Fonts.MEDIUM}>
           CATEGORIES
         </Box>
         <ProductsCategory />
         <Divider className={classes.divider} />
-        <Box color='text.secondary' my={4} fontWeight={Fonts.MEDIUM}>
+        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
           PRICE
         </Box>
         <PriceSelector />
         <Divider className={classes.divider} />
-        <Box color='text.secondary' my={4} fontWeight={Fonts.MEDIUM}>
+        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
           BRAND
           <AppList
             data={BrandData}
@@ -135,7 +136,7 @@ const ProductSidebar = () => {
           />
         </Box>
         <Divider className={classes.divider} />
-        <Box color='text.secondary' my={4} fontWeight={Fonts.MEDIUM}>
+        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
           IDEAL FOR
           <AppList
             data={IdealFor}
@@ -150,7 +151,7 @@ const ProductSidebar = () => {
           />
         </Box>
         <Divider className={classes.divider} />
-        <Box color='text.secondary' my={4} fontWeight={Fonts.MEDIUM}>
+        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
           DISCOUNT
           <AppList
             data={DiscountList}
@@ -165,12 +166,10 @@ const ProductSidebar = () => {
           />
         </Box>
         <Divider className={classes.divider} />
-        <Box color='text.secondary' my={4} fontWeight={Fonts.MEDIUM}>
+        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
           COLOR
-          <Box
+          <AppList
             data={Object.values(ProductColors)}
-            column={6}
-            // itemPadding={10}
             renderRow={(data, index) => (
               <ColorCell
                 key={'color-' + index}
@@ -182,7 +181,7 @@ const ProductSidebar = () => {
           />
         </Box>
         <Divider className={classes.divider} />
-        <Box color='text.secondary' my={4} fontWeight={Fonts.MEDIUM}>
+        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
           CUSTOMER RATINGS
           <AppList
             data={[5, 4, 3, 2, 1]}

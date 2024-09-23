@@ -18,7 +18,7 @@ const ProductView = ({product}) => {
         ${product.mrp}
         <Box
           component='span'
-          color='text.secondary'
+          color='textSecondary'
           fontSize={16}
           ml={3}
           style={{textDecoration: 'line-through'}}>
@@ -28,7 +28,7 @@ const ProductView = ({product}) => {
       <Box color='primary.main' fontSize={16} mb={4}>
         In stoke
       </Box>
-      <Box component='p' color='text.secondary'>
+      <Box component='p' color='textSecondary'>
         It is a long established fact that a reader will be distracted by the
         readable content of a page looking at its layout. The point of using
         Lorem Ipsum is that it has a more-or-less normal distribution of

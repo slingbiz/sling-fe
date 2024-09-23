@@ -147,7 +147,7 @@ const ListItem = (props) => {
 
           <Typography
             component='h6'
-            color='text.secondary'
+            color='textSecondary'
             className={clsx(
               classes.truncate,
               classes.textSm,
@@ -184,7 +184,7 @@ const ListItem = (props) => {
                   mr={{xs: 2, xl: 4}}
                   mb={1}
                   pr={{xs: 2, xl: 4}}
-                  color='text.secondary'
+                  color='textSecondary'
                   borderRight={1}
                   borderColor='primary.main'>
                   <IntlMessages id='ecommerce.mrp' />:
