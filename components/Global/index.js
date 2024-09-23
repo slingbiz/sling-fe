@@ -6,28 +6,9 @@ import {makeStyles} from '@material-ui/core/styles';
 import {RenderTree} from 'sling-core';
 import ErrorSling from '../ErrorSling';
 
-const useStyles = makeStyles((theme) => ({
-  bodyMain: {padding: '20px 20px 0'},
-  appMain: {
-    display: 'flex',
-    position: 'relative',
-    flexDirection: 'column',
-    paddingTop: 56,
-    backgroundColor: 'white',
-    [theme.breakpoints.up('sm')]: {
-      paddingTop: 70,
-    },
-    '&.appMainFooter': {
-      '& $mainContainerFull': {},
-    },
-    '&.appMainFixedFooter': {
-      paddingBottom: 48,
-      [theme.breakpoints.up('xl')]: {
-        paddingBottom: 58,
-      },
-      '& $mainContainerFull': {},
-    },
-  },
+const useStyles = makeStyles(() => ({
+  // bodyMain: {padding: '20px 20px 0'},
+  appMain: {},
 }));
 
 const GlobalPage = () => {

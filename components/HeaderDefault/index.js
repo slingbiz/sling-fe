@@ -1,86 +1,141 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import Box from '@material-ui/core/Box';
-import useStyles from './Header.style';
-import HeaderMessages from '../../widgets/HeaderMessages';
-import Notifications from '../../widgets/Notifications';
-import AppLogo from '../../widgets/AppLogo';
-import Hidden from '@material-ui/core/Hidden';
-import LanguageSwitcher from '../../utils/context/LanguageSwitcher';
+import React, {useState} from 'react';
+import {
+  Toolbar,
+  IconButton,
+  Typography,
+  Box,
+  Menu,
+  MenuItem,
+  Hidden,
+  useMediaQuery,
+} from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import MessageIcon from '@material-ui/icons/Message';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import FlagIcon from '@material-ui/icons/Flag'; // Placeholder for the flag icon
+import {makeStyles, useTheme} from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  header: {border: 'none'},
+  root: {
+    flexGrow: 1,
+    width: '100%',
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+  logo: {
+    height: 36,
+    marginRight: theme.spacing(2),
+  },
+  iconButton: {
+    padding: theme.spacing(1),
+  },
+  toolbar: {
+    width: '100%',
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(1),
+    },
+  },
+  appBar: {
+    width: '100%',
+    boxShadow: 'none',
+  },
+}));
 
 const Header = () => {
   const classes = useStyles();
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
 
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
   };
 
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
+  const handleMenuClose = () => {
+    setAnchorEl(null);
   };
-
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{vertical: 'top', horizontal: 'right'}}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{vertical: 'top', horizontal: 'right'}}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}>
-      <MenuItem className={classes.menuItemRoot}>
-        <HeaderMessages />
-      </MenuItem>
-      <MenuItem className={classes.menuItemRoot}>
-        <Notifications />
-      </MenuItem>
-      <MenuItem className={classes.menuItemRoot}>
-        {/* Ensure proper color props for Button */}
-        <LanguageSwitcher />
-      </MenuItem>
-    </Menu>
-  );
 
   return (
-    <>
-      <AppBar className='app-bar' color='inherit'>
-        <Toolbar className={classes.appToolbar}>
-          <AppLogo />
-          <Box className={classes.grow} />
-          <Box className={classes.sectionDesktop}>
-            <HeaderMessages />
-            <Notifications />
-          </Box>
-          <Box className={classes.sectionMobile}>
-            <IconButton
-              aria-label='show more'
-              aria-controls={mobileMenuId}
-              aria-haspopup='true'
-              onClick={handleMobileMenuOpen}
-              color='inherit'>
-              <MoreIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-        <Hidden mdDown>
-          <Box className={classes.headerNav}>
-            <Box className={classes.headerContainer}>
-              {/* Add your navigation here */}
-            </Box>
-          </Box>
+    <Box position='static' color='default' className={classes.appBar}>
+      <Toolbar className={classes.toolbar}>
+        {/* Logo */}
+        <IconButton
+          edge='start'
+          className={classes.menuButton}
+          color='inherit'
+          aria-label='logo'>
+          <img
+            src={isMobile ? '/images/logo.png' : '/images/logo-white.png'}
+            alt='Logo'
+            className={classes.logo}
+          />
+        </IconButton>
+
+        {/* Title */}
+        <Typography variant='h6' className={classes.title}>
+          Demo
+        </Typography>
+
+        {/* Hidden for larger screens */}
+        <Hidden smUp>
+          <IconButton edge='end' color='inherit' onClick={handleMenuClick}>
+            <MoreVertIcon />
+          </IconButton>
         </Hidden>
-      </AppBar>
-      {renderMobileMenu}
-    </>
+
+        {/* Inline icons for larger screens */}
+        <Hidden xsDown>
+          <Grid
+            display='flex'
+            spacing={5}
+            container
+            justifyContent='flex-end'
+            flexDirection='row'>
+            <Grid item>
+              <IconButton className={classes.iconButton} color='inherit'>
+                <MessageIcon />
+              </IconButton>
+            </Grid>
+            <Grid item>
+              <IconButton className={classes.iconButton} color='inherit'>
+                <NotificationsIcon />
+              </IconButton>
+            </Grid>
+            <Grid item>
+              <IconButton className={classes.iconButton} color='inherit'>
+                <FlagIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
+        </Hidden>
+
+        {/* Dropdown menu for mobile screens */}
+        <Menu
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleMenuClose}>
+          <MenuItem onClick={handleMenuClose}>
+            <MessageIcon /> Messages
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <NotificationsIcon /> Notifications
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <FlagIcon /> Language
+          </MenuItem>
+        </Menu>
+      </Toolbar>
+    </Box>
   );
 };
 

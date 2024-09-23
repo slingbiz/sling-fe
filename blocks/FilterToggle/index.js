@@ -23,17 +23,10 @@ const useStyles = makeStyles((theme) => ({
       width: '20rem',
     },
   },
-  appsMainContent: (props) => ({
+  appsMainContent: () => ({
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    [theme.breakpoints.up('lg')]: {
-      width: `calc(100% - ${props.fullView ? 0 : 17}rem)`,
-      paddingLeft: props.fullView ? 0 : 40,
-    },
-    [theme.breakpoints.up('xl')]: {
-      width: `calc(100% - ${props.fullView ? 0 : 20}rem)`,
-    },
   }),
   menuButton: {
     marginRight: theme.spacing(2),

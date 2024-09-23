@@ -33,9 +33,7 @@ const useStyles = makeStyles((theme) => {
       fontSize: 24,
       backgroundColor: orange[500],
     },
-    userInfo: {
-      width: (props) => (!props.header ? 'calc(100% - 75px)' : '100%'),
-    },
+
     userName: {
       overflow: 'hidden',
       textOverflow: 'ellipsis',

@@ -15,6 +15,7 @@ const ColorCell = ({selected, data, onChange}) => {
         borderRadius: 100,
         height: 40,
         width: 40,
+        margin: 5,
       }}
       onClick={() => onChange(data)}
       className='pointer'>

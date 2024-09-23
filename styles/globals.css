@@ -55,3 +55,8 @@ h5 {
 h6 {
   font-size: 14px;
 }
+
+.MuiGrid-spacing-xs-2 {
+  width: 100% !important;
+  margin: 0 !important;
+}

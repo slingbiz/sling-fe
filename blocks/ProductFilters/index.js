@@ -4,23 +4,22 @@ import {Box} from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import PriceSelector from './PriceSelector';
 import {makeStyles} from '@material-ui/core/styles';
-import {AppList} from 'sling-core';
-const {Fonts} = AppEnums;
-
 import CheckedCell from './CheckedCell';
-import {
-  BrandData,
-  DiscountList,
-  IdealFor,
-  ProductColors,
-} from '../../utils/services/db/ecommerce/ecommerceData';
 import ColorCell from './ColorCell';
 import RatingCell from './RatingCell';
 import {useDispatch, useSelector} from 'react-redux';
 import {setFilters} from '../../redux/actions/Ecommerce';
 import AppContext from '../../utils/context/AppContext';
 import AppEnums from '../../utils/constants/AppEnums';
-import {AppSidebar} from 'sling-core';
+import AppSidebar from './AppSidebar';
+import {
+  BrandData,
+  DiscountList,
+  IdealFor,
+  ProductColors,
+} from '../../utils/services/db/ecommerce/ecommerceData';
+
+const {Fonts} = AppEnums;
 
 const useStyles = makeStyles({
   divider: {
@@ -107,93 +106,91 @@ const ProductSidebar = () => {
       isAppDrawerOpen={isAppDrawerOpen}
       footer={footer}
       navStyle={navStyle}>
-      <Box p={6}>
+      <Box style={{padding: 20}}>
         <Box component='h5' mb={2} fontWeight={Fonts.MEDIUM}>
           Filter By
         </Box>
-        <Box color='textSecondary' mb={4} fontWeight={Fonts.MEDIUM}>
+        <Box mb={4} fontWeight={Fonts.MEDIUM}>
           CATEGORIES
         </Box>
         <ProductsCategory />
         <Divider className={classes.divider} />
-        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
+
+        <Box my={4} fontWeight={Fonts.MEDIUM}>
           PRICE
         </Box>
         <PriceSelector />
         <Divider className={classes.divider} />
-        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
+
+        {/* Brand Filter */}
+        <Box my={4} fontWeight={Fonts.MEDIUM}>
           BRAND
-          <AppList
-            data={BrandData}
-            renderRow={(data) => (
-              <CheckedCell
-                key={data.id}
-                data={data}
-                onChange={onSelectBrand}
-                selected={selectedBrand}
-              />
-            )}
-          />
+          {BrandData.map((data) => (
+            <CheckedCell
+              key={data.id}
+              data={data}
+              onChange={onSelectBrand}
+              selected={selectedBrand}
+            />
+          ))}
         </Box>
         <Divider className={classes.divider} />
-        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
+
+        {/* Ideal For Filter */}
+        <Box my={4} fontWeight={Fonts.MEDIUM}>
           IDEAL FOR
-          <AppList
-            data={IdealFor}
-            renderRow={(data) => (
-              <CheckedCell
-                key={data.id}
-                data={data}
-                onChange={onSelectFor}
-                selected={selectedFor}
-              />
-            )}
-          />
+          {IdealFor.map((data) => (
+            <CheckedCell
+              key={data.id}
+              data={data}
+              onChange={onSelectFor}
+              selected={selectedFor}
+            />
+          ))}
         </Box>
         <Divider className={classes.divider} />
-        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
+
+        {/* Discount Filter */}
+        <Box my={4} fontWeight={Fonts.MEDIUM}>
           DISCOUNT
-          <AppList
-            data={DiscountList}
-            renderRow={(data) => (
-              <CheckedCell
-                key={data.id}
-                data={data}
-                onChange={onSelectDiscount}
-                selected={selectedDiscount}
-              />
-            )}
-          />
+          {DiscountList.map((data) => (
+            <CheckedCell
+              key={data.id}
+              data={data}
+              onChange={onSelectDiscount}
+              selected={selectedDiscount}
+            />
+          ))}
         </Box>
         <Divider className={classes.divider} />
-        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
+
+        {/* Color Filter */}
+        <Box my={4} fontWeight={Fonts.MEDIUM}>
           COLOR
-          <AppList
-            data={Object.values(ProductColors)}
-            renderRow={(data, index) => (
+          <Box style={{display: 'flex'}}>
+            {Object.values(ProductColors).map((data, index) => (
               <ColorCell
                 key={'color-' + index}
                 data={data}
                 selected={selectedColor}
                 onChange={onSelectColor}
               />
-            )}
-          />
+            ))}
+          </Box>
         </Box>
         <Divider className={classes.divider} />
-        <Box color='textSecondary' my={4} fontWeight={Fonts.MEDIUM}>
+
+        {/* Rating Filter */}
+        <Box my={4} fontWeight={Fonts.MEDIUM}>
           CUSTOMER RATINGS
-          <AppList
-            data={[5, 4, 3, 2, 1]}
-            renderRow={(data) => (
-              <RatingCell
-                key={data}
-                data={data}
-                onChange={onSelectRating}
-                selected={customerRating}
-              />
-            )}
-          />
+          {[5, 4, 3, 2, 1].map((data) => (
+            <RatingCell
+              key={data}
+              data={data}
+              onChange={onSelectRating}
+              selected={customerRating}
+            />
+          ))}
         </Box>
       </Box>
     </AppSidebar>
