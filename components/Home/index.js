@@ -161,7 +161,7 @@ const HomeComponent = (props) => {
                 <Box className={classes.p10}>
                   <Link
                     color='inherit'
-                    href='https://sling.biz/documentation/'
+                    href='https://sling.biz/documentation'
                     target={'_blank'}>
                     Learn More
                   </Link>
