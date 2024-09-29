@@ -14,7 +14,7 @@ const defaultConfig = {
         default: '#FFFFFF',
       },
       primary: {
-        main: '#0A8FDC',
+        main: '#fff',
         contrastText: '#fff',
       },
       secondary: {
