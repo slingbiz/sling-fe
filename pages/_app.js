@@ -87,13 +87,7 @@ MyApp.getInitialProps = async (appContext) => {
   let response = {};
   const {ctx} = appContext;
   const {pathname, query, asPath} = ctx;
-  console.log(
-    '[MyApp.getInitialProps]',
-    pathname,
-    query,
-    asPath,
-    GET_INIT_PROPS,
-  );
+
   try {
     //Fetch initial Layout based on url.
     response = await axios({
