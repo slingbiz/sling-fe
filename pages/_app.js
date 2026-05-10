@@ -51,14 +51,16 @@ const MyApp = ({
   if (error) {
     // return <Error status={500} />;
   }
+  const contextProps = {
+    initConfig,
+    layout: {layoutConfig, pageTemplate},
+    routeConstants,
+    ssrApi: apiResponse,
+  };
   return (
     <React.Fragment>
       <PageMeta />
-      <ContextProvider
-        initConfig={initConfig}
-        layout={{layoutConfig, pageTemplate}}
-        routeConstants={routeConstants}
-        ssrApi={apiResponse}>
+      <ContextProvider {...contextProps}>
         <Provider store={store}>
           <SlingThemeProvider appLocale={AppLocale} theme={defaultConfig}>
             <SlingStyleProvider>
@@ -74,13 +76,36 @@ const MyApp = ({
   );
 };
 
-const getHeaders = () => {
-  return {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    license: CLIENT_KEY_SECRET,
-    client: CLIENT_ID,
-  };
+const resolveBootstrapPostUrl = (ctx) => {
+  if (typeof window !== 'undefined') {
+    return `${window.location.origin}/api/fe-bootstrap`;
+  }
+
+  const req = ctx.req;
+  if (!req?.headers) {
+    return `${GET_INIT_PROPS}`;
+  }
+
+  const fwd = req.headers['x-forwarded-host'];
+  const hostFromForwarded =
+    typeof fwd === 'string' && fwd.trim() !== ''
+      ? fwd.split(',')[0].trim()
+      : '';
+
+  const host =
+    hostFromForwarded ||
+    (typeof req.headers.host === 'string'
+      ? req.headers.host.split(',')[0].trim()
+      : '');
+  const protoHeader = req.headers['x-forwarded-proto']?.split(',')[0]?.trim();
+  const proto =
+    protoHeader === 'http' || protoHeader === 'https' ? protoHeader : 'https';
+
+  if (!host) {
+    return `${GET_INIT_PROPS}`;
+  }
+
+  return `${proto}://${host}/api/fe-bootstrap`;
 };
 
 MyApp.getInitialProps = async (appContext) => {
@@ -89,14 +114,32 @@ MyApp.getInitialProps = async (appContext) => {
   const {pathname, query, asPath} = ctx;
 
   try {
-    //Fetch initial Layout based on url.
-    response = await axios({
-      url: `${GET_INIT_PROPS}`,
-      method: 'POST',
-      headers: getHeaders(),
-      data: {pathname, query, asPath},
-    });
+    const bootstrapUrl = resolveBootstrapPostUrl(ctx);
+    const isDirectInit = bootstrapUrl === `${GET_INIT_PROPS}`;
 
+    const axiosConfig = isDirectInit
+      ? {
+          url: `${GET_INIT_PROPS}`,
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            license: CLIENT_KEY_SECRET,
+            client: CLIENT_ID,
+          },
+          data: {pathname, query, asPath},
+        }
+      : {
+          url: bootstrapUrl,
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          data: {pathname, query, asPath},
+        };
+
+    response = await axios(axiosConfig);
     response = response.data;
   } catch (e) {
     console.log('[MyApp.getInitialProps] - Message', e.message);
