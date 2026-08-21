@@ -1,6 +1,11 @@
 import {registerWidget} from 'sling-core';
 import dynamic from 'next/dynamic';
 
+// AI-generated widgets register themselves here once published, kept
+// entirely separate from the hand-written widgets below so the publish
+// automation (sling-api) never has to touch this file.
+import './generated';
+
 registerWidget(
   'Pagination Widget',
   dynamic(() => import('./PaginationControlled'), {ssr: false}),
