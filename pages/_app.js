@@ -22,6 +22,7 @@ import ContextProvider from '../utils/context/ContextProvider';
 import PageMeta from '../utils/context/PageMeta';
 import LocaleProvider from '../utils/context/LocaleProvider';
 import defaultConfig from '../utils/context/defaultConfig';
+import {mergeInitConfig} from '../utils/context/mergeInitConfig';
 
 const MyApp = ({
   Component,
@@ -51,8 +52,9 @@ const MyApp = ({
   if (error) {
     // return <Error status={500} />;
   }
+  const mergedInitConfig = mergeInitConfig(initConfig, defaultConfig);
   const contextProps = {
-    initConfig,
+    initConfig: mergedInitConfig,
     layout: {layoutConfig, pageTemplate},
     routeConstants,
     ssrApi: apiResponse,
@@ -62,7 +64,7 @@ const MyApp = ({
       <PageMeta />
       <ContextProvider {...contextProps}>
         <Provider store={store}>
-          <SlingThemeProvider appLocale={AppLocale} theme={defaultConfig}>
+          <SlingThemeProvider appLocale={AppLocale} theme={mergedInitConfig}>
             <SlingStyleProvider>
               <LocaleProvider appLocale={AppLocale}>
                 <CssBaseline />
