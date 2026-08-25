@@ -6,9 +6,9 @@ const {Fonts} = AppEnums;
 
 const ThumbBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
-const PriceSlider = withStyles({
+const PriceSlider = withStyles((theme) => ({
   root: {
-    color: '#0A8FDC',
+    color: theme.palette.primary.main,
     height: 2,
     padding: '15px 0',
   },
@@ -22,7 +22,6 @@ const PriceSlider = withStyles({
     '&:focus, &:hover, &$active': {
       boxShadow:
         '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.02)',
-      // Reset on touch devices, it doesn't add specificity
       '@media (hover: none)': {
         boxShadow: ThumbBoxShadow,
       },
@@ -45,10 +44,10 @@ const PriceSlider = withStyles({
     height: 8,
     borderRadius: 4,
     opacity: 0.5,
-    backgroundColor: '#bfbfbf',
+    backgroundColor: theme.palette.grey[400],
   },
   mark: {
-    backgroundColor: '#bfbfbf',
+    backgroundColor: theme.palette.grey[400],
     height: 8,
     width: 1,
     marginTop: -3,
@@ -57,7 +56,7 @@ const PriceSlider = withStyles({
     opacity: 1,
     backgroundColor: 'currentColor',
   },
-})(Slider);
+}))(Slider);
 
 const PriceSelector = () => {
   const [value, setValue] = React.useState([50, 400]);

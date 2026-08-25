@@ -73,8 +73,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 8,
     color: theme.palette.textSecondary,
   },
-  textUppercase: {
-    textTransform: 'uppercase',
+  productLink: {
+    color: theme.palette.primary.main,
+    fontWeight: 'bold',
   },
 }));
 
@@ -204,8 +205,7 @@ const HomeComponent = (props) => {
                             href='/dubai/women/clothes/products'
                             style={{textDecoration: 'none'}}>
                             <span style={{color: 'grey'}}>Try</span>
-                            <span
-                              style={{color: '#ff9800', fontWeight: 'bold'}}>
+                            <span className={classes.productLink}>
                               Product Listing
                             </span>
                           </a>

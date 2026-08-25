@@ -9,3 +9,11 @@ test('ThemeProvider uses API initConfig (merged), not only local defaultConfig',
   assert.match(src, /mergeInitConfig/);
   assert.doesNotMatch(src, /<SlingThemeProvider[^>]*theme=\{defaultConfig\}/);
 });
+
+test('SlingThemeProvider applies tenant palette as CSS variables', () => {
+  const provider = fs.readFileSync(
+    path.join(__dirname, '../utils/context/SlingThemeProvider.js'),
+    'utf8',
+  );
+  assert.match(provider, /withThemeCssVars/);
+});

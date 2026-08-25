@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box} from '@material-ui/core';
+import {Box, useTheme} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import LoopIcon from '@material-ui/icons/Loop';
@@ -8,6 +8,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 
 const DeliveryInfo = () => {
+  const theme = useTheme();
+  const brand = theme.palette.primary.main;
+  const muted = theme.palette.text.secondary;
+
   return (
     <Grid container spacing={3}>
       <Grid item xs={12} sm={6}>
@@ -40,13 +44,13 @@ const DeliveryInfo = () => {
 
         <Box fontSize={14} display='flex' alignItems='center'>
           <Tooltip title='Return policy'>
-            <LoopIcon style={{color: '#0A8FDC', fontSize: 18}} />
+            <LoopIcon style={{color: brand, fontSize: 18}} />
           </Tooltip>
           <Box color='text.primary' ml={3} display='flex' alignItems='center'>
             30 Day Return Policy
             <Tooltip title='info'>
               <InfoIcon
-                style={{color: '#A0A5B9', fontSize: 18, marginLeft: 12}}
+                style={{color: muted, fontSize: 18, marginLeft: 12}}
               />
             </Tooltip>
           </Box>
@@ -54,13 +58,13 @@ const DeliveryInfo = () => {
 
         <Box fontSize={14} my={3} display='flex' alignItems='center'>
           <Tooltip title='COD Available'>
-            <MonetizationOnIcon style={{color: '#0A8FDC', fontSize: 18}} />
+            <MonetizationOnIcon style={{color: brand, fontSize: 18}} />
           </Tooltip>
           <Box color='text.primary' ml={3} display='flex' alignItems='center'>
             Cash on Delivery available{' '}
             <Tooltip title='info'>
               <InfoIcon
-                style={{color: '#A0A5B9', fontSize: 18, marginLeft: 12}}
+                style={{color: muted, fontSize: 18, marginLeft: 12}}
               />
             </Tooltip>
           </Box>

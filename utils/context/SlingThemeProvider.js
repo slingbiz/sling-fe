@@ -7,9 +7,12 @@ import {
 import {MuiPickersUtilsProvider} from '@material-ui/pickers';
 import PropTypes from 'prop-types';
 import MomentUtils from '@date-io/moment';
+import {withThemeCssVars} from './withThemeCssVars';
 
 const SlingThemeProvider = ({children, appLocale, theme: customTheme}) => {
-  const mergedTheme = responsiveFontSizes(createTheme(customTheme.theme)); // Merge custom theme
+  const mergedTheme = responsiveFontSizes(
+    createTheme(withThemeCssVars(customTheme.theme)),
+  );
 
   return (
     <ThemeProvider theme={mergedTheme}>

@@ -8,7 +8,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
-import {orange} from '@material-ui/core/colors';
 import AppContext from '../../utils/context/AppContext';
 import AppEnums from '../../utils/constants/AppEnums';
 const {Fonts} = AppEnums;
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme) => {
     },
     profilePic: {
       fontSize: 24,
-      backgroundColor: orange[500],
+      backgroundColor: theme.palette.primary.main,
     },
 
     userName: {
@@ -40,7 +39,8 @@ const useStyles = makeStyles((theme) => {
       whiteSpace: 'nowrap',
       fontSize: 16,
       fontWeight: Fonts.MEDIUM,
-      color: (props) => (props.themeMode === 'light' ? '#313541' : 'white'),
+      color: (props) =>
+        props.themeMode === 'light' ? theme.palette.text.primary : 'white',
     },
     designation: {
       marginTop: -2,
@@ -104,7 +104,7 @@ const UserInfo = (props) => {
             <Box
               ml={3}
               className={classes.pointer}
-              color={themeMode === 'light' ? '#313541' : 'white'}>
+              color={themeMode === 'light' ? 'text.primary' : 'white'}>
               <ExpandMoreIcon onClick={handleClick} />
               <Menu
                 id='simple-menu'

@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
   },
   dashboardBtn: {
-    backgroundColor: '#ff9800',
+    backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
     fontWeight: Fonts.BOLD,
     paddingRight: 20,
@@ -81,8 +81,8 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'none',
     paddingLeft: 20,
     '&:hover, &:focus': {
-      backgroundColor: '#ff9800',
-      color: theme.palette.secondary.contrastText,
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.primary.contrastText,
     },
   },
 }));

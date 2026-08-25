@@ -9,7 +9,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
-import {orange} from '@material-ui/core/colors';
 import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles((theme) => {
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme) => {
     },
     profilePic: {
       fontSize: 24,
-      backgroundColor: orange[500],
+      backgroundColor: theme.palette.primary.main,
     },
 
     userName: {
@@ -44,7 +43,7 @@ const useStyles = makeStyles((theme) => {
       color: (props) =>
         props.themeMode === AppEnums.ThemeMode.DARK || !props.header
           ? 'white'
-          : '#313541',
+          : theme.palette.text.primary,
     },
     pointer: {
       cursor: 'pointer',
@@ -112,7 +111,7 @@ const HeaderUser = (props) => {
               color={
                 themeMode === AppEnums.ThemeMode.DARK || !props.header
                   ? 'white'
-                  : '#313541'
+                  : 'text.primary'
               }>
               <Hidden mdDown>
                 <ExpandMoreIcon onClick={handleClick} />

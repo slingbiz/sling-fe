@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     boxSizing: 'border-box',
     '&:focus': {
       backgroundColor: 'rgba(255, 255, 255, 0.5)',
-      borderColor: theme.palette.primary,
+      borderColor: theme.palette.primary.main,
       width: '100%',
       [theme.breakpoints.down('sm')]: {
         // backgroundColor: theme.palette.common.white,
@@ -94,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: Fonts.MEDIUM,
     border: '1px solid',
     borderColor: (props) =>
-      props.borderLight ? '#efefef' : theme.palette.textSecondary,
+      props.borderLight ? theme.palette.divider : theme.palette.text.secondary,
     color: 'black',
     borderRadius: 4,
 

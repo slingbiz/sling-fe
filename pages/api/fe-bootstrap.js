@@ -62,6 +62,7 @@ export default async function handler(req, res) {
       incomingReq: req,
     });
 
+    res.setHeader('Cache-Control', 'no-store');
     res.status(200).json(response.data);
   } catch (e) {
     const status = e.response?.status;
