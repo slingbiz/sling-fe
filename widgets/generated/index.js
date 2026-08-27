@@ -28,3 +28,16 @@ registerWidget(
     props: [],
   },
 );
+
+registerWidget(
+  "Featured video player widget",
+  dynamic(() => import('./YtFeaturedPlayer'), {ssr: false}),
+  {
+    description: "Large main video player with details",
+    ownership: "private",
+    type: "widget",
+    key: "YtFeaturedPlayer",
+    icon: "play_arrow",
+    props: [],
+  },
+);
