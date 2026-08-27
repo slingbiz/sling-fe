@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "name": "Category chips widget",
+  "key": "YtCategories",
+  "description": "Horizontal scrolling category filters",
+  "type": "widget",
+  "ownership": "private",
+  "icon": "label",
+  "props": [],
+  "source": "ai_generated"
+}
