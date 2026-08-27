@@ -41,3 +41,16 @@ registerWidget(
     props: [],
   },
 );
+
+registerWidget(
+  "Video grid list widget",
+  dynamic(() => import('./YtVideoGrid'), {ssr: false}),
+  {
+    description: "Responsive grid of video thumbnail cards",
+    ownership: "private",
+    type: "widget",
+    key: "YtVideoGrid",
+    icon: "grid_on",
+    props: [],
+  },
+);
