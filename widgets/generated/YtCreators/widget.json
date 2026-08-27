@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "name": "Trending creators widget",
+  "key": "YtCreators",
+  "description": "List of trending channels to subscribe to",
+  "type": "widget",
+  "ownership": "private",
+  "icon": "people",
+  "props": [],
+  "source": "ai_generated"
+}
