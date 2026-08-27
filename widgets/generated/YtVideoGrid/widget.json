@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "name": "Video grid list widget",
+  "key": "YtVideoGrid",
+  "description": "Responsive grid of video thumbnail cards",
+  "type": "widget",
+  "ownership": "private",
+  "icon": "grid_on",
+  "props": [],
+  "source": "ai_generated"
+}
