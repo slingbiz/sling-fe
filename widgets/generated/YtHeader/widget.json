@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "name": "Navigation bar widget",
+  "key": "YtHeader",
+  "description": "Top search bar and navigation header",
+  "type": "widget",
+  "ownership": "private",
+  "icon": "menu",
+  "props": [],
+  "source": "ai_generated"
+}
