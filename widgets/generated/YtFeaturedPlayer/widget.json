@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "name": "Featured video player widget",
+  "key": "YtFeaturedPlayer",
+  "description": "Large main video player with details",
+  "type": "widget",
+  "ownership": "private",
+  "icon": "play_arrow",
+  "props": [],
+  "source": "ai_generated"
+}
