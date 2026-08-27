@@ -15,3 +15,16 @@ registerWidget(
     props: [],
   },
 );
+
+registerWidget(
+  "Category chips widget",
+  dynamic(() => import('./YtCategories'), {ssr: false}),
+  {
+    description: "Horizontal scrolling category filters",
+    ownership: "private",
+    type: "widget",
+    key: "YtCategories",
+    icon: "label",
+    props: [],
+  },
+);
