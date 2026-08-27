@@ -54,3 +54,16 @@ registerWidget(
     props: [],
   },
 );
+
+registerWidget(
+  "Trending creators widget",
+  dynamic(() => import('./YtCreators'), {ssr: false}),
+  {
+    description: "List of trending channels to subscribe to",
+    ownership: "private",
+    type: "widget",
+    key: "YtCreators",
+    icon: "people",
+    props: [],
+  },
+);
