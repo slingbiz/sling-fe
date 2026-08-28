@@ -9,11 +9,7 @@ import '../widgets/index';
 import '../blocks/index';
 import '../components/index';
 
-import {
-  GET_INIT_PROPS,
-  CLIENT_KEY_SECRET,
-  CLIENT_ID,
-} from '../utils/constants/Services';
+import {GET_INIT_PROPS, STOREFRONT_AUTH_HEADERS} from '../utils/constants/Services';
 import axios from 'axios';
 import AppLocale from '../utils/localization';
 import SlingThemeProvider from '../utils/context/SlingThemeProvider';
@@ -126,8 +122,7 @@ MyApp.getInitialProps = async (appContext) => {
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            license: CLIENT_KEY_SECRET,
-            client: CLIENT_ID,
+            ...STOREFRONT_AUTH_HEADERS,
           },
           data: {pathname, query, asPath},
         }

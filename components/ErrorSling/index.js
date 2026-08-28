@@ -105,8 +105,20 @@ const ErrorSling = () => {
                   </Avatar>
                 </ListItemAvatar>
                 <ListItemText
-                  primary='Missing Sling Api Keys'
-                  secondary='Please check - CLIENT_KEY_SECRET & CLIENT_ID'
+                  primary={
+                    String(process.env.NEXT_PUBLIC_API_URL || '').includes(
+                      'localhost',
+                    )
+                      ? 'No company, or more than one'
+                      : 'Missing Sling Api Keys'
+                  }
+                  secondary={
+                    String(process.env.NEXT_PUBLIC_API_URL || '').includes(
+                      'localhost',
+                    )
+                      ? 'Sign up in Studio at localhost:2021, then refresh. A second company: paste its key from Settings → Keys into sling-fe/.env and restart.'
+                      : 'Please check - CLIENT_KEY_SECRET & CLIENT_ID'
+                  }
                 />
               </ListItem>
               <ListItem>

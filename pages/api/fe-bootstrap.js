@@ -1,9 +1,5 @@
 import axios from 'axios';
-import {
-  CLIENT_ID,
-  CLIENT_KEY_SECRET,
-  GET_INIT_PROPS,
-} from '../../utils/constants/Services';
+import {GET_INIT_PROPS, STOREFRONT_AUTH_HEADERS} from '../../utils/constants/Services';
 import {
   extractTenantSlugFromPreviewHostname,
   storefrontHostnameFromNodeRequest,
@@ -34,8 +30,7 @@ async function proxyToSlingApi({pathname, query, asPath, incomingReq}) {
     headers['x-sling-preview-init-secret'] = serverSecret;
     headers['x-sling-origin-host'] = hostOnly;
   } else {
-    headers.license = CLIENT_KEY_SECRET;
-    headers.client = CLIENT_ID;
+    Object.assign(headers, STOREFRONT_AUTH_HEADERS);
   }
 
   return axios.post(
