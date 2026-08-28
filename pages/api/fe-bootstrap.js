@@ -1,5 +1,8 @@
 import axios from 'axios';
-import {GET_INIT_PROPS, STOREFRONT_AUTH_HEADERS} from '../../utils/constants/Services';
+import {
+  GET_INIT_PROPS,
+  STOREFRONT_AUTH_HEADERS,
+} from '../../utils/constants/Services';
 import {
   extractTenantSlugFromPreviewHostname,
   storefrontHostnameFromNodeRequest,
