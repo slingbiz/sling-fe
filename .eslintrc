@@ -19,6 +19,7 @@
       "version": "detect"
     }
   },
+  "ignorePatterns": ["**/*.test.js", ".next/**", "node_modules/**"],
   "rules": {
     "react/prop-types": 0,
     "linebreak-style": ["error", "unix"],

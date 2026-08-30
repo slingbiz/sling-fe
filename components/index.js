@@ -104,6 +104,22 @@ registerWidget(
 );
 
 registerWidget(
+  'Product Detail Page Component', // Name of the component
+  dynamic(() => import('./ProductDetail'), {ssr: false}),
+  {
+    key: 'ProductDetailPageComponent', // Key used for identifying the component
+    type: 'component', // Type is also set to 'component'
+    description: 'Detail page wrapper for Sling FE PDP', // Description of the component
+    ownership: 'private', // This is a private component
+    icon: 'add_shopping_cart', // Icon representing the component
+    props: [], // No props defined for this component
+    availableToAllPages: true, // If applicable
+    config: {}, // Add config if needed
+    requiredProps: [], // No required props for this component
+  },
+);
+
+registerWidget(
   'Default Header Component', // Name of the component
   dynamic(() => import('./HeaderDefault'), {ssr: false}),
   {
