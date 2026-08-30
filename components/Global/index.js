@@ -5,6 +5,8 @@ import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
 import {RenderTree} from 'sling-core';
 import ErrorSling from '../ErrorSling';
+import HomeComponent from '../Home';
+import {layoutHasPaint} from '../../utils/layoutHasPaint';
 
 const useStyles = makeStyles(() => ({
   // bodyMain: {padding: '20px 20px 0'},
@@ -26,6 +28,9 @@ const GlobalPage = () => {
 
   if (!layout) {
     return <ErrorSling statusCode={404} />;
+  }
+  if (!layoutHasPaint(layout)) {
+    return <HomeComponent />;
   }
   // Only render the component if on the client side
   return isClient ? (
