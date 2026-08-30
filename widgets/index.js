@@ -46,20 +46,6 @@ registerWidget(
   },
 );
 
-// Register the PureListingSearchBar widget
-registerWidget(
-  'Search Bar Widget',
-  dynamic(() => import('./PureListingSearchBar'), {ssr: false}),
-  {
-    description: 'Pure Search Widget.',
-    ownership: 'private',
-    type: 'widget',
-    key: 'PureListingSearchBar',
-    icon: 'search', // Using the provided icon
-    props: [], // Add any props if necessary
-  },
-);
-
 // Register the Notifications widget
 registerWidget(
   'Notification Widget',

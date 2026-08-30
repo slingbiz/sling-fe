@@ -14,6 +14,9 @@ const walk = (dir) => {
   return fs.readdirSync(dir, {withFileTypes: true}).flatMap((entry) => {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
+      if (entry.name === 'generated') {
+        return [];
+      }
       return walk(full);
     }
     if (!entry.name.endsWith('.js') || entry.name.endsWith('.test.js')) {
