@@ -10,8 +10,7 @@ import {
   SET_PRODUCT_VIEW_TYPE,
   UPDATE_CART_ITEM,
 } from '../../utils/constants/ActionTypes';
-import {cartItems} from '../../utils/services/db/ecommerce/ecommerceData';
-import {VIEW_TYPE} from "../../utils/constants/AppConst";
+import {VIEW_TYPE} from '../../utils/constants/AppConst';
 
 const initialState = {
   ecommerceList: [],
@@ -26,7 +25,7 @@ const initialState = {
     color: [],
     rating: [],
   },
-  cartItems: cartItems,
+  cartItems: [],
   recentOrders: [],
   customers: [],
   customerCount: 0,

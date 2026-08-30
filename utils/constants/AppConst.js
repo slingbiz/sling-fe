@@ -12,4 +12,4 @@ export const defaultUser = {
   role: 'user',
   photoURL: 'https://via.placeholder.com/150',
 };
-export const initialUrl = '/dubai/women/clothes/products'; // this url will open after login
+export const initialUrl = '/';
