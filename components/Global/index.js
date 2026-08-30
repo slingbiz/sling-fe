@@ -3,10 +3,12 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import Box from '@material-ui/core/Box';
 import {makeStyles} from '@material-ui/core/styles';
-import {RenderTree} from 'sling-core';
+import {RenderTree, getAllWidgets} from 'sling-core';
 import ErrorSling from '../ErrorSling';
 import HomeComponent from '../Home';
+import RenderTreeGuard from '../RenderTreeGuard';
 import {layoutHasPaint} from '../../utils/layoutHasPaint';
+import {dropUnrenderableCells} from '../../utils/safeLayout';
 
 const useStyles = makeStyles(() => ({
   // bodyMain: {padding: '20px 20px 0'},
@@ -32,11 +34,20 @@ const GlobalPage = () => {
   if (!layoutHasPaint(layout)) {
     return <HomeComponent />;
   }
-  // Only render the component if on the client side
+  const registry = typeof getAllWidgets === 'function' ? getAllWidgets() : {};
+  const safeLayout = dropUnrenderableCells(layout, registry);
+
   return isClient ? (
     <Box className={classes.appMain}>
       <Box className={classes.bodyMain}>
-        <RenderTree layout={layout} />
+        <RenderTreeGuard
+          fallback={
+            <RenderTreeGuard fallback={<ErrorSling />}>
+              <RenderTree layout={safeLayout} />
+            </RenderTreeGuard>
+          }>
+          <RenderTree layout={layout} />
+        </RenderTreeGuard>
       </Box>
     </Box>
   ) : null;

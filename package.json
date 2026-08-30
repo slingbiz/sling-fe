@@ -13,7 +13,7 @@
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "lint:fix": "eslint --fix",
     "format": "prettier --write",
-    "test": "node --test utils/constants/storefrontAuth.test.js utils/context/mergeInitConfig.test.js utils/context/appTheme.test.js utils/context/withThemeCssVars.test.js widgets/themePalette.test.js babel.config.test.js utils/layoutHasPaint.test.js blocks/noDemoCatalog.test.js"
+    "test": "node --test utils/constants/storefrontAuth.test.js utils/context/mergeInitConfig.test.js utils/context/appTheme.test.js utils/context/withThemeCssVars.test.js widgets/themePalette.test.js babel.config.test.js utils/layoutHasPaint.test.js utils/safeLayout.test.js blocks/catalogWidgets.test.js components/Error404/Error404.test.js"
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^2.1.3",
