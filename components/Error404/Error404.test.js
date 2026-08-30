@@ -22,7 +22,10 @@ test('storefront 404 is Sling, not Crema', () => {
 test('Error404 and ErrorSling use the Sling missing page', () => {
   assert.match(read('index.js'), /SlingMissingPage/);
   assert.match(read('../ErrorSling/index.js'), /SlingMissingPage/);
-  assert.doesNotMatch(read('../ErrorSling/index.js'), /router\.push\('\/home'\)/);
+  assert.doesNotMatch(
+    read('../ErrorSling/index.js'),
+    /router\.push\('\/home'\)/,
+  );
   assert.doesNotMatch(read('../ErrorSling/index.js'), /dubai/);
 });
 
