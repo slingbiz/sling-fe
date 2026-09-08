@@ -22,6 +22,7 @@ import PageMeta from '../utils/context/PageMeta';
 import LocaleProvider from '../utils/context/LocaleProvider';
 import defaultConfig from '../utils/context/defaultConfig';
 import {mergeInitConfig} from '../utils/context/mergeInitConfig';
+import {hydrateStorefrontWidgets} from '../utils/hydrateStorefrontWidgets';
 
 const MyApp = ({
   Component,
@@ -46,6 +47,7 @@ const MyApp = ({
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
+    hydrateStorefrontWidgets();
   }, []);
 
   if (error) {

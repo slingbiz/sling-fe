@@ -1,5 +1,6 @@
 import React from 'react';
 import {Box, Typography, TextField, IconButton, Avatar, Icon, Grid} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
 import {Search} from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({

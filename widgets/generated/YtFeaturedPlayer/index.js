@@ -1,5 +1,6 @@
 import React from 'react';
 import {Box, Grid, Typography, Button, Avatar, Icon} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
 import {Chat, Save, Share} from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
